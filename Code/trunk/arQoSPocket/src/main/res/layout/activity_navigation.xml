@@ -1,0 +1,33 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     >
+
+    <fragment
+        android:id="@+id/activity_arqos_actionbar"
+        android:name="pt.ptinovacao.arqospocket.fragments.FragmentActionBar"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <FrameLayout
+        android:id="@+id/activity_arqos_content"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"       
+        android:layout_below="@+id/activity_arqos_actionbar" />
+    
+
+    <FrameLayout
+        android:id="@+id/activity_arqos_sliding_menu_cover"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"           	
+        android:layout_below="@+id/activity_arqos_actionbar"
+         >   
+         <FrameLayout android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:background="@android:color/transparent">
+
+        </FrameLayout> 
+ </FrameLayout> 
+
+</RelativeLayout>

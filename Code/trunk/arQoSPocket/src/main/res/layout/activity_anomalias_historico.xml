@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/historico_margin_top"
+    android:orientation="vertical" >
+
+    <!--
+       <fragment
+       android:id="@+id/activity_historico_anomalias"
+       android:name="pt.ptinovacao.arqospocket.fragments."
+       android:layout_width="fill_parent"
+       android:layout_height="wrap_content"
+       android:layout_weight="0.2" />
+    -->
+    
+    <pt.ptinovacao.arqospocket.util.ListAwareViewPager
+        android:id="@+id/activity_anomalias_historico_viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fadingEdge="none"
+        android:scrollbars="none" />
+
+</RelativeLayout>

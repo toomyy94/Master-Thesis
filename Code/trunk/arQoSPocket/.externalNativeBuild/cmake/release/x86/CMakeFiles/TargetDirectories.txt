@@ -1,0 +1,3 @@
+C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/.externalNativeBuild/cmake/release/x86/CMakeFiles/ttaenc.dir
+C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/.externalNativeBuild/cmake/release/x86/CMakeFiles/edit_cache.dir
+C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/.externalNativeBuild/cmake/release/x86/CMakeFiles/rebuild_cache.dir

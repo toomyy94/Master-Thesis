@@ -1,0 +1,3 @@
+C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/ttaenc.dir
+C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
+C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir

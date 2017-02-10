@@ -1,0 +1,134 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pt.ptinovacao.arqospocket"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="9"
+        android:targetSdkVersion="18" />
+
+    <permission
+        android:name="pt.ptinovacao.arqospocket.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.knockout.kohealthclub.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.CONTROL_INCALL_EXPERIENCE" />
+    <uses-permission android:name="android.permission.READ_LOGS" />
+
+    <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:name="pt.ptinovacao.arqospocket.MyApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/arqos_icon"
+
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivitySplash"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityConfiguracoes"
+            android:label="@string/app_name" />
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityDashboardMain"
+            android:label="@string/app_name"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityAnomalias"
+            android:label="@string/app_name" />
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityAnomaliasHistorico"
+            android:label="@string/app_name" />
+        <activity
+            android:name="pt.ptinovacao.arqospocket.map.MapAct"
+            android:label="@string/app_name" />
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityTestesHistorico"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityTestes"
+            android:label="@string/app_name" />
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityTestesHistorico_Detalhes"
+            android:label="@string/app_name" />
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityAjuda"
+            android:label="@string/app_name" />
+
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.Activityo_arQos"
+            android:label="@string/app_name" />
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.LanguageSelectionActivity"
+            android:theme="@android:style/Theme.Dialog"
+            android:noHistory="true"
+            android:label="@string/language" />
+
+        <!-- Google Maps v2 API Key -->
+        <!--<meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCjcxGXYF8Ht1gpQdDeX83h9EnCW7XZ2QA" />-->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyA7et6S7tPfdMl8waap8SiucoTOn0CijJY" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <receiver android:name=".service.alarm.AlarmReceiver">
+            <intent-filter>
+                <action android:name="pt.ptinovacao.arqospocket.service.alarm.AlarmReceiver" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".service.service.EngineService"
+            android:enabled="true"></service>
+
+        <receiver android:name=".service.service.utils.StartServiceBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+
+    </application>
+
+</manifest>
