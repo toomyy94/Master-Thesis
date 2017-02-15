@@ -144,34 +144,34 @@ public class ActivityDashboardMain extends ArqosActivity
 			}
 		}
 
-		//THIS IS A TRY!!!
-        //
-        //GET (try!)
-        // Instantiate the RequestQueue.
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url ="http://httpbin.org/ip";
-
-        // Request a string response from the provided URL.
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        // Display the first 500 characters of the response string.
-                        Log.d("GET Response: ",response);
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.e("Get error!","That didn't work!");
-            }
-        });
-        // Add the request to the RequestQueue.
-        queue.add(stringRequest);
-        //END OF GET (try!)
-        SystemClock.sleep(1000);
-        ////////////////////////////
-        //
-		//POST
+//		//THIS IS A TRY!!!
+//        //
+//        //GET (try!)
+//        // Instantiate the RequestQueue.
+//        RequestQueue queue = Volley.newRequestQueue(this);
+//        String url ="http://httpbin.org/ip";
+//
+//        // Request a string response from the provided URL.
+//        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+//                new Response.Listener<String>() {
+//                    @Override
+//                    public void onResponse(String response) {
+//                        // Display the first 500 characters of the response string.
+//                        Log.d("GET Response: ",response);
+//                    }
+//                }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                Log.e("Get error!","That didn't work!");
+//            }
+//        });
+//        // Add the request to the RequestQueue.
+//        queue.add(stringRequest);
+//        //END OF GET (try!)
+//        SystemClock.sleep(1000);
+//        ////////////////////////////
+//        //
+//		//POST
 //		final String URL = "http://putsreq.com/ZQ92fvizkw9g6EAUaOtm";
 //		// Post params to be sent to the server
 //		HashMap<String, String> params = new HashMap<String, String>();
@@ -199,22 +199,22 @@ public class ActivityDashboardMain extends ArqosActivity
 //		ApplicationController.getInstance().addToRequestQueue(req);
 		//END OF POST
 		/////////-//////-////////
-        //
-		//WRITE LOGFILE
-		try {
-			Process process = Runtime.getRuntime().exec("logcat -d");
-			BufferedReader bufferedReader = new BufferedReader(
-					new InputStreamReader(process.getInputStream()));
-
-			StringBuilder log = new StringBuilder();
-			String line;
-			while ((line = bufferedReader.readLine()) != null) {
-				log.append(line);
-			}
-
-            saveLogcatToFile(getApplicationContext());
-		} catch (IOException e) {
-		}
+//        //
+//		//WRITE LOGFILE
+//		try {
+//			Process process = Runtime.getRuntime().exec("logcat -d");
+//			BufferedReader bufferedReader = new BufferedReader(
+//					new InputStreamReader(process.getInputStream()));
+//
+//			StringBuilder log = new StringBuilder();
+//			String line;
+//			while ((line = bufferedReader.readLine()) != null) {
+//				log.append(line);
+//			}
+//
+//            saveLogcatToFile(getApplicationContext());
+//		} catch (IOException e) {
+//		}
 
 
 	///////////////-///////-//////////
@@ -378,7 +378,7 @@ public class ActivityDashboardMain extends ArqosActivity
 				return false;	
 			}			
 		};
-		
+
 		mViewPager = (DashboardViewPager) findViewById(R.id.activity_dashboard_main_viewpaper);
 		mViewPager.setOffscreenPageLimit(2);
 		mPageAdater = new AdapterDashboardPager(getSupportFragmentManager(), isMobileNetwork, adapterItems);

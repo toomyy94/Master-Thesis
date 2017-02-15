@@ -414,6 +414,38 @@
 					"immediate": "0"
 				}
 			]
-		}
+		},
+        {
+          "testeid": "T500001",
+          "dataini": "20140529171900",
+          "datafim": "20200717133554",
+          "modulo": 0,
+          "testname": "Scan WiFi Networks",
+          "macronr": 1,
+          "testtype": 5,
+          "priority": 40,
+          "data": [
+            {
+              "task_id": "0008",
+              "task_name": "Turn ON WiFi",
+              "macro_id": "1",
+              "task_number": "1",
+              "iccid": "",
+              "instanteExec": "0",
+              "timeout": "20",
+              "immediate": "0"
+            },
+            {
+              "task_id": "0012",
+              "task_name": "Scan WiFi Networks",
+              "macro_id": "1",
+              "task_number": "2",
+              "iccid": "",
+              "instanteExec": "30",
+              "timeout": "20",
+              "immediate": "0"
+            }
+          ]
+        }
 	]
 }

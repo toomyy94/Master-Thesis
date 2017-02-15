@@ -1,10 +1,13 @@
 
 {
-	"buildFiles" : [ "C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/CMakeLists.txt" ],
+	"buildFiles" : 
+	[
+		"C:/Users/p057937/Desktop/Master-Thesis.git/Code/trunk/arQoSPocket/CMakeLists.txt"
+	],
 	"cFileExtensions" : [ "c" ],
 	"cleanCommands" : 
 	[
-		"C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\p057937\\Desktop\\ArqosSVN\\arQoSPocket\\.externalNativeBuild\\cmake\\release\\mips --target clean"
+		"C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\p057937\\Desktop\\Master-Thesis.git\\Code\\trunk\\arQoSPocket\\.externalNativeBuild\\cmake\\release\\mips --target clean"
 	],
 	"libraries" : 
 	{
@@ -12,18 +15,18 @@
 		{
 			"abi" : "mips",
 			"artifactName" : "ttaenc",
-			"buildCommand" : "C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\p057937\\Desktop\\ArqosSVN\\arQoSPocket\\.externalNativeBuild\\cmake\\release\\mips --target ttaenc",
+			"buildCommand" : "C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\p057937\\Desktop\\Master-Thesis.git\\Code\\trunk\\arQoSPocket\\.externalNativeBuild\\cmake\\release\\mips --target ttaenc",
 			"buildType" : "release",
 			"files" : 
 			[
 				
 				{
 					"flags" : "  -target mipsel-none-linux-android -gcc-toolchain C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/mipsel-linux-android-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/platforms/android-9/arch-mips -Dttaenc_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mips32 -Wa,--noexecstack -Wformat -Werror=format-security  -O2 -DNDEBUG -O2 -DNDEBUG  -fPIC      -c ",
-					"src" : "C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/src/main/cpp/ttaenc.c",
-					"workingDirectory" : "C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/.externalNativeBuild/cmake/release/mips"
+					"src" : "C:/Users/p057937/Desktop/Master-Thesis.git/Code/trunk/arQoSPocket/src/main/cpp/ttaenc.c",
+					"workingDirectory" : "C:/Users/p057937/Desktop/Master-Thesis.git/Code/trunk/arQoSPocket/.externalNativeBuild/cmake/release/mips"
 				}
 			],
-			"output" : "C:/Users/p057937/Desktop/ArqosSVN/arQoSPocket/build/intermediates/cmake/release/obj/mips/libttaenc.so",
+			"output" : "C:/Users/p057937/Desktop/Master-Thesis.git/Code/trunk/arQoSPocket/build/intermediates/cmake/release/obj/mips/libttaenc.so",
 			"toolchain" : "704307921"
 		}
 	},

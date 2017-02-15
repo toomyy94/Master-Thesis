@@ -36,7 +36,7 @@ build CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o: C_COMPILER__ttaenc ../../..
   DEFINES = -Dttaenc_EXPORTS
   DEP_FILE = CMakeFiles\ttaenc.dir\src\main\cpp\ttaenc.c.o.d
   FLAGS = -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC
-  IN_ABS = C:\Users\p057937\Desktop\ArqosSVN\arQoSPocket\src\main\cpp\ttaenc.c
+  IN_ABS = C:\Users\p057937\Desktop\Master-Thesis.git\Code\trunk\arQoSPocket\src\main\cpp\ttaenc.c
   OBJECT_DIR = CMakeFiles\ttaenc.dir
   OBJECT_FILE_DIR = CMakeFiles\ttaenc.dir\src\main\cpp
 
@@ -63,7 +63,7 @@ build ../../../../build/intermediates/cmake/debug/obj/armeabi/libttaenc.so: C_SH
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\p057937\Desktop\ArqosSVN\arQoSPocket\.externalNativeBuild\cmake\debug\armeabi && C:\Users\p057937\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D C:\Users\p057937\Desktop\Master-Thesis.git\Code\trunk\arQoSPocket\.externalNativeBuild\cmake\debug\armeabi && C:\Users\p057937\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 build edit_cache: phony CMakeFiles/edit_cache.util
@@ -72,7 +72,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\Users\p057937\Desktop\ArqosSVN\arQoSPocket\.externalNativeBuild\cmake\debug\armeabi && C:\Users\p057937\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\cmake.exe -HC:\Users\p057937\Desktop\ArqosSVN\arQoSPocket -BC:\Users\p057937\Desktop\ArqosSVN\arQoSPocket\.externalNativeBuild\cmake\debug\armeabi"
+  COMMAND = cmd.exe /C "cd /D C:\Users\p057937\Desktop\Master-Thesis.git\Code\trunk\arQoSPocket\.externalNativeBuild\cmake\debug\armeabi && C:\Users\p057937\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\cmake.exe -HC:\Users\p057937\Desktop\Master-Thesis.git\Code\trunk\arQoSPocket -BC:\Users\p057937\Desktop\Master-Thesis.git\Code\trunk\arQoSPocket\.externalNativeBuild\cmake\debug\armeabi"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1

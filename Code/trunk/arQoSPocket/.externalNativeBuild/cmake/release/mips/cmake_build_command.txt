@@ -1,11 +1,11 @@
 Executable : C:\Users\p057937\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\cmake.exe
 arguments : 
--HC:\Users\p057937\Desktop\ArqosSVN\arQoSPocket
--BC:\Users\p057937\Desktop\ArqosSVN\arQoSPocket\.externalNativeBuild\cmake\release\mips
+-HC:\Users\p057937\Desktop\Master-Thesis.git\Code\trunk\arQoSPocket
+-BC:\Users\p057937\Desktop\Master-Thesis.git\Code\trunk\arQoSPocket\.externalNativeBuild\cmake\release\mips
 -GAndroid Gradle - Ninja
 -DANDROID_ABI=mips
 -DANDROID_NDK=C:\Users\p057937\AppData\Local\Android\Sdk\ndk-bundle
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\p057937\Desktop\ArqosSVN\arQoSPocket\build\intermediates\cmake\release\obj\mips
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\p057937\Desktop\Master-Thesis.git\Code\trunk\arQoSPocket\build\intermediates\cmake\release\obj\mips
 -DCMAKE_BUILD_TYPE=Release
 -DCMAKE_MAKE_PROGRAM=C:\Users\p057937\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\ninja.exe
 -DCMAKE_TOOLCHAIN_FILE=C:\Users\p057937\AppData\Local\Android\Sdk\ndk-bundle\build\cmake\android.toolchain.cmake

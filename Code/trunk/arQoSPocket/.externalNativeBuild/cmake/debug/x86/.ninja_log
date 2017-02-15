@@ -1,5 +1,3 @@
 # ninja log v5
-144	8877	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	3a0731d4e6f52fe1
-8878	10075	0	../../../../build/intermediates/cmake/debug/obj/x86/libttaenc.so	2c3aced33cd37ede
-188	1060	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	3a0731d4e6f52fe1
-1061	1722	0	../../../../build/intermediates/cmake/debug/obj/x86/libttaenc.so	2c3aced33cd37ede
+25	13678	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	4ba49b0cac6660ab
+13679	40812	0	../../../../build/intermediates/cmake/debug/obj/x86/libttaenc.so	2c3aced33cd37ede
