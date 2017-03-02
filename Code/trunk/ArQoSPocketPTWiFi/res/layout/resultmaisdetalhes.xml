@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    
+    <TextView android:id="@+id/MenuAssociation"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Associação"
+			android:textSize="11dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="5dp"
+			android:textStyle="bold">
+		</TextView>
+		
+         <TextView android:id="@+id/headerAssociationTime"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Tempo de associação :"
+			android:textSize="14dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="5dp"
+			android:layout_below="@+id/MenuAssociation">
+		</TextView>
+		
+         <TextView android:id="@+id/resultAssociationTime"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/headerAssociationTime"
+			android:layout_toRightOf="@+id/headerAssociationTime">
+		</TextView>
+		
+         <TextView android:id="@+id/resultAssociationTimeMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="sec"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultAssociationTime"
+			android:layout_toRightOf="@+id/resultAssociationTime">
+		</TextView>
+		
+         <TextView android:id="@+id/MenuAuthentication"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Autenticação"
+			android:textSize="11dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="10dp"
+			android:textStyle="bold"
+			android:layout_below="@+id/headerAssociationTime">
+		</TextView>
+		
+         <TextView android:id="@+id/headerAuthTime"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Tempo de autenticação :"
+			android:textSize="14dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="5dp"
+			android:layout_below="@+id/MenuAuthentication">
+		</TextView>
+		
+         <TextView android:id="@+id/resultAuthTime"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/headerAuthTime"
+			android:layout_toRightOf="@+id/headerAuthTime">
+		</TextView>
+		
+         <TextView android:id="@+id/resultAuthTimeMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="sec"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultAuthTime"
+			android:layout_toRightOf="@+id/resultAuthTime">
+		</TextView>
+		
+         <TextView android:id="@+id/headerAuthTAccessime"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Tempo de acesso :"
+			android:textSize="14dp"
+			android:paddingLeft="15dp"
+			android:layout_below="@+id/headerAuthTime">
+		</TextView>
+		
+         <TextView android:id="@+id/resultAuthAccessTime"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/headerAuthTAccessime"
+			android:layout_toRightOf="@+id/headerAuthTAccessime">
+		</TextView>
+		
+         <TextView android:id="@+id/resultAuthAccessTimeMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="sec"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultAuthAccessTime"
+			android:layout_toRightOf="@+id/resultAuthAccessTime">
+		</TextView>
+		
+         <TextView android:id="@+id/MenuPing"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Ping"
+			android:textSize="11dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="10dp"
+			android:textStyle="bold"
+			android:layout_below="@+id/headerAuthTAccessime">
+		</TextView>
+        
+         <TextView android:id="@+id/headerRTT"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Round Trip Time :"
+			android:textSize="14dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="5dp"
+			android:layout_below="@+id/MenuPing">
+		</TextView>
+		
+         <TextView android:id="@+id/resultRTT"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/headerRTT"
+			android:layout_toRightOf="@+id/headerRTT">
+		</TextView>
+		
+         <TextView android:id="@+id/resultRTTMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="sec"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultRTT"
+			android:layout_toRightOf="@+id/resultRTT">
+		</TextView>
+		
+         <TextView android:id="@+id/headerPacketLost"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Packet Lost :"
+			android:textSize="14dp"
+			android:paddingLeft="15dp"
+			android:layout_below="@+id/headerRTT">
+		</TextView>
+		
+         <TextView android:id="@+id/resultPacketLost"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/headerPacketLost"
+			android:layout_toRightOf="@+id/headerPacketLost">
+		</TextView>
+		
+         <TextView android:id="@+id/MenuDownload"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Download"
+			android:textSize="11dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="10dp"
+			android:textStyle="bold"
+			android:layout_below="@+id/headerPacketLost">
+		</TextView>
+		
+         <TextView android:id="@+id/headerDownloadDebito"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Débito :"
+			android:textSize="14dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="5dp"
+			android:layout_below="@+id/MenuDownload">
+		</TextView>
+		
+         <TextView android:id="@+id/resultDownloadDebito"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/headerDownloadDebito"
+			android:layout_toRightOf="@+id/headerDownloadDebito">
+		</TextView>
+		
+         <TextView android:id="@+id/resultDownloadDebitoMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="bps"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultDownloadDebito"
+			android:layout_toRightOf="@+id/resultDownloadDebito">
+		</TextView>
+		
+         <TextView android:id="@+id/MenuUpload"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Upload"
+			android:textSize="11dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="10dp"
+			android:textStyle="bold"
+			android:layout_below="@+id/headerDownloadDebito">
+		</TextView>
+		
+         <TextView android:id="@+id/headerUploadDebito"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="Débito :"
+			android:textSize="14dp"
+			android:paddingLeft="15dp"
+			android:paddingTop="5dp"
+			android:layout_below="@+id/MenuUpload">
+		</TextView>
+		
+         <TextView android:id="@+id/resultUploadDebito"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="0"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_marginBottom="30dp"
+			android:layout_alignBaseline="@+id/headerUploadDebito"
+			android:layout_toRightOf="@+id/headerUploadDebito">
+		</TextView>
+		
+         <TextView android:id="@+id/resultUploadDebitoMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="bps"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_marginBottom="30dp"
+			android:layout_alignBaseline="@+id/resultUploadDebito"
+			android:layout_toRightOf="@+id/resultUploadDebito">
+		</TextView>
+
+</RelativeLayout>

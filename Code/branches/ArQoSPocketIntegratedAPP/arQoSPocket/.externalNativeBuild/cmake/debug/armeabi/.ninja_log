@@ -1,0 +1,5 @@
+# ninja log v5
+0	348	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	638c5a8e9a286ab7
+349	490	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libttaenc.so	e0677c57d4400474
+4	548	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	638c5a8e9a286ab7
+549	654	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libttaenc.so	e0677c57d4400474

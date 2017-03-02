@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:paddingTop="5dp"
+	android:paddingBottom="5dp"
+    android:orientation="vertical"
+    android:background="#ffffff">
+
+    <PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView
+		android:id="@+id/LocationHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Localização"
+		android:textColor="#4c4c4e"
+		android:textSize="19dp"
+		android:paddingBottom="5dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/LocationLatitudeHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Latitude:"
+		android:layout_below="@+id/LocationHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/LocationLatitudeResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="40.9087654"
+		android:layout_below="@+id/LocationHeader"
+		android:layout_toRightOf="@+id/LocationLatitudeHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/LocationLongitudeHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Longitude:"
+		android:layout_below="@+id/LocationLatitudeHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/LocationLongitudeResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="-8.9087654"
+		android:layout_below="@+id/LocationLatitudeHeader"
+		android:layout_toRightOf="@+id/LocationLongitudeHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <ImageView android:id="@+id/line1"
+		android:src="@drawable/resultline"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/LocationLongitudeHeader"
+		android:paddingTop="5dp">
+	</ImageView>
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView
+		android:id="@+id/MobileConnectionHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/line1"
+		android:text="Ligação Mobile"
+		android:textColor="#4c4c4e"
+		android:textSize="19dp"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionCELLIDHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="CiD:"
+		android:layout_below="@+id/MobileConnectionHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionCELLIDResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="4024"
+		android:layout_below="@+id/MobileConnectionHeader"
+		android:layout_toRightOf="@+id/MobileConnectionCELLIDHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionLacHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Lac:"
+		android:layout_below="@+id/MobileConnectionCELLIDHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionLacResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="5534"
+		android:layout_below="@+id/MobileConnectionCELLIDHeader"
+		android:layout_toRightOf="@+id/MobileConnectionLacHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionPscHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Psc:"
+		android:layout_below="@+id/MobileConnectionLacHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionPscResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="5534"
+		android:layout_below="@+id/MobileConnectionLacHeader"
+		android:layout_toRightOf="@+id/MobileConnectionPscHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionRSSIHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="RSSI:"
+		android:layout_below="@+id/MobileConnectionPscHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionRSSIResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="-96"
+		android:layout_below="@+id/MobileConnectionPscHeader"
+		android:layout_toRightOf="@+id/MobileConnectionRSSIHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionBERHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="BER:"
+		android:layout_below="@+id/MobileConnectionRSSIHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionBERResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="-1"
+		android:layout_below="@+id/MobileConnectionRSSIHeader"
+		android:layout_toRightOf="@+id/MobileConnectionBERHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionNetworkTypeHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Tipo de ligação:"
+		android:layout_below="@+id/MobileConnectionBERHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionNetworkTypeResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="UMTS"
+		android:layout_below="@+id/MobileConnectionBERHeader"
+		android:layout_toRightOf="@+id/MobileConnectionNetworkTypeHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionIMSIHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="IMSI:"
+		android:layout_below="@+id/MobileConnectionNetworkTypeHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionIMSIResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="123456789012345"
+		android:layout_below="@+id/MobileConnectionNetworkTypeHeader"
+		android:layout_toRightOf="@+id/MobileConnectionIMSIHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionRoamingHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Roaming:"
+		android:layout_below="@+id/MobileConnectionIMSIHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/MobileConnectionRoamingResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Não"
+		android:layout_below="@+id/MobileConnectionIMSIHeader"
+		android:layout_toRightOf="@+id/MobileConnectionRoamingHeader"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:textStyle="bold"
+		android:paddingLeft="3dp" />
+    
+    <ImageView android:id="@+id/line2"
+		android:src="@drawable/resultline"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/MobileConnectionRoamingResult"
+		android:paddingTop="5dp">
+	</ImageView>
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView
+		android:id="@+id/NeighboringCellHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/line2"
+		android:text="Células Vizinhas"
+		android:textColor="#4c4c4e"
+		android:textSize="19dp"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/NeighboringCellResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="CiD: 22312, RSSI:-96, Lac:4398, UMTS\nCiD: 22313, RSSI:-87, Lac:4398, UMTS"
+		android:layout_below="@+id/NeighboringCellHeader"
+		android:textColor="#666666"
+		android:textSize="14dp"
+		android:textStyle="bold" />
+    
+    <ImageView android:id="@+id/line3"
+		android:src="@drawable/resultline"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/NeighboringCellResult"
+		android:paddingTop="5dp">
+	</ImageView>
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView
+		android:id="@+id/VoiceCallHeader"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/line3"
+		android:text="Teste Chamada de Voz"
+		android:textColor="#4c4c4e"
+		android:textSize="19dp"
+		android:paddingTop="5dp"
+		android:paddingBottom="5dp" />
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView
+		android:id="@+id/VoiceCallResult"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Nenhum resultado disponível."
+		android:layout_below="@+id/VoiceCallHeader"
+		android:textColor="#666666"
+		android:textSize="14dp" />
+    
+    <ImageView android:id="@+id/line4"
+		android:src="@drawable/resultline"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_below="@+id/VoiceCallResult"
+		android:paddingTop="5dp">
+	</ImageView>
+    
+    <ImageView android:id="@+id/OKButton"
+		android:src="@drawable/bok"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:layout_centerHorizontal="true"
+		android:paddingTop="20dp"
+		android:paddingBottom="5dp"
+		android:layout_below="@+id/line4">
+	</ImageView>
+
+</RelativeLayout>

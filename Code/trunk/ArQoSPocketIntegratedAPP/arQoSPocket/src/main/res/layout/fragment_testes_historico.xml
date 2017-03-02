@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/historico_margin_top"
+    android:layout_marginBottom="@dimen/historico_margin_top"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/testes_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/historico_margin_top"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/bt_swipe_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/tit_lista_en" />
+
+        <ImageView
+            android:id="@+id/bt_swipe_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bot_swipe_map" 
+            android:clickable="true"/>
+        
+    </RelativeLayout>
+
+    
+    <!--
+         <Spinner
+        android:id="@+id/spinner_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/historico_margin_top"
+        android:layout_below="@+id/anomalias_header_layout"
+        android:text="Todas as anomalias" />
+    -->
+
+    <Spinner
+        android:id="@+id/spinner_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/testes_header_layout"
+        android:layout_margin="@dimen/historico_margin_top"
+        android:spinnerMode="dialog"
+        android:entries="@array/testes"
+        android:paddingLeft="10dp"
+        android:prompt="@string/test_types"
+        android:paddingRight="10dp"
+      
+        />
+    
+    <pt.ptinovacao.arqospocket.swipablelistview.SwipeListView
+            xmlns:swipe="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/list"
+            android:listSelector="#00000000"
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/spinner_filter"
+            android:layout_above="@+id/bt_sendPendingTests"
+            android:divider="@drawable/linha_separador"
+            swipe:swipeFrontView="@+id/front"
+            swipe:swipeBackView="@+id/back"
+            swipe:swipeActionLeft="reveal"
+            swipe:swipeActionRight="reveal"
+            swipe:swipeMode="left"
+            swipe:swipeCloseAllItemsWhenMoveList="true"
+	        swipe:swipeOpenOnLongPress="false"
+	        swipe:swipeAnimationTime="100"
+	        swipe:swipeOffsetLeft="50dp"
+	        
+	        />
+
+    <LinearLayout
+        android:id="@+id/bt_sendPendingTests"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/global_margin"        
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/testes_bt_background"
+        android:clickable="true"
+        android:gravity="center"        
+        android:orientation="horizontal"
+        android:padding="@dimen/global_margin" >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingRight="@dimen/global_margin"
+            android:src="@drawable/testes_bt_enviar"
+            android:duplicateParentState="true" />
+
+        <TextView            
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/send_pending_tests"
+            android:textColor="@drawable/testes_text_enviar" 
+            android:textSize="@dimen/text_size_large"
+            android:duplicateParentState="true" />
+    	
+    </LinearLayout>
+
+</RelativeLayout>

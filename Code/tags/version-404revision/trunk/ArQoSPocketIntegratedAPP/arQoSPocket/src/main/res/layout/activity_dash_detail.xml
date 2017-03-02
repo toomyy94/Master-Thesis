@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp" >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/icon_rede_movel" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mobile_network"
+            android:textColor="#B8C6C8"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/network_type_3g"
+            android:textColor="#B8C6C8"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <pt.ptinovacao.arqospocket.views.GaugeView
+        android:id="@+id/activity_dashboard_detail_gaugeview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp" >
+    </pt.ptinovacao.arqospocket.views.GaugeView>
+
+    <ImageView
+        android:id="@+id/btn1"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/logo_meo" />
+
+    <LinearLayout
+        android:id="@+id/activity_dashboard_detail_values"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/activity_dashboard_detail_gaugeview"
+        android:layout_centerHorizontal="true"
+        android:layout_marginRight="25dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-193"
+            android:textColor="#FAB300"
+            android:textSize="60sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/dbm_ber"
+                android:textColor="#FAB300"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=".44"
+                android:textColor="#FAB300"
+                android:textSize="30sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/activity_dashboard_detail_listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/activity_dashboard_detail_restart"
+        android:layout_below="@+id/activity_dashboard_detail_values"
+        android:divider="#59B8C6C8"
+        android:dividerHeight="1dp"
+        android:fadingEdge="none"
+        android:scrollbars="none" >
+    </ListView>
+
+    <ImageView
+        android:id="@+id/activity_dashboard_detail_restart"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:src="@drawable/restart_rede_movel" />
+
+</RelativeLayout>

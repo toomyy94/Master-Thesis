@@ -1,0 +1,45 @@
+<resources>
+
+    <dimen name="global_margin">10dp</dimen>
+    <dimen name="sliding_menu_item_text_padding_right">15dp</dimen>
+    <dimen name="action_bar_height">50dp</dimen>
+    <dimen name="linha">30dp</dimen>
+    <!-- Sliding -->
+    <dimen name="sliding_menu_offset">60dp</dimen>
+    <dimen name="sliding_menu_shadow_width">15dp</dimen>
+    <dimen name="sliding_menu_item_height">45dp</dimen>
+    <dimen name="sliding_menu_item_icon">35dp</dimen>
+    <dimen name="sliding_menu_item_icon_small">18dp</dimen>
+    <dimen name="sliding_menu_item_outer_padding">20dp</dimen>
+    <dimen name="sliding_menu_item_innner_padding">20dp</dimen>
+    <dimen name="sliding_menu_item_innner_padding_small">10dp</dimen>
+
+    <!-- Anomalias -->
+	<dimen name="tamanho_views">266dp</dimen>
+    <dimen name="text_steps_anoma">12sp</dimen>
+    <dimen name="image_steps_anoma">70dp</dimen>
+
+    <!-- Testes -->
+    <dimen name="testes_indice_margin">5dp</dimen>
+
+    <!-- Text -->    
+    <dimen name="text_size_large">22sp</dimen>
+    <dimen name="primary_text_size">18sp</dimen>
+    <dimen name="secondary_text_size">16sp</dimen>
+    <dimen name="terciary_text_size">14sp</dimen>
+    <dimen name="quaternary_text_size">12sp</dimen>
+	<dimen name="Listview_min_height_teste">75dp</dimen>
+
+
+    <!-- Historico -->
+    <dimen name="historico_margin_top">20dp</dimen>
+    <dimen name="historico_margin_separator_large">16dp</dimen>
+    <dimen name="historico_margin_separator_medium">12dp</dimen>
+    <dimen name="historico_margin_separator_small">8dp</dimen>
+    <dimen name="details_separator_height">35dp</dimen>
+    <dimen name="Listview_min_height">70dp</dimen>
+
+    <!-- Margin between viewpager views -->
+    <dimen name="viewpager_page_margin">20px</dimen>
+
+</resources>

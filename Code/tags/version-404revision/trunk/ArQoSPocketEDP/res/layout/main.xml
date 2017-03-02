@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ffffff" >
+    
+    <RelativeLayout android:id="@+id/layoutHeader" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content">
+        
+        <ImageView android:id="@+id/headerImg"
+			android:src="@drawable/header"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</ImageView>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/layoutHeaderRunTest" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/layoutHeader">
+        
+        <ImageView android:id="@+id/limitLineStartButton"
+                android:src="@drawable/barracomseta"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutHeader">
+		</ImageView>
+		
+        <RelativeLayout android:id="@+id/layoutSubHeaderRunTest" 
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content"
+    		android:layout_centerHorizontal="true"
+    		android:layout_below="@+id/layoutHeader">
+        
+        	<ImageView android:id="@+id/stateImg"
+                android:src="@drawable/agendamentoparado"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
+                </ImageView>
+                
+        	<PT.PTInov.ArQoSPocketEDP.UI.MyRiadProRegularTextView 
+        	    	android:id="@+id/testExecutionInformation"
+                	android:layout_width="wrap_content" 
+                	android:layout_height="wrap_content"
+                	android:text="@string/app_state_stopped_pt"
+                	android:textSize="20dp"
+                	android:paddingLeft="12dp"
+                	android:paddingTop="17dp"
+					android:layout_toRightOf="@+id/stateImg"
+					android:textColor="#4c4c4e">
+                	</PT.PTInov.ArQoSPocketEDP.UI.MyRiadProRegularTextView> 
+		</RelativeLayout>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/layoutTestInformation" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:layout_below="@+id/layoutHeaderRunTest">
+        
+        <RelativeLayout android:id="@+id/layoutTestInformationHeader" 
+    		android:layout_width="fill_parent" 
+    		android:layout_height="wrap_content"
+    		android:layout_marginTop="20dp"
+   		 	android:layout_below="@+id/layoutTestInformation">
+        
+        	<PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView android:id="@+id/testStateInformation"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:text="@string/app_registe_state_pt"
+                android:textSize="17dp"
+                android:paddingRight="30dp"
+                android:layout_centerInParent="true"
+				android:layout_below="@+id/layoutTestInformationHeader"
+				android:paddingLeft="15dp"
+				android:textColor="#4c4c4e">
+                </PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView> 
+        
+        	<ImageView android:id="@+id/iconTestState"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/testStateInformation">
+                </ImageView>
+                
+        </RelativeLayout>
+
+		<RelativeLayout android:id="@+id/layoutDateTimeInformation" 
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content"
+    		android:paddingTop="5dp"
+    		android:layout_centerHorizontal="true"
+   		 	android:layout_below="@+id/layoutTestInformationHeader">
+        
+		    <PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView android:id="@+id/testTimeDateInformation"
+                	android:layout_width="wrap_content" 
+                	android:layout_height="wrap_content"
+                	android:text="@string/app_registe_state_time_pt"
+                	android:textSize="17dp"
+                	android:paddingRight="20dp"
+					android:layout_below="@+id/layoutDateTimeInformation"
+					android:textColor="#666666">
+                	</PT.PTInov.ArQoSPocketEDP.UI.MyArialTextView> 
+        
+		</RelativeLayout>
+		
+		<ImageView android:id="@+id/goToResults"
+                android:src="@drawable/setagranderesultados"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_below="@+id/layoutTestInformation"
+                android:layout_alignParentRight="true"
+                android:paddingRight="10dp"
+                android:visibility="invisible">
+                </ImageView>
+        
+        <ImageView android:id="@+id/limitLineTestInformation"
+                android:src="@drawable/linha"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutDateTimeInformation"
+                android:paddingTop="25dp">
+                </ImageView>
+        
+	</RelativeLayout>
+	
+    <RelativeLayout 
+        android:id="@+id/layoutMenuTests" 
+    	android:layout_width="wrap_content" 
+    	android:layout_height="wrap_content"
+    	android:layout_centerInParent="true"
+    	android:layout_above="@+id/layoutLogoPT"
+    	android:layout_below="@+id/layoutTestInformation">
+        
+
+        <ImageView
+            android:id="@+id/TestsScheduledImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/efectuarmedicao" >
+		</ImageView>
+		
+        <Spinner
+		android:id="@+id/mySpinner"
+		android:layout_width="0dp"
+		android:layout_height="dp">
+        </Spinner>
+        
+	</RelativeLayout>
+    
+    
+    <RelativeLayout android:id="@+id/layoutLogoPT" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_alignParentBottom="true">
+        
+        <ImageView android:id="@+id/barraBaixo"
+			android:src="@drawable/barraback"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</ImageView>
+        
+	</RelativeLayout>
+
+</RelativeLayout>

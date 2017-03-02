@@ -1,0 +1,95 @@
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/historico_margin_top"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+    </FrameLayout>
+
+    <RelativeLayout
+        android:id="@+id/anomalias_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/historico_margin_top"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/bt_swipe_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/tit_lista" />
+
+        <ImageView
+            android:id="@+id/bt_swipe_map"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bot_swipe_map"
+            android:clickable="true" />
+    </RelativeLayout>
+
+    <!--
+         <Spinner
+        android:id="@+id/spinner_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/historico_margin_top"
+        android:layout_below="@+id/anomalias_header_layout"
+        android:text="Todas as anomalias" />
+    -->
+
+    <Spinner
+        android:id="@+id/spinner_filter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/anomalias_header_layout"
+        android:layout_margin="@dimen/historico_margin_top"
+        android:paddingLeft="2dp"
+        android:paddingRight="2dp"
+        android:entries="@array/anomalias"             
+        android:spinnerMode="dialog"
+        android:textAllCaps="true"
+        android:prompt="@string/anomaly_type"
+         />
+    
+    <!-- android:prompt="@string/tipoanoma"
+
+     android:dropDownVerticalOffset="5dp"
+
+         <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_filter"
+        android:cacheColorHint="@android:color/transparent"
+        android:divider="@drawable/linha_separador"
+        android:drawSelectorOnTop="false"
+        android:overScrollMode="never" />
+    -->
+
+
+    <pt.ptinovacao.arqospocket.swipablelistview.SwipeListView
+        xmlns:swipe="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/spinner_filter"
+        android:divider="@drawable/linha_separador"
+        android:listSelector="#00000000" 
+        swipe:swipeActionLeft="reveal"
+        swipe:swipeActionRight="reveal"
+        swipe:swipeAnimationTime="100"
+        swipe:swipeBackView="@+id/back"
+        swipe:swipeCloseAllItemsWhenMoveList="true"
+        swipe:swipeFrontView="@+id/front"
+        swipe:swipeMode="left"
+        swipe:swipeOffsetLeft="50dp"
+        swipe:swipeOpenOnLongPress="false" />
+
+</RelativeLayout>

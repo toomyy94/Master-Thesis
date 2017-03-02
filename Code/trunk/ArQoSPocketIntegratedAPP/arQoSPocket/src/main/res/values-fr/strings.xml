@@ -1,0 +1,233 @@
+<resources>
+
+    <string name="app_name">arQos pocket</string>
+    <string name="app_language">Français</string>
+
+    <!-- Dashboard -->
+    <string name="na">NA</string>
+    <string name="unavailable">Indisponível</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="english">Anglais</string>
+    <string name="portuguese">Portugais</string>
+    <string name="french">Français</string>
+
+    <string name="dashboard">Dashboard</string>
+    <string name="anomalies">Anomalies</string>
+    <string name="tests">Tests</string>
+    <string name="settings">Réglages</string>
+    <string name="about">Les ArQoS pocket</string>
+    <string name="help">Aidez</string>
+    <string name="homepage">Page d\'accueil</string>
+    <string name="language">Langue</string>
+
+    <string name="network_unavailable">Indisponible</string>
+    <string name="horario">Calendrier</string>
+    <string name="location_info">Lieu d\'identification</string>
+    <string name="feedback">Feedback</string>
+    <string name="sliddingmenu_log_label">Histoire</string>
+
+    <string name="settings_wifi_only_label">Seulement via Wi-Fi</string>
+    <string name="settings_wifi_priority_label">Plutôt via Wi-Fi</string>
+    <string name="settings_any_network_label">Tout réseau</string>
+    <string name="settings_log_upload_periodicity">Periodicidade de envio dos logs</string>
+    <string name="settings_network_to_send_logs">Fréquence d\'envoi des grumes</string>
+    <string name="settings_daily_label">Tous les jours</string>
+    <string name="settings_dashboard_label">Dashboard</string>
+
+    <string name="wifi">Wi-Fi</string>
+    <string name="mbps">Mbps</string>
+    <string name="network_type_2g">2G</string>
+    <string name="network_type_3g">3G</string>
+    <string name="network_type_4g">4G</string>
+    <string name="mobile_state">État mobile</string>
+    <string name="network_mode">Mode réseau</string>
+    <string name="operator_code">Code_opérateur</string>
+    <string name="rx_level">rx_level</string>
+    <string name="lac">lac</string>
+    <string name="link_speed">link_speed</string>
+    <string name="ssid">ssid</string>
+    <string name="wifi_version">Wi-Fi Version</string>
+    <string name="bit_error_rate">Erreur de débit binaire</string>
+    <string name="cid">CID</string>
+    <string name="dbm_ber">dBm (BER)</string>
+    <string name="dbm">dBm</string>
+
+    <!-- Anomalias -->
+
+    <string name="anomaly_type">Anomalie</string>
+    <string name="report_anomaly">Rapport anomalie</string>
+    <string name="all_anomalies">Toute anomalie</string>
+    <string name="anomaly_log">Anomalies Histoire</string>
+    <string name="send_feedback_text_hint">L\'anomalie observée en raison de...</string>
+
+    <string name="location">Local</string>
+    <string name="failure">Échec</string>
+    <string name="finish">Fin</string>
+    <string name="service">SERVICE</string>
+    <string name="failure_type">Type de défaillance</string>
+
+    <string name="anomaly_category_voice">Voix</string>
+    <string name="anomaly_category_internet">Internet</string>
+    <string name="anomaly_category_messaging">Messaging</string>
+    <string name="anomaly_category_network_coverage">Couverture</string>
+    <string name="anomaly_category_other">Autre</string>
+    <string name="anomaly_type_dropped_call">Appeler tombé</string>
+    <string name="anomaly_type_call_not_established">Appelez pas tenu</string>
+    <string name="anomaly_type_lost_call">Appel manqué</string>
+    <string name="anomaly_type_bad_call_audio">Mauvaise qualité audio</string>
+    <string name="anomaly_type_another_anomaly_type">Autre type d\'anomalie</string>
+    <string name="anomaly_type_no_data_access">Pas d\'accès aux données</string>
+    <string name="anomaly_type_intermittent_access">Accès intermittent</string>
+    <string name="anomaly_type_slow_connection">Accès lent</string>
+    <string name="anomaly_type_message_not_sent">Message Unsent</string>
+    <string name="anomaly_type_message_not_received">Pas reçu un message</string>
+    <string name="anomaly_type_message_slow_dispatch">Expédition lente</string>
+    <string name="anomaly_type_message_delayed_recepetion">Réception tardive</string>
+    <string name="anomaly_type_no_indoor_coverage">Sans couverture intérieure</string>
+    <string name="anomaly_type_no_outdoor_coverage">Pas de couverture extérieure</string>
+
+    <!-- Anomalias icons -->
+    <string name="anomalias_ic_01">anomalias_icon_01</string>
+    <string name="anomalias_ic_02">anomalias_icon_02</string>
+    <string name="anomalias_ic_03">anomalias_icon_03</string>
+    <string name="anomalias_ic_04">anomalias_icon_04</string>
+    <string name="anomalias_ic_05">anomalias_icon_05</string>
+
+    <!-- Testes -->
+    <string name="test_types">TYPE DE TEST</string>
+    <string name="test_log">Tests Histoire</string>
+    <string name="mobile_network">Réseau mobile</string>
+    <string name="test_wifi">Wi-Fi</string>
+    <string name="test_mixed_network">Mixte</string>
+    <string name="test_not_connected">Sans rapport</string>
+    <string name="all_tests">Tous les tests</string>
+    <string name="send_pending_tests">Envoyer des tests en attente</string>
+
+
+
+    <!-- Mapa -->
+    <string name="anomaly_map_info_title">Faites glisser la carte</string>
+    <string name="anomaly_map_info_info_subtitle">pour voir d\'autres anomalies.</string>
+    <string name="test_map_info_subtitle">pour voir d\'autres tests.</string>
+    <string name="error_msg_unable_to_create_maps">Impossible de créer la carte</string>
+
+    <!-- Testes -->
+    <string name="test_name">Nom du test</string>
+    <string name="test_inactive">Inactif</string>
+    <string name="test_running">En cours</string>
+    <string name="test_completed">Terminé</string>
+    <string name="test_failed">Manqué</string>
+    <string name="running_tests">Test en cours</string>
+    <string name="inactive_tests">Test inactifs</string>
+
+    <!-- Testes pendentes -->
+    <string name="pending_tests_mobile">Tests de Réseau mobile</string>
+    <string name="pending_tests_wifi">Tests de Réseau Wi-Fi</string>
+    <string name="pending_tests_both">Tests de Réseau hybride</string>
+
+    <string name="percent_0">0%</string>
+    <string name="percent_10">10%</string>
+    <string name="percent_20">20%</string>
+    <string name="percent_30">30%</string>
+    <string name="percent_40">40%</string>
+    <string name="percent_50">50%</string>
+    <string name="percent_60">60%</string>
+    <string name="percent_70">70%</string>
+    <string name="percent_80">80%</string>
+    <string name="percent_90">90%</string>
+    <string name="percent_100">100%</string>
+
+
+    <!-- 	about -->
+
+    <string name="about_dialog_title">arQos Pocket v1.0</string>
+    <string name="about_dialog_text">Les arQos Pocket  est une sonde ArQoS pour l\'installation sur Smartphone Clients employés MEO et PT. \n\n
+        ArQoS est le système de performance de suivi pour évaluer la qualité du service et de l\'expérience de l\'utilisateur dans les réseaux muti-technologie (FTTx, LTE, Ethernet et IP).\n\n
+        Le système utilise des sondes fixes et mobiles, et un système de gestion.</string>
+    <string name="about_dialog_copyright">© 2014 PT Inovação e Sistemas, S.A. Tous droits réservés </string>
+
+    <string name="install_application">Veuillez installer cette application.</string>
+    <string name="error_msg_no_web_browser">Erreur fatale! Aucune application de navigateur Web sur votre appareil!</string>
+
+    <string name="gps_heading_north">N</string>
+    <string name="gps_heading_south">S</string>
+    <string name="gps_heading_east">E</string>
+    <string name="gps_heading_west">W</string>
+
+    <string name="task_result_min_rtt_ms">RTT Minimo (ms)</string>
+    <string name="task_result_max_rtt_ms">RTT Maximo (ms)</string>
+    <string name="task_result_average_rtt_ms">RTT Médio (ms)</string>
+    <string name="task_result_sent_packets">Paquets envoyés</string>
+    <string name="task_result_received_packets">Paquets reçus</string>
+    <string name="task_result_lost_packets">% Paquets de perdus</string>
+    <string name="task_result_email_to_send">Envoi d\'email</string>
+    <string name="task_result_destination_address">Email destinataire</string>
+    <string name="task_result_sent_data">Les données envoyées</string>
+    <string name="task_result_sending_time">Temps d\'expédition</string>
+    <string name="task_result_destination_number">Numéro de destination</string>
+    <string name="task_result_call_duration">Durée d\'appel</string>
+    <string name="task_result_wifi_authentication_answer">Resposta ao pedido de autenticação</string>
+    <string name="task_result_response_time">Réponse à la demande d\'authentification</string>
+    <string name="task_result_wifi_scan_available_networks">Les Réseaux disponibles</string>
+    <string name="task_result_received_sms_text">SMS Reçus</string>
+    <string name="task_result_origin_number">Nombre d\'expédition</string>
+    <string name="task_result_received_mms_received_data">Les données reçues</string>
+    <string name="task_result_data_size">Dimension Data</string>
+    <string name="task_result_uploaded_data_size_kb">Télécharger (KB)</string>
+    <string name="task_result_upload_time_ms">Télécharger le temps (ms)</string>
+    <string name="task_result_mac">MAC</string>
+    <string name="frequency_mhz">Fréquence (MHz)</string>
+    <string name="task_result_channel">Canal</string>
+    <string name="task_result_mode">Manière</string>
+    <string name="task_result_protocol">Protocole</string>
+    <string name="task_result_bitrate">Vitesse (bps)</string>
+    <string name="task_result_encryption">Chiffrement</string>
+    <string name="task_result_association_time_sec">Lifespan (sec)</string>
+    <string name="task_result_signal_level">Niveau de signal (dB)</string>
+    <string name="task_result_noise_level">Niveau sonore (dB)</string>
+    <string name="task_result_ip_address">Adresse</string>
+    <string name="task_result_subnet_mask">Masquer</string>
+    <string name="task_result_gateway">Gateway</string>
+    <string name="task_result_dns">DNS</string>
+    <string name="task_result_domain">Domaine</string>
+    <string name="task_result_lease_time_sec">Temps de location (sec)</string>
+    <string name="task_result_received_data_kb">Download (KB)</string>
+    <string name="task_result_download_time_in_ms">Temps de download (ms)</string>
+    <string name="task_result_access_time_in_ms">Temps d\'accès (ms)</string>
+    <string name="task_result_throughput">Vitesse (Kbps)</string>
+    <string name="task_result_measured_impulses">des Impulsions mesurées</string>
+    <string name="task_result_call_setup_time">Durée de configuration d\'appel</string>
+    <string name="task_result_call_origin_number">Numéro de l\'appelant</string>
+    <string name="task_result_time_waiting_ringing">Temps d\'attente pour le RING</string>
+    <string name="task_result_audio_recording">Enregistrement audio</string>
+
+
+    <string name="mobile_params_device_id">ID d\'appareil</string>
+    <string name="mobile_params_cell_id">ID de cellule</string>
+    <string name="mobile_params_provider_code">Code opérateur</string>
+    <string name="mobile_params_msisdn">MSISDN</string>
+    <string name="mobile_params_network_operator_name">Nom de l\'opérateur de réseau</string>
+    <string name="mobile_params_imsi">IMSI</string>
+    <string name="mobile_params_roaming">Roaming</string>
+    <string name="mobile_params_imei">IMEI</string>
+    <string name="mobile_params_mnc">MNC</string>
+    <string name="mobile_params_mcc">MCC</string>
+
+    <string name="wifi_params_bssid">BSSID</string>
+    <string name="wifi_params_hidden_ssid">SSID caché</string>
+    <string name="wifi_params_mac_address">MAC Address</string>
+    <string name="wifi_params_ip_address">IP Address</string>
+    <string name="wifi_params_primary_dns">DNS 1</string>
+    <string name="wifi_params_secondary_dns">DNS 2</string>
+    <string name="wifi_params_gateway_adress">Gateway</string>
+    <string name="wifi_params_lease_duration">Lease Duration</string>
+    <string name="wifi_params_netmask">Netmask</string>
+    <string name="wifi_params_server_address">Server Address</string>
+    <string name="wifi_params_essid">ESSID</string>
+    <string name="wifi_params_channel">Channel</string>
+
+    <string name="test_execution_settings">Paramètres d\'exécution des tests</string>
+    <string name="auto_run_date_tests">Exécuter automatiquement les tests par DATE</string>
+
+</resources>

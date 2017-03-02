@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:paddingBottom="10dp"
+    android:orientation="vertical" >
+    
+     <TextView android:id="@+id/headerMail"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:text="Email de relatórios"
+		android:textSize="20dp"
+		android:paddingLeft="12dp"
+		android:paddingTop="10dp">
+	</TextView>
+	
+     <EditText android:id="@+id/mailAddress"      
+        android:layout_width="fill_parent"    
+        android:layout_height="wrap_content"
+        android:textSize="18dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_below="@+id/headerMail">
+     </EditText>
+     
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ArQoS Pocket WiFi</string>
+    <string name="local">Escolha o Local</string>
+    <string-array name="places_array">
+    <item>Rua (a pé)</item>        
+    <item>Comboio</item>        
+    <item>Autocarro</item>        
+    <item>Automóvel</item>        
+    <item>Edifício</item>        
+    <item>Metro</item>    
+    <item>Barco</item>         
+    </string-array>
+
+</resources>

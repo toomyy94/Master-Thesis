@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <string name="mainScreen_title">Testes de Conetividade Gerida</string>
+    <string name="layoutNetworkMetricsHeaderBarText">Medidas de Rede</string>
+    <string name="layoutNetworkMetricsHeaderBar_layout_RSSI_State_Info_header">RSSI</string>
+    <string name="layoutNetworkMetricsHeaderBar_layout_LAC_State_Info_header">LAC</string>
+    <string name="layoutNetworkMetricsHeaderBar_layout_CELLID_State_Info_header">Cell ID</string>
+    <string name="layoutNetworkMetricsHeaderBar_layout_OperatorName_State_Info_header">Nome Operador</string>
+    <string name="layoutNetworkMetricsHeaderBar_layout_NetworkType_State_Info_header">Rede</string>
+    <string name="layoutInsertModemInformation_subHeader_text">Informação do Contador</string>
+    <string name="layoutInsertInformation_Body_MSISDN_textHeader">Introduza o MSISDN</string>
+    <string name="layoutInsertModemInformation_Body_MSISDN_textHeader">Nº Série Contador (EB)</string>
+    <string name="layoutInsertInformation_Body_IP_textHeader">Endereço IP</string>
+    <string name="layoutTestE2EHeaderBarText">Teste E2E</string>
+    <string name="layoutTestE2E_subHeader_text">Teste Completo</string>
+    <string name="layoutUserInformationHeaderBarText">Fim do WorkFlow</string>
+    <string name="layoutUserInformationTextInformationSubText_TMN">Insira o SIM TMN no telemóvel</string>
+    <string name="layoutUserInformationTextInformationSubText_Vodafone">Insira o SIM Vodafone no telemóvel</string>
+    <string name="layoutUserInformationTextInformationSubText_Optimus">Insira o SIM Optimus no telemóvel</string>
+    <string name="layoutUserInformationTextInformationSubText_done">Processo concluído</string>
+    <string name="layoutUserInformationTextInformationSubText_backOffice">Solicitar apoio do backoffice!!!</string>
+    <string name="layoutUserInformationTextInformationSubText_TmnModem">Insira o novo SIM TMN no Modem</string>
+    <string name="layoutUserInformationTextInformationSubText_VodafoneModem">Insira o novo SIM Vodafone no Modem</string>
+    <string name="layoutUserInformationTextInformationSubText_OptimusModem">Insira o novo SIM Optimus no Modem</string>
+    
+    <string name="Warning_TMN_SIM_ON_PHONE">É necessário ter introduzido um SIM TMN no telemóvel para efectuar este teste</string>
+    <string name="Warning_VODAFONE_SIM_ON_PHONE">É necessário ter introduzido um SIM Vodafone no telemóvel para efectuar este teste</string>
+    <string name="Warning_Optimus_SIM_ON_PHONE">É necessário ter introduzido um SIM Optimus no telemóvel para efectuar este teste</string>
+    
+    <string name="layoutUserInformationTextInformationSubText_OtherOperator">Insira o SIM de outro operador no telemóvel</string>
+    <string name="layoutUserInformationTextInformationSubTextComment">Comentário</string>
+    <string name="layoutUserInformationTextInformationSubTextModelo_Selo">Modelo/Selo</string>
+    <string name="layoutInsertModemInformation_serial_number">Para efetuar o teste é necessário que introduza o número de serie do contador (EB).</string>
+    <string name="layoutInsertInformation_MSISDN">A introdução do MSISDN é obrigatória.</string>
+    
+    <string name="layoutInsertInformation_subHeader_text_Actual">Informação do Atual SIM</string>
+    <string name="layoutInsertInformation_subHeader_text">Informação do Novo SIM</string>
+    
+    <string name="layoutTestE2E_subHeader_text_exec">Em Execução</string>
+    <string name="layoutTestE2E_BodyState_InfoState_Info_text">Conetividade OK!</string>
+    <string name="layoutTestE2E_BodyState_InfoState_Info_text_notok">Sem Conetividade!</string>
+    <string name="modulo_indisponivel">Recursos indisponíveis, tente novamente...</string>
+    <string name="network_error">Falha no pedido, verificar ligação de dados!</string>
+    <string name="probe_error">Erro interno, tente novamente...</string>
+    
+    <string name="warning_access">Aplicação sem licenciamento. Contactar o backoffice!</string>
+    <string name="warning_networkFail">Verificar ligação de dados ou contactar o backoffice!</string>
+    
+    <string name="header_workflow_state1">Teste E2E_CSD</string>
+    
+    <string name="TEST_E2E_CSD">Teste E2E_CSD</string>
+    <string name="TEST_E2E_IP">Teste E2E_IP</string>
+    
+    
+    <string name="defaultMSISDN">96.......</string>
+    <string name="defaultIP">xxx.xxx.xxx.xxx</string>
+    
+    <string name="app_name">ArQoS Pocket Network</string>
+    
+    <string name="mais_detalhes_pt"><u>Mais Detalhes</u></string>
+    <string name="mais_detalhes_eng"><u>More Details</u></string>
+    
+    <string name="local_pt">Escolha o Local</string>
+    <string name="local_eng">Choose Local</string>
+    
+    <string-array name="places_array_pt">
+    <item>Rua (a pé)</item>        
+    <item>Comboio</item>        
+    <item>Autocarro</item>        
+    <item>Automóvel</item>        
+    <item>Edifício</item>        
+    <item>Metro</item>    
+    <item>Barco</item>         
+    <item>Outro</item>
+    </string-array>
+    
+    <string-array name="places_array_eng">
+    <item>Street (on foot)</item>        
+    <item>Train</item>        
+    <item>Bus</item>        
+    <item>Car</item>        
+    <item>Building</item>        
+    <item>Subway</item>    
+    <item>Boat</item>         
+    <item>Other</item>
+    </string-array>
+    
+    <string name="app_other_pt">Outro</string>
+    <string name="app_other_eng">Other</string>
+    
+    <string name="app_details_pt">Detalhes</string>
+    <string name="app_details_eng">Details</string>
+    
+    <string name="app_neighboring_networks_pt">Redes Vizinhas</string>
+    <string name="app_neighboring_networks_eng">Neighboring networks</string>   
+    
+    <string name="app_operator_name_pt">Nome Operador :</string>
+    <string name="app_operator_name_eng">Operator Name :</string>   
+    
+    <string name="app_state_no_results_pt">Sem Resultados</string>
+    <string name="app_state_no_results_eng">No Results</string>    
+    
+    <string name="app_state_exec_pt">Em execução</string>
+    <string name="app_state_exec_eng">Running</string>
+    
+    <string name="app_state_exec_success_pt">Medição com Sucesso</string>
+    <string name="app_state_exec_success_eng">Measuring Success</string>
+    
+    <string name="app_state_exec_fail_pt">Medição sem Sucesso</string>
+    <string name="app_state_exec_fail_eng">Measuring Fail</string>
+    
+    <string name="app_state_stopped_pt">Medição Parada</string>
+    <string name="app_state_stopped_eng">Stopped Measurement</string>
+    
+    <string name="app_registe_state_pt">Sem registos</string>
+    <string name="app_registe_state_eng">No Records</string>
+    
+    <string name="app_registe_state_time_pt">00-00-0000  00:00:00</string>
+    <string name="app_registe_state_time_eng">00-00-0000  00:00:00</string>
+    
+    <string name="app_doaction_pt">Efectuar Medição</string>
+    <string name="app_doaction_eng">Making Measurement</string>
+    
+    <string name="app_results_header_pt">Resultados</string>
+    <string name="app_results_header_eng">Results</string>
+    
+    <string name="app_results_details_header_pt">Resultados > Informação Mobile</string>
+    <string name="app_results_details_header_eng">Results > Mobile Information</string>
+    
+    <string name="app_results_location_header_pt">Localização</string>
+    <string name="app_results_location_header_eng">Location</string>
+    
+    <string name="app_results_latitude_pt">Latitude :</string>
+    <string name="app_results_latitude_eng">Latitude :</string>
+    
+    <string name="app_results_longitude_pt">Longitude :</string>
+    <string name="app_results_longitude_eng">Longitude :</string>
+    
+    <string name="app_results_Network_pt">Network</string>
+    <string name="app_results_Network_eng">Network</string>
+    
+    <string name="app_results_RSSI_pt">RSSI :</string>
+    <string name="app_results_RSSI_eng">RSSI :</string>
+    
+    <string name="app_results_dBm_pt">dBm</string>
+    <string name="app_results_dBm_eng">dBm</string>
+    
+    <string name="app_results_Bit_Error_Rate_pt">Bit Error Rate :</string>
+    <string name="app_results_Bit_Error_Rate_eng">Bit Error Rate :</string>
+    
+    <string name="app_results_Celula_ID_pt">Célula ID :</string>
+    <string name="app_results_Celula_ID_eng">Cell ID :</string>
+    
+    <string name="app_results_Lac_Tac_pt">Lac/Tac :</string>
+    <string name="app_results_Lac_Tac_eng">Lac/Tac :</string>
+    
+    <string name="app_results_connection_pt">Ligação :</string>
+    <string name="app_results_connection_eng">Link :</string>
+    
+    <string name="app_results_details_pt">Detalhes</string>
+    <string name="app_results_details_eng">Details</string>
+    
+    <string name="app_results_send_to_server_pt">Enviado para o servidor :</string>
+    <string name="app_results_send_to_server_eng">Sent to the server :</string>
+    
+
+</resources>

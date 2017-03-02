@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/Legenda_testes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/todostestes"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1.07"
+            android:background="@drawable/fundo_testes"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:paddingEnd="@dimen/global_margin"
+            android:paddingTop="@dimen/global_margin"
+            android:paddingLeft="@dimen/global_margin"
+            android:paddingRight="@dimen/global_margin">
+
+            <RelativeLayout
+                android:id="@+id/image_bola1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/testes_indice_margin" >
+
+                <ImageView
+                    android:id="@+id/bola1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/bola_branca" />
+
+                <TextView
+                    android:id="@+id/text_bola_todas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="0" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/linhatodos2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/linha_todos_os_testes" />
+
+            <TextView
+                android:id="@+id/texttodos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:padding="@dimen/testes_indice_margin"
+                android:text="@string/all_tests"
+                android:textAllCaps="true"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/testesemcurso"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/fundo_testes"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/global_margin"
+            android:paddingLeft="@dimen/global_margin"
+            android:paddingRight="@dimen/global_margin">
+
+            <RelativeLayout
+                android:id="@+id/image_bola2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/testes_indice_margin" >
+
+                <ImageView
+                    android:id="@+id/bola2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/bola_branca" />
+
+                <TextView
+                    android:id="@+id/text_bola_emcurso"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="0" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/linhaemcurso2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/linha_testes_em_curso" />
+
+            <TextView
+                android:id="@+id/textemcurso"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:padding="@dimen/testes_indice_margin"
+                android:text="@string/running_tests"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/testesinactivos"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@drawable/fundo_testes"
+            android:clickable="true"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/global_margin"
+            android:paddingLeft="@dimen/global_margin"
+            android:paddingRight="@dimen/global_margin">
+
+            <RelativeLayout
+                android:id="@+id/image_bola3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:padding="@dimen/testes_indice_margin" >
+
+                <ImageView
+                    android:id="@+id/bola3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/bola_branca" />
+
+                <TextView
+                    android:id="@+id/text_bola_inac"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="0" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/linhainactivos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/linha_testes_inativos" />
+
+            <TextView
+                android:id="@+id/textinactivos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:padding="@dimen/testes_indice_margin"
+                android:text="@string/inactive_tests"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <pt.ptinovacao.arqospocket.swipablelistview.SwipeListView
+        xmlns:swipe="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/listTestes"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@drawable/linha_separador"
+        android:listSelector="#00000000"
+        swipe:swipeActionLeft="reveal"
+        swipe:swipeActionRight="reveal"
+        swipe:swipeAnimationTime="100"
+        swipe:swipeBackView="@+id/back"
+        swipe:swipeCloseAllItemsWhenMoveList="true"
+        swipe:swipeFrontView="@+id/front"
+        swipe:swipeMode="left"
+        swipe:swipeOffsetLeft="260dp"
+        swipe:swipeOpenOnLongPress="false" />
+
+</LinearLayout>

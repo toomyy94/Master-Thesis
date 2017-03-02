@@ -1,0 +1,5 @@
+# ninja log v5
+18	1755	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	ba29d734917be4cd
+1755	2014	0	../../../../build/intermediates/cmake/debug/obj/mips/libttaenc.so	42da8f48417a06de
+16	2044	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	ba29d734917be4cd
+2045	2380	0	../../../../build/intermediates/cmake/debug/obj/mips/libttaenc.so	42da8f48417a06de

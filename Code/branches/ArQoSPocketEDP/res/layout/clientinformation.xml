@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="#ffffff" >
+    
+    <PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView
+         android:id="@+id/headerwarning"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:text="Introduza toda a informação!"
+		android:textColor="#ff4040"
+		android:paddingTop="2dp"
+		android:textSize="15dp"
+		android:visibility="invisible"
+		android:layout_centerHorizontal="true">"
+	</PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView>
+    
+     <PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView
+         android:id="@+id/headerClientID"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:text="ID do cliente"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:paddingLeft="12dp"
+		android:paddingTop="23dp">
+	</PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView>
+	
+     <EditText android:id="@+id/ClientID"      
+        android:layout_width="fill_parent"    
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_below="@+id/headerClientID">
+     </EditText>
+     
+      <PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView android:id="@+id/headerModemNumber"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:text="Número do Modem"
+		android:textColor="#666666"
+		android:textSize="15dp"
+		android:paddingLeft="12dp"
+		android:paddingTop="5dp"
+		android:layout_below="@+id/ClientID">
+	</PT.PTInov.ArQoSPocketEDP.UI.MyRiadProBoldTextView>
+	
+      <EditText android:id="@+id/ModemNumber"      
+        android:layout_width="fill_parent"    
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_below="@+id/headerModemNumber">
+     </EditText>
+     
+      <ImageView android:id="@+id/OKButton"
+		android:src="@drawable/bok"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:paddingTop="15dp"
+		android:paddingBottom="15dp"
+		android:layout_below="@+id/ModemNumber"
+		android:layout_alignLeft="@+id/ModemNumber">
+	</ImageView>
+	
+      <ImageView android:id="@+id/CancelButton"
+		android:src="@drawable/cancelar"
+		android:layout_width="wrap_content" 
+		android:layout_height="wrap_content"
+		android:paddingTop="15dp"
+		android:paddingBottom="15dp"
+		android:layout_below="@+id/ModemNumber"
+		android:layout_alignRight="@+id/ModemNumber">
+	</ImageView>
+
+</RelativeLayout>

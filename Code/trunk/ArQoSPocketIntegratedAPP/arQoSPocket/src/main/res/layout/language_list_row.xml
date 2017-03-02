@@ -1,0 +1,30 @@
+<pt.ptinovacao.arqospocket.views.CheckableLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/flag"
+        android:src="@drawable/flag_en"
+        android:scaleType="centerInside"
+        android:layout_width="52dp"
+        android:layout_height="48dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginLeft="4dp"/>
+
+    <CheckedTextView
+        android:id="@+id/name"
+        android:padding="5dp"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:checkMark="@drawable/radiobutton_select_confi"
+        android:text="Title"
+        android:layout_gravity="center_vertical"
+        android:textColor="@color/color_radio"/>
+
+
+</pt.ptinovacao.arqospocket.views.CheckableLinearLayout>

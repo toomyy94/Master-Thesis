@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background" >
+    
+    <RelativeLayout android:id="@+id/layoutHeader" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content">
+        
+        <ImageView android:id="@+id/headerImg"
+			android:src="@drawable/header"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</ImageView>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/layoutHeaderRunTest" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:layout_below="@+id/layoutHeader">
+        
+        <ImageView android:id="@+id/limitLineStartButton"
+                android:src="@drawable/barracomseta"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutHeader">
+		</ImageView>
+		
+        <RelativeLayout android:id="@+id/layoutSubHeaderRunTest" 
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content"
+    		android:layout_centerHorizontal="true"
+    		android:layout_below="@+id/layoutHeader">
+        
+        	<ImageView android:id="@+id/stateImg"
+                android:src="@drawable/agendamentoparado"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp">
+                </ImageView>
+                
+        	<TextView android:id="@+id/testExecutionInformation"
+                	android:layout_width="wrap_content" 
+                	android:layout_height="wrap_content"
+                	android:text="@string/app_state_stopped_pt"
+                	android:textSize="20dp"
+                	android:paddingLeft="12dp"
+                	android:paddingTop="17dp"
+					android:layout_toRightOf="@+id/stateImg">
+                	</TextView> 
+		</RelativeLayout>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/layoutTestInformation" 
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content"
+    android:paddingTop="5dp"
+    android:layout_below="@+id/layoutHeaderRunTest">
+        
+        <RelativeLayout android:id="@+id/layoutActionInformation" 
+    		android:layout_width="fill_parent" 
+    		android:layout_height="wrap_content"
+    		android:paddingTop="20dp">
+   		 	
+            <TextView android:id="@+id/ActionInformationText"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:text="A verificar a ligação WiFi..."
+                android:textSize="16dp"
+                android:paddingRight="30dp"
+                android:layout_centerInParent="true"
+				android:layout_below="@+id/layoutActionInformation"
+				android:paddingLeft="15dp"
+				android:paddingTop="20dp"
+				android:visibility="invisible">"
+                </TextView> 
+            
+		</RelativeLayout>
+        
+        
+        <RelativeLayout android:id="@+id/layoutTestInformationHeader" 
+    		android:layout_width="fill_parent" 
+    		android:layout_height="wrap_content"
+    		android:paddingTop="20dp"
+   		 	android:layout_below="@+id/layoutTestInformation">
+        
+        	<TextView android:id="@+id/testStateInformation"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:text="@string/app_registe_state_pt"
+                android:textSize="20dp"
+                android:paddingRight="30dp"
+                android:layout_centerInParent="true"
+				android:layout_below="@+id/layoutTestInformationHeader"
+				android:paddingLeft="15dp"
+				android:paddingTop="3dp">
+                </TextView> 
+        
+        	<ImageView android:id="@+id/iconTestState"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@+id/testStateInformation">
+                </ImageView>
+                
+        </RelativeLayout>
+
+		<RelativeLayout android:id="@+id/layoutDateTimeInformation" 
+    		android:layout_width="wrap_content" 
+    		android:layout_height="wrap_content"
+    		android:paddingTop="2dp"
+    		android:layout_centerInParent="true"
+   		 	android:layout_below="@+id/layoutTestInformationHeader">
+        
+		    <TextView android:id="@+id/testTimeDateInformation"
+                	android:layout_width="wrap_content" 
+                	android:layout_height="wrap_content"
+                	android:text="@string/app_registe_state_time_pt"
+                	android:textSize="16dp"
+                	android:paddingRight="20dp"
+					android:layout_below="@+id/layoutDateTimeInformation">
+                	</TextView> 
+        
+		</RelativeLayout>
+		
+		<ImageView android:id="@+id/goToResults"
+                android:src="@drawable/setagranderesultados"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:paddingTop="25dp"
+                android:layout_below="@+id/layoutTestInformation"
+                android:layout_alignParentRight="true"
+                android:paddingRight="10dp">
+                </ImageView>
+        
+        <ImageView android:id="@+id/limitLineTestInformation"
+                android:src="@drawable/linha"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutDateTimeInformation"
+                android:paddingTop="25dp">
+                </ImageView>
+        
+	</RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/layoutMenuTests" 
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/layoutLogoPT"
+    android:layout_below="@+id/layoutTestInformation">
+        
+
+        <ImageView
+            android:id="@+id/TestsScheduledImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/efectuarmedicao" >
+		</ImageView>
+		
+        <!-- 
+        <TextView android:id="@+id/TestsScheduledText1"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_doaction_pt"
+			android:paddingTop="155dp"
+            android:layout_centerHorizontal="true"
+			android:textSize="15dp">
+		</TextView>
+		-->
+        
+        
+	</RelativeLayout>
+    
+    <RelativeLayout android:id="@+id/layoutLogoPT" 
+    android:layout_width="wrap_content" 
+    android:layout_height="wrap_content"
+    android:layout_centerInParent="true"
+    android:layout_alignParentBottom="true">
+        
+        <ImageView android:id="@+id/barraBaixo"
+			android:src="@drawable/barraback"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+		</ImageView>
+
+        <ImageView android:id="@+id/logoPTn"
+                android:src="@drawable/ptin"
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/layoutLogoPT"
+                android:layout_centerInParent="true">
+                </ImageView>
+        
+	</RelativeLayout>
+   
+
+</RelativeLayout>

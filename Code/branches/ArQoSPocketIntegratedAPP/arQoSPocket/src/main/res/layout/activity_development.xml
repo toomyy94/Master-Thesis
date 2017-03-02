@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/global_margin"
+        android:orientation="vertical" >
+
+        <pt.ptinovacao.arqospocket.views.SuperTextView
+            android:id="@+id/tests_general"
+            style="@style/SlidingMenuText"
+            android:text="@string/development"
+            android:layout_width="match_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_titulos" />
+
+        <RadioGroup
+            android:id="@+id/development_tests_general"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/development_general"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/linha"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:text="@string/development_tests_dtmf"
+                android:textColor="@color/color_radio"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/activity_configuracoes_linha_separador" />
+
+        </RadioGroup>
+
+        <pt.ptinovacao.arqospocket.views.SuperTextView
+            android:id="@+id/tests_apn"
+            style="@style/SlidingMenuText"
+            android:text="@string/main_development_apn"
+            android:layout_width="match_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_titulos" />
+
+        <RadioGroup
+            android:id="@+id/development_tests_apn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/development_default_apn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/linha"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:text="@string/development_tests_default_apn"
+                android:textColor="@color/color_radio"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/activity_configuracoes_linha_separador" />
+
+
+            <RadioButton
+                android:id="@+id/development_insert_apn"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/linha"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:text="@string/development_tests_insert_apn"
+                android:textColor="@color/color_radio"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/activity_configuracoes_linha_separador" />
+
+        </RadioGroup>
+
+        <pt.ptinovacao.arqospocket.views.SuperTextView
+            android:id="@+id/tests_logfile"
+            style="@style/SlidingMenuText"
+            android:text="@string/main_development_logfile"
+            android:layout_width="match_parent" />
+
+        <ImageView
+            android:id="@+id/linha_titulos_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_titulos" />
+
+        <RadioGroup
+            android:id="@+id/development_logs_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/development_logfile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linha"
+            android:button="@null"
+            android:drawableRight="@drawable/radiobutton_select_confi"
+            android:text="@string/development_tests_logfile"
+            android:textColor="@color/color_radio"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_separador" />
+
+        <RadioButton
+            android:id="@+id/development_no_logfile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/linha"
+            android:button="@null"
+            android:drawableRight="@drawable/radiobutton_select_confi"
+            android:text="@string/development_tests_no_logfile"
+            android:textColor="@color/color_radio"
+            android:checked="true"
+            />
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_separador" />
+
+        </RadioGroup>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" >
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

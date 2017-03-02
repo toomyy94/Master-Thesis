@@ -1,0 +1,451 @@
+{
+	"msg_type": 64,
+	"macaddress": "00139500F85F",
+	"probetest": [
+		{
+			"testeid": "T999999",
+			"dataini": "20170113104900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "Make Voice Call",
+			"macronr": 1,
+			"testtype": 0,
+            "recursion":
+            {
+              "event": 3,
+              "param":{
+				  "interval": 50
+			  }
+            },
+            "endevent": 2,
+            "endparam":
+            {
+              "count": 3
+            },
+            "state": 0,
+            "priority" : 0,
+			"data": [
+				"419232|1||2016-07-20T13:30:00.000Z|30|1||1|964389135||||0|||||||||||3|2||||||||||||1|||||||||makecall||"
+			]
+		},
+		{
+			"testeid": "T999998",
+			"dataini": "20170113104900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "Make Voice Call",
+			"macronr": 1,
+			"testtype": 0,
+			"endevent": 0,
+			"priority" : 0,
+            "state" : 0,
+			"data": [
+				"419232|1||2016-07-20T13:30:00.000Z|30|1||1|964389135||||0|||||||||||0|2||||||||||||1|||||||||||",
+                "419232|1||2016-07-20T13:30:00.000Z|30|42|1|makecall|20|1",
+                "419234|1||45|30|3|0|1"
+			]
+		},
+		{
+			"testeid": "T888888",
+			"dataini": "20160529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "Answer Voice Call",
+			"macronr": 1,
+			"testtype": 5,
+            "state": 1,
+            "priority" : 1,
+			"data": [
+				"419232|1||2016-07-20T13:30:00.000Z|30|2|0|1|1|10||||answer|||5||||"
+			]
+		},
+        {
+          "testeid": "T777777",
+          "dataini": "20160529171900",
+          "datafim": "20200717133554",
+          "modulo": 0,
+          "testname": "Hang Up Voice Call",
+          "macronr": 1,
+          "testtype": 5,
+          "priority" : 2,
+          "data": [
+            "419232|1||2016-07-20T13:30:00.000Z|30|3|0|1"
+          ]
+        },
+		{
+			"testeid": "T666666",
+			"dataini": "20160529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "Record Audio",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 3,
+			"data": [
+				"419232|1||2016-07-20T13:30:00.000Z|30|42|0|record|20|1"
+			]
+		},
+		{
+			"testeid": "T555555",
+			"dataini": "20160529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "PESQ Destino",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 4,
+			"data": [
+				"419232|1||2016-07-20T13:30:00.000Z|30|53|0|pesq|20|0"
+			]
+		},
+		{
+			"testeid": "T417650",
+			"dataini": "20140529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "MEO Browsing",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 40,
+			"data": [
+				{
+					"task_id": "0004",
+					"task_name": "Http Download",
+					"macro_id": "1",
+					"task_number": "1",
+					"iccid": "",
+					"instanteExec": "0",
+					"timeout": "20",
+					"immediate": "0",
+					"url": "https://meo.pt",
+					"proxy": "",
+					"user_agent": "Mozzila/5.0"
+				}
+			]
+		},
+		{
+			"testeid": "T417651",
+			"dataini": "20140529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "PTEmpresas Browsing",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 40,
+			"data": [
+				{
+					"task_id": "0004",
+					"task_name": "Http Download",
+					"macro_id": "1",
+					"task_number": "1",
+					"iccid": "",
+					"instanteExec": "0",
+					"timeout": "20",
+					"immediate": "0",
+					"url": "https://www.ptempresas.pt/",
+					"proxy": "",
+					"user_agent": "Mozzila/5.0"
+				}
+			]
+		},
+		{
+			"testeid": "T417652",
+			"dataini": "20140529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "MEO Music Browsing",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 40,
+			"data": [
+				{
+					"task_id": "0004",
+					"task_name": "Http Download",
+					"macro_id": "1",
+					"task_number": "1",
+					"iccid": "",
+					"instanteExec": "0",
+					"timeout": "20",
+					"immediate": "0",
+					"url": "http://music.meo.pt/",
+					"proxy": "",
+					"user_agent": "Mozzila/5.0"
+				}
+			]
+		},
+		{
+			"testeid": "T417653",
+			"dataini": "20140529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "MEO Go Browsing",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 40,
+			"data": [
+				{
+					"task_id": "0004",
+					"task_name": "Http Download",
+					"macro_id": "1",
+					"task_number": "1",
+					"iccid": "",
+					"instanteExec": "0",
+					"timeout": "20",
+					"immediate": "0",
+					"url": "http://meogo.meo.pt/Pages/homepage.aspx",
+					"proxy": "",
+					"user_agent": "Mozzila/5.0"
+				}
+			]
+		},
+		{
+			"testeid": "T417654",
+			"dataini": "20140529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "Google PING",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 40,
+			"data": [
+				{
+					"task_id": "0001",
+					"task_name": "Ping",
+					"macro_id": "1",
+					"task_number": "6",
+					"iccid": "",
+					"instanteExec": "0",
+					"timeout": "10",
+					"immediate": "0",
+					"packet_size": "16",
+					"interval": "1",
+					"packet_number": "8",
+					"ip_address": "8.8.8.8"
+				}
+			]
+		},
+		{
+			"testeid": "T417655",
+			"dataini": "20140529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "IPPlan Speedtest",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 40,
+			"data": [
+				{
+					"task_id": "0004",
+					"task_name": "Http Download",
+					"macro_id": "1",
+					"task_number": "1",
+					"iccid": "",
+					"instanteExec": "0",
+					"timeout": "60",
+					"immediate": "0",
+					"url": "http://connectionclass.parseapp.com/m100_hubble_4060.jpg",
+					"proxy": "",
+					"user_agent": "Mozzila/5.0"
+				},
+				{
+					"task_id": "0005",
+					"task_name": "Http Upload",
+					"macro_id": "1",
+					"task_number": "5",
+					"iccid": "",
+					"instanteExec": "70",
+					"timeout": "60",
+					"immediate": "0",
+					"url": "http://www.speedtest.co.bw/speedtest/upload.php",
+					"proxy": "",
+					"content": "content0=12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+				}
+			]
+		},
+		{
+			"testeid": "T417655",
+			"dataini": "20140529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "MEO-WiFi-Premium Login",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 40,
+			"data": [
+				{
+					"task_id": "0008",
+					"task_name": "Turn ON WiFi",
+					"macro_id": "1",
+					"task_number": "1",
+					"iccid": "",
+					"instanteExec": "0",
+					"timeout": "20",
+					"immediate": "0"
+				},
+				{
+					"task_id": "0006",
+					"task_name": "Associate WiFi",
+					"macro_id": "1",
+					"task_number": "2",
+					"iccid": "",
+					"instanteExec": "30",
+					"timeout": "20",
+					"immediate": "0",
+					"essid": "MEO-WiFi-Premium",
+					"password": "",
+					"bssid": ""
+				},
+				{
+					"task_id": "0010",
+					"task_name": "WiFi Authentication Login",
+					"macro_id": "1",
+					"task_number": "3",
+					"iccid": "",
+					"instanteExec": "60",
+					"timeout": "20",
+					"immediate": "0",
+					"url": "https://wifi.meo.pt/Httphandlers/login.aspx",
+					"username": "guest",
+					"password": "guest"
+				},
+				{
+					"task_id": "0007",
+					"task_name": "Turn OFF WiFi",
+					"macro_id": "1",
+					"task_number": "4",
+					"iccid": "",
+					"instanteExec": "90",
+					"timeout": "20",
+					"immediate": "0"
+				}
+			]
+		},
+		{
+			"testeid": "T417657",
+			"dataini": "20140529171900",
+			"datafim": "20200717133554",
+			"modulo": 0,
+			"testname": "MEO-WiFi-Premium IPplan Speedtest",
+			"macronr": 1,
+			"testtype": 5,
+            "priority" : 40,
+			"data": [
+				{
+					"task_id": "0008",
+					"task_name": "Turn ON WiFi",
+					"macro_id": "1",
+					"task_number": "1",
+					"iccid": "",
+					"instanteExec": "0",
+					"timeout": "20",
+					"immediate": "0"
+				},
+				{
+					"task_id": "0006",
+					"task_name": "Associate WiFi",
+					"macro_id": "1",
+					"task_number": "2",
+					"iccid": "",
+					"instanteExec": "30",
+					"timeout": "20",
+					"immediate": "0",
+					"essid": "MEO-WiFi-Premium",
+					"password": "",
+					"bssid": ""
+				},
+				{
+					"task_id": "0010",
+					"task_name": "WiFi Authentication Login",
+					"macro_id": "1",
+					"task_number": "3",
+					"iccid": "",
+					"instanteExec": "60",
+					"timeout": "20",
+					"immediate": "0",
+					"url": "https://wifi.meo.pt/Httphandlers/login.aspx",
+					"username": "guest",
+					"password": "guest"
+				},
+				{
+					"task_id": "0004",
+					"task_name": "Http Download",
+					"macro_id": "1",
+					"task_number": "5",
+					"iccid": "",
+					"instanteExec": "90",
+					"timeout": "60",
+					"immediate": "0",
+					"url": "http://connectionclass.parseapp.com/m100_hubble_4060.jpg",
+					"proxy": "",
+					"user_agent": "Mozzila/5.0"
+				},
+				{
+					"task_id": "0005",
+					"task_name": "Http Upload",
+					"macro_id": "1",
+					"task_number": "7",
+					"iccid": "",
+					"instanteExec": "150",
+					"timeout": "20",
+					"immediate": "0",
+					"url": "http://www.speedtest.co.bw/speedtest/upload.php",
+					"proxy": "",
+					"content": "content0=12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890"
+				},
+				{
+					"task_id": "0011",
+					"task_name": "WiFi Authentication Logout",
+					"macro_id": "1",
+					"task_number": "9",
+					"iccid": "",
+					"instanteExec": "180",
+					"timeout": "20",
+					"immediate": "0",
+					"url": "https://wifi.meo.pt/Httphandlers/logoff.aspx"
+				},
+				{
+					"task_id": "0007",
+					"task_name": "Turn OFF WiFi",
+					"macro_id": "1",
+					"task_number": "10",
+					"iccid": "",
+					"instanteExec": "210",
+					"timeout": "20",
+					"immediate": "0"
+				}
+			]
+		},
+        {
+          "testeid": "T500001",
+          "dataini": "20140529171900",
+          "datafim": "20200717133554",
+          "modulo": 0,
+          "testname": "Scan WiFi Networks",
+          "macronr": 1,
+          "testtype": 5,
+          "priority": 40,
+          "data": [
+            {
+              "task_id": "0008",
+              "task_name": "Turn ON WiFi",
+              "macro_id": "1",
+              "task_number": "1",
+              "iccid": "",
+              "instanteExec": "0",
+              "timeout": "20",
+              "immediate": "0"
+            },
+            {
+              "task_id": "0012",
+              "task_name": "Scan WiFi Networks",
+              "macro_id": "1",
+              "task_number": "2",
+              "iccid": "",
+              "instanteExec": "30",
+              "timeout": "20",
+              "immediate": "0"
+            }
+          ]
+        }
+	]
+}

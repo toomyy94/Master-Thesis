@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <ImageView
+            android:id="@+id/imageStep1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/step1_on" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal|center"
+            android:text="@string/service"
+            android:textColor="@color/color_fragment" 
+            android:textSize="@dimen/text_steps_anoma"
+            android:background="#ff0000"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/imageStep2"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/step2_on" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/failure"
+            android:textColor="@color/color_fragment"
+            android:textAllCaps="true"
+            android:textSize="@dimen/text_steps_anoma"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/imageStep3"
+            android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:src="@drawable/step3_on"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/location"
+            android:textAllCaps="true"
+            android:textColor="@color/color_fragment"
+            android:textSize="@dimen/text_steps_anoma" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+>
+
+        <ImageView
+            android:id="@+id/imageStep4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/step4_on"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/feedback"
+            android:textAllCaps="true"
+            android:textColor="@color/color_fragment"
+            android:textSize="@dimen/text_steps_anoma" />
+
+    </LinearLayout>
+
+</LinearLayout>

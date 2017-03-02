@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+	android:paddingTop="5dp"
+	android:paddingBottom="5dp"
+    android:orientation="vertical" >
+    
+    <TextView android:id="@+id/headerCid"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="25dp"
+    	android:textSize="12dp"
+    	android:text="cid : "
+    	android:textStyle="bold"/>
+    
+    <TextView android:id="@+id/resultCid"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="5dp"
+    	android:textSize="12dp"
+    	android:text="NA"
+    	android:layout_alignBaseline="@+id/headerCid"
+    	android:layout_toRightOf="@+id/headerCid" />
+    
+    <TextView android:id="@+id/headerLac"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="25dp"
+    	android:textSize="12dp"
+    	android:text="Lac : "
+    	android:textStyle="bold"
+    	android:layout_below="@+id/headerCid" />
+    
+    <TextView android:id="@+id/resultLac"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="5dp"
+    	android:textSize="12dp"
+    	android:text="NA"
+    	android:layout_alignBaseline="@+id/headerLac"
+    	android:layout_toRightOf="@+id/headerLac" />
+    
+    <TextView android:id="@+id/headerNetWorkType"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="25dp"
+    	android:textSize="12dp"
+    	android:text="Ligação : "
+    	android:textStyle="bold"
+    	android:layout_below="@+id/headerLac" />
+    
+    <TextView android:id="@+id/resultNetWorkType"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="5dp"
+    	android:textSize="12dp"
+    	android:text="NA"
+    	android:layout_alignBaseline="@+id/headerNetWorkType"
+    	android:layout_toRightOf="@+id/headerNetWorkType" />
+    
+    <TextView android:id="@+id/headerPsc"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="25dp"
+    	android:textSize="12dp"
+    	android:text="Psc : "
+    	android:textStyle="bold"
+    	android:layout_below="@+id/headerNetWorkType" />
+    
+    <TextView android:id="@+id/resultPsc"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="5dp"
+    	android:textSize="12dp"
+    	android:text="NA"
+    	android:layout_alignBaseline="@+id/headerPsc"
+    	android:layout_toRightOf="@+id/headerPsc" />
+    
+    <TextView android:id="@+id/headerRssi"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="25dp"
+    	android:textSize="12dp"
+    	android:text="Rssi : "
+    	android:textStyle="bold"
+    	android:layout_below="@+id/headerPsc" />
+    
+    <TextView android:id="@+id/resultRssi"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:paddingLeft="5dp"
+    	android:textSize="12dp"
+    	android:text="NA"
+    	android:layout_alignBaseline="@+id/headerRssi"
+    	android:layout_toRightOf="@+id/headerRssi" />
+    
+    <TextView android:id="@+id/resultSignalLevelMedida"
+      	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:textSize="12dp"
+    	android:text="dBm"
+    	android:layout_alignBaseline="@+id/resultRssi"
+    	android:layout_toRightOf="@+id/resultRssi" />
+    
+
+</RelativeLayout>

@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:fillViewport="true"
+    android:orientation="vertical" >
+
+   <RelativeLayout android:id="@+id/layoutMainMoreDetails"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <TextView
+            android:id="@+id/MenuMedidasRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:text="@string/app_medidas_radio_pt"
+            android:textSize="11dp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/headerRSSI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MenuMedidasRadio"
+            android:paddingLeft="15dp"
+            android:paddingTop="5dp"
+            android:text="@string/app_results_RSSI_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultRSSI"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerRSSI"
+            android:layout_toRightOf="@+id/headerRSSI"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultRSSIMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_dBm_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultRSSI"
+			android:layout_toRightOf="@+id/resultRSSI">
+		</TextView>
+		
+        <TextView
+            android:id="@+id/headerRSRP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerRSSI"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_RSRP_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultRSRP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerRSRP"
+            android:layout_toRightOf="@+id/headerRSRP"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultRSRPMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_dBm_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultRSRP"
+			android:layout_toRightOf="@+id/resultRSRP">
+		</TextView>
+
+        <TextView
+            android:id="@+id/headerCID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerRSRP"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_CID_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultCID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerCID"
+            android:layout_toRightOf="@+id/headerCID"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <!-- 
+        <TextView
+            android:id="@+id/headerLCID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerCID"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_LCID_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultLCID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerLCID"
+            android:layout_toRightOf="@+id/headerLCID"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+         -->
+
+        <TextView
+            android:id="@+id/headerLac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerCID"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_Lac_Tac_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultLac"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerLac"
+            android:layout_toRightOf="@+id/headerLac"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/headerLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerLac"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_connection_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerLink"
+            android:layout_toRightOf="@+id/headerLink"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView
+            android:id="@+id/headerECIO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerLink"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_ECIO_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resulECIO"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerECIO"
+            android:layout_toRightOf="@+id/headerECIO"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView
+            android:id="@+id/headerSNR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerECIO"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_SNR_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resulSNR"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerSNR"
+            android:layout_toRightOf="@+id/headerSNR"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView
+            android:id="@+id/headerBER"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerSNR"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_BER_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultBER"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerBER"
+            android:layout_toRightOf="@+id/headerBER"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/headerPSC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerBER"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_PSC_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultPSC"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerPSC"
+            android:layout_toRightOf="@+id/headerPSC"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView
+            android:id="@+id/headerREGISTED_OPERATOR_NAME_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerPSC"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_REGISTED_OPERATOR_NAME_ID_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultREGISTED_OPERATOR_NAME_ID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerREGISTED_OPERATOR_NAME_ID"
+            android:layout_toRightOf="@+id/headerREGISTED_OPERATOR_NAME_ID"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        
+         <TextView
+            android:id="@+id/headerREGISTED_OPERATOR_NAME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerREGISTED_OPERATOR_NAME_ID"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_REGISTED_OPERATOR_NAME_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultREGISTED_OPERATOR_NAME"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerREGISTED_OPERATOR_NAME"
+            android:layout_toRightOf="@+id/headerREGISTED_OPERATOR_NAME"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        
+         <TextView
+            android:id="@+id/headerNetwork_Mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerREGISTED_OPERATOR_NAME"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_Network_Mode_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultNetwork_Mode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerNetwork_Mode"
+            android:layout_toRightOf="@+id/headerNetwork_Mode"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        
+        <TextView
+            android:id="@+id/headerRoaming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerNetwork_Mode"
+            android:paddingLeft="15dp"
+            android:text="@string/app_results_IS_ROAMING_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultRoaming"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerRoaming"
+            android:layout_toRightOf="@+id/headerRoaming"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+
+        
+        
+        
+        <TextView
+            android:id="@+id/MenuRedesVizinhas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerRoaming"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="@string/app_neighboring_networks_pt"
+            android:textSize="11dp"
+            android:textStyle="bold" >
+        </TextView>
+
+        <ImageView
+            android:id="@+id/limitLinelistTop"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MenuRedesVizinhas"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/linha" >
+        </ImageView>
+        
+        <ListView
+        	android:id="@+id/redesVizinhaslist"
+        	android:layout_width="wrap_content"
+        	android:layout_height="200dp"
+        	android:cacheColorHint="@android:color/transparent"
+        	android:layout_below="@+id/limitLinelistTop">
+    	</ListView>
+    	
+        <ImageView
+            android:id="@+id/limitLinelistBottom"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/redesVizinhaslist"
+            android:layout_centerHorizontal="true"
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:src="@drawable/linha" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/MenuTestAcesso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/limitLinelistBottom"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="@string/app_teste_acesso_pt"
+            android:textSize="11dp"
+            android:textStyle="bold"/>
+        
+        <TextView
+            android:id="@+id/headerMinRTT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MenuTestAcesso"
+            android:paddingLeft="15dp"
+            android:text="@string/app_min_rtt_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultMinRTT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerMinRTT"
+            android:layout_toRightOf="@+id/headerMinRTT"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultMinRTTMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_sec_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultMinRTT"
+			android:layout_toRightOf="@+id/resultMinRTT">
+		</TextView>
+        
+         <TextView
+            android:id="@+id/headerMaxRTT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerMinRTT"
+            android:paddingLeft="15dp"
+            android:text="@string/app_max_rtt_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultMaxRTT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerMaxRTT"
+            android:layout_toRightOf="@+id/headerMaxRTT"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultMaxRTTMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_sec_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultMaxRTT"
+			android:layout_toRightOf="@+id/resultMaxRTT">
+		</TextView>
+        
+        <TextView
+            android:id="@+id/headerMedRTT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerMaxRTT"
+            android:paddingLeft="15dp"
+            android:text="@string/app_med_rtt_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultMedRTT"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerMedRTT"
+            android:layout_toRightOf="@+id/headerMedRTT"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultMedRTTMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_sec_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_alignBaseline="@+id/resultMedRTT"
+			android:layout_toRightOf="@+id/resultMedRTT">
+		</TextView>
+        
+        <TextView
+            android:id="@+id/headerPacketLost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerMedRTT"
+            android:paddingLeft="15dp"
+            android:text="@string/app_packet_lost_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultPacketLost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerPacketLost"
+            android:layout_toRightOf="@+id/headerPacketLost"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+         <TextView
+            android:id="@+id/MenuLarguraDeBanda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerPacketLost"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="@string/app_teste_banda_pt"
+            android:textSize="11dp"
+            android:textStyle="bold"/>
+         
+         <TextView
+            android:id="@+id/headerDownloadDebito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MenuLarguraDeBanda"
+            android:paddingLeft="15dp"
+            android:text="@string/app_debito_download_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultDownloadDebito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerDownloadDebito"
+            android:layout_toRightOf="@+id/headerDownloadDebito"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultDownloadDebitoMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_bps_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_marginBottom="30dp"
+			android:layout_alignBaseline="@+id/resultDownloadDebito"
+			android:layout_toRightOf="@+id/resultDownloadDebito">
+		</TextView>
+        
+        <TextView
+            android:id="@+id/headerUploadDebito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerDownloadDebito"
+            android:paddingLeft="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/app_debito_upload_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultUploadDebito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerUploadDebito"
+            android:layout_toRightOf="@+id/headerUploadDebito"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultUploadDebitoMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_bps_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_marginBottom="30dp"
+			android:layout_alignBaseline="@+id/resultUploadDebito"
+			android:layout_toRightOf="@+id/resultUploadDebito">
+		</TextView>
+		
+        <TextView
+            android:id="@+id/headerMaxDownloadDebito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerUploadDebito"
+            android:paddingLeft="15dp"
+            android:text="@string/app_max_debito_download_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultMaxDownloadDebito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerMaxDownloadDebito"
+            android:layout_toRightOf="@+id/headerMaxDownloadDebito"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultMaxDownloadDebitoMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_bps_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_marginBottom="30dp"
+			android:layout_alignBaseline="@+id/resultMaxDownloadDebito"
+			android:layout_toRightOf="@+id/resultMaxDownloadDebito">
+		</TextView>
+		
+        <TextView
+            android:id="@+id/headerMaxUploadDebito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerMaxDownloadDebito"
+            android:paddingLeft="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/app_max_debito_upload_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultMaxUploadDebito"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerMaxUploadDebito"
+            android:layout_toRightOf="@+id/headerMaxUploadDebito"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultMaxUploadDebitoMetric"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_bps_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_marginBottom="30dp"
+			android:layout_alignBaseline="@+id/resultMaxUploadDebito"
+			android:layout_toRightOf="@+id/resultMaxUploadDebito">
+		</TextView>
+		
+        <TextView
+            android:id="@+id/MenuTestFTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerMaxUploadDebito"
+            android:paddingLeft="15dp"
+            android:paddingTop="10dp"
+            android:text="@string/app_teste_ftp_pt"
+            android:textSize="11dp"
+            android:textStyle="bold"/>
+         
+         <TextView
+            android:id="@+id/headerDownloadDebitoFTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/MenuTestFTP"
+            android:paddingLeft="15dp"
+            android:text="@string/app_debito_download_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultDownloadDebitoFTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerDownloadDebitoFTP"
+            android:layout_toRightOf="@+id/headerDownloadDebitoFTP"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultDownloadDebitoMetricFTP"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_bps_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_marginBottom="30dp"
+			android:layout_alignBaseline="@+id/resultDownloadDebitoFTP"
+			android:layout_toRightOf="@+id/resultDownloadDebitoFTP">
+		</TextView>
+        
+        <TextView
+            android:id="@+id/headerUploadDebitoFTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerDownloadDebitoFTP"
+            android:paddingLeft="15dp"
+            android:paddingBottom="15dp"
+            android:text="@string/app_debito_upload_pt"
+            android:textSize="14dp" >
+        </TextView>
+
+        <TextView
+            android:id="@+id/resultUploadDebitoFTP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/headerUploadDebitoFTP"
+            android:layout_toRightOf="@+id/headerUploadDebitoFTP"
+            android:paddingLeft="5dp"
+            android:text="0"
+            android:textSize="14dp" >
+        </TextView>
+        
+        <TextView android:id="@+id/resultUploadDebitoMetricFTP"
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content"
+			android:text="@string/app_results_bps_pt"
+			android:textSize="14dp"
+			android:paddingLeft="5dp"
+			android:layout_marginBottom="30dp"
+			android:layout_alignBaseline="@+id/resultUploadDebitoFTP"
+			android:layout_toRightOf="@+id/resultUploadDebitoFTP">
+		</TextView>
+		
+         <ImageView
+            android:id="@+id/limitLineBottom"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerUploadDebitoFTP"
+            android:layout_centerHorizontal="true"
+			android:layout_marginLeft="15dp"
+			android:layout_marginRight="15dp"
+            android:src="@drawable/hidelinha" >
+        </ImageView>
+        
+    </RelativeLayout>
+
+</ScrollView>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+      package="PTInov.IEX.ArQoSPocket.UserInterface"
+      android:versionCode="1"
+      android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="7" />
+
+    <application android:icon="@drawable/arqosicon" android:label="@string/app_name">
+    
+    	<receiver android:name="StartAtBoot">
+			<intent-filter>
+				<action android:name="android.intent.action.BOOT_COMPLETED">
+                </action>
+				<category android:name="android.intent.category.HOME">
+                </category>
+			</intent-filter>
+		</receiver>
+		
+		<service android:name=".EngineService" android:exported="true"
+			android:enabled="true">
+			<intent-filter>
+				<action android:name="PTInov.IEX.ArQoSPocket.EngineService.EngineService">
+				</action>
+			</intent-filter>
+		</service>
+		
+		<activity android:name=".ConfigInterface" android:screenOrientation="portrait" android:label="@string/app_name">
+		</activity>
+		
+		<activity android:name=".UserTaskListInterface" android:screenOrientation="portrait" android:label="@string/app_name">
+		</activity>
+		
+		<activity android:name=".HistoryInterface" android:screenOrientation="portrait" android:label="@string/app_name">
+		</activity>
+		
+		<activity android:name=".SchedulingInterface" android:screenOrientation="portrait" android:label="@string/app_name">
+		</activity>
+		
+		<activity android:name=".ShowTestResultLog" android:screenOrientation="portrait" android:label="@string/app_name">
+		</activity>
+		
+		<activity android:name=".ShowTarefaResult" android:screenOrientation="portrait" android:label="@string/app_name">
+		</activity>
+		
+		<activity android:name=".UserTestListInterface" android:screenOrientation="portrait" android:label="@string/app_name">
+		</activity>
+    
+        <activity android:name=".MainInterface" android:screenOrientation="portrait"
+                  android:label="@string/app_name">
+            <intent-filter>
+            	<action android:name="PTInov.IEX.ArQoSPocket.UserInterface.MainInterface"/>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+    
+    <uses-permission android:name="android.permission.VIBRATE" />
+	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+	<uses-permission android:name="android.permission.RECORD_AUDIO" />
+	<uses-permission android:name="android.permission.INTERNET" />
+    
+</manifest>
