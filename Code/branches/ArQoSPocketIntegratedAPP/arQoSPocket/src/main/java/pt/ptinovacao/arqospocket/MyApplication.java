@@ -20,7 +20,9 @@ import android.os.IBinder;
 public class MyApplication extends Application {
 	
 	private final static Logger logger = LoggerFactory.getLogger(MyApplication.class);
-	
+
+	private static Context context;
+
 	private IService mEngineService = null;
 	private boolean mIsBound = false;
 	
@@ -77,11 +79,12 @@ public class MyApplication extends Application {
 	        mIsBound = false;
 	    }
 	}
-	
+
 	
 	@Override
     public void onCreate() {
         super.onCreate();
+		this.context = getApplicationContext(); // Grab the Context you want.
 
         LocaleHelper.onCreate(this);
 
@@ -93,6 +96,10 @@ public class MyApplication extends Application {
         //}
             
         doBindService();
+    }
+
+    public static Context getContext() {
+        return context;
     }
     
 	@Override

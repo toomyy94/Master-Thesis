@@ -98,7 +98,6 @@
             android:layout_width="match_parent" />
 
         <ImageView
-            android:id="@+id/linha_titulos_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/activity_configuracoes_linha_titulos" />
@@ -142,6 +141,57 @@
             android:src="@drawable/activity_configuracoes_linha_separador" />
 
         </RadioGroup>
+
+        <pt.ptinovacao.arqospocket.views.SuperTextView
+            android:id="@+id/tests_radiolog"
+            style="@style/SlidingMenuText"
+            android:text="@string/main_development_radiolog"
+            android:layout_width="match_parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_titulos" />
+
+        <RadioGroup
+            android:id="@+id/development_radiologs_page"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RadioButton
+                android:id="@+id/development_create_radiolog"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/linha"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:text="@string/development_tests_create_radiolog"
+                android:textColor="@color/color_radio"
+                />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/activity_configuracoes_linha_separador" />
+
+            <RadioButton
+                android:id="@+id/development_send_radiolog"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/linha"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:text="@string/development_tests_send_radiolog"
+                android:textColor="@color/color_radio"
+                />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/activity_configuracoes_linha_separador" />
+
+        </RadioGroup>
+
 
 
 

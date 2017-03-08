@@ -57,11 +57,11 @@ public class MobileAdvancedInfoStruct extends MobileBasicInfoStruct {
 	public String get_imsi() {
 		return imsi;
 	}
-	
+
 	public boolean get_roaming() {
 		return roaming;
 	}
-	
+
 	public List<NeighboringCellInfo> get_neighboring_cell_list() {
 		return neighboring_cell_list;
 	}

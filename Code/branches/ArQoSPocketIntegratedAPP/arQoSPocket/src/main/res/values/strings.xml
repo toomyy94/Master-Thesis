@@ -129,6 +129,7 @@
     <!-- Testes em desenvolvimento -->
     <string name="main_development_apn">APN configuration</string>
     <string name="main_development_logfile">Send logcat to file</string>
+    <string name="main_development_radiolog">Radiologs</string>
 
     <string name="development_tests_dtmf">Send DTMF tone</string>
 
@@ -137,6 +138,9 @@
 
     <string name="development_tests_logfile">Write logcat to logfile.txt</string>
     <string name="development_tests_no_logfile">No write logcat to logfile.txt</string>
+
+    <string name="development_tests_create_radiolog">Generate radiolog</string>
+    <string name="development_tests_send_radiolog">Send radiolog to Management system</string>
 
 
     <!-- Percent -->

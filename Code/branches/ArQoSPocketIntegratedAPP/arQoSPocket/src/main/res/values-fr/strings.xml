@@ -130,6 +130,7 @@
     <!-- Testes em desenvolvimento -->
     <string name="main_development_apn">Définir APN</string>
     <string name="main_development_logfile">Envoyer logcat au fichier</string>
+    <string name="main_development_radiolog">Radiologs</string>
 
     <string name="development_tests_dtmf">Envoyer ton DTMF</string>
 
@@ -138,6 +139,9 @@
 
     <string name="development_tests_logfile">Écrire logcat au logfile.txt</string>
     <string name="development_tests_no_logfile">Pas écrire logcat au logfile.txt</string>
+
+    <string name="development_tests_create_radiolog">Générer radiolog</string>
+    <string name="development_tests_send_radiolog">Envoyer radiolog au Management system</string>
 
     <!-- Percent -->
     <string name="percent_0">0%</string>

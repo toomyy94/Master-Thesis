@@ -7,8 +7,11 @@ import android.util.Log;
 
 import java.util.Date;
 
+import pt.ptinovacao.arqospocket.MyApplication;
 import pt.ptinovacao.arqospocket.service.enums.ECallType;
+import pt.ptinovacao.arqospocket.service.enums.EEvent;
 import pt.ptinovacao.arqospocket.service.interfaces.IRunTaskWorker;
+import pt.ptinovacao.arqospocket.service.interfaces.IService;
 import pt.ptinovacao.arqospocket.service.jsonparser.taskparser.AnswerVoiceCallTaskStruct;
 import pt.ptinovacao.arqospocket.service.jsonparser.taskparser.HangUpVoiceCallTaskStruct;
 import pt.ptinovacao.arqospocket.service.jsonresult.AnswerVoiceCallTaskJsonResult;
@@ -39,6 +42,8 @@ public class HangUpVoiceCall implements VoiceCallReceiver.VoiceCallReceiverListe
     private static final String TAG = HangUpVoiceCall.class.getSimpleName();
 
     private Context context;
+    private MyApplication MyApplicationRef;
+    private IService iService;
 
     private VoiceCallReceiver voiceCallReceiver;
     private HangUpVoiceCallTaskStruct hangUpVoiceCallTaskStruct;
@@ -60,6 +65,9 @@ public class HangUpVoiceCall implements VoiceCallReceiver.VoiceCallReceiverListe
         this.callbackRef = callbackRef;
         this.gpsInformation = gpsInformation;
         this.mobile = mobileRef;
+
+        MyApplicationRef = (MyApplication) MyApplication.getContext();
+        iService  = MyApplicationRef.getEngineServiceRef();
     }
 
     public boolean hangupCall(){
@@ -161,6 +169,9 @@ public class HangUpVoiceCall implements VoiceCallReceiver.VoiceCallReceiverListe
         callDuration = Utils.parseIntParameter(CallUtils.getCallDurationFromLog(context, callNumber, cType));
 
         Log.i(TAG, "onCallDisconnected :: callDuration: " + callDuration);
+
+        iService.generate_radiolog(EEvent.CALL_END, "duration: "+callDuration);
+
 
         publishResult(STATUS_OK);
     }

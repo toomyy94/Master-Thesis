@@ -1,5 +1,10 @@
 # ninja log v5
-18	1755	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	ba29d734917be4cd
-1755	2014	0	../../../../build/intermediates/cmake/debug/obj/mips/libttaenc.so	42da8f48417a06de
-16	2044	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	ba29d734917be4cd
-2045	2380	0	../../../../build/intermediates/cmake/debug/obj/mips/libttaenc.so	42da8f48417a06de
+0	838	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	ba29d734917be4cd
+839	981	0	../../../../build/intermediates/cmake/debug/obj/mips/libttaenc.so	42da8f48417a06de
+228	1578	0	build.ninja	941de074a792c24f
+72	3001	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	a3d3a85206a4d27e
+3002	3377	0	../../../../build/intermediates/cmake/debug/obj/mips/libttaenc.so	61329422e45adb00
+12	1133	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	a3d3a85206a4d27e
+1134	1339	0	../../../../build/intermediates/cmake/debug/obj/mips/libttaenc.so	61329422e45adb00
+1	161	0	CMakeFiles/ttaenc.dir/src/main/cpp/ttaenc.c.o	a3d3a85206a4d27e
+161	245	0	../../../../build/intermediates/cmake/debug/obj/mips/libttaenc.so	61329422e45adb00

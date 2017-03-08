@@ -3,11 +3,14 @@ package pt.ptinovacao.arqospocket.service.interfaces;
 import java.util.List;
 import java.util.TreeMap;
 
+import pt.ptinovacao.arqospocket.service.enums.EEvent;
 import pt.ptinovacao.arqospocket.service.store.CurrentConfiguration;
 
 import android.graphics.Bitmap;
 import android.location.Location;
 import android.util.Pair;
+
+import org.json.JSONObject;
 
 public interface IService {
 	
@@ -285,4 +288,30 @@ public interface IService {
 	 * @return true -  se as configurações gravadas com sucesso, False - se houve falha a gravar o objecto
 	 */
 	public boolean set_current_configuration(CurrentConfiguration configObject);
+
+	/**
+	 *
+	 * Gera o objecto com as informações radio
+	 *
+	 *
+	 * @return a json
+	 */
+	public JSONObject generate_radiolog();
+	/**
+	 *
+	 * Gera o objecto com as informações radio
+	 *
+	 *
+	 * @return a json
+	 */
+	public JSONObject generate_radiolog(EEvent type, String origin);
+
+	/**
+	 *
+	 * Gera o objecto com as informações radio
+	 *
+	 *
+	 * @return a json
+	 */
+	public JSONObject generate_scanlog();
 }

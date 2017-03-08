@@ -16,36 +16,68 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import pt.ptinovacao.arqospocket.ArqosActivity;
+import pt.ptinovacao.arqospocket.MyApplication;
 import pt.ptinovacao.arqospocket.R;
 import pt.ptinovacao.arqospocket.core.CurrentConfiguration;
+import pt.ptinovacao.arqospocket.fragments.FragmentDashboardDetailWifi;
+import pt.ptinovacao.arqospocket.service.enums.ENetworkAction;
+import pt.ptinovacao.arqospocket.service.interfaces.IService;
+import pt.ptinovacao.arqospocket.service.interfaces.IServiceNetworksInfo;
+import pt.ptinovacao.arqospocket.service.interfaces.IUI;
+import pt.ptinovacao.arqospocket.service.logs.MyLogger;
+import pt.ptinovacao.arqospocket.service.service.EngineService;
+import pt.ptinovacao.arqospocket.service.tasks.Mobile;
+import pt.ptinovacao.arqospocket.service.tasks.Wifi;
+import pt.ptinovacao.arqospocket.service.tasks.interfaces.IMobileCallback;
+import pt.ptinovacao.arqospocket.service.tasks.interfaces.IWifiCallback;
+import pt.ptinovacao.arqospocket.service.tasks.structs.MobileAdvancedInfoStruct;
+import pt.ptinovacao.arqospocket.service.tasks.structs.MobileBasicInfoStruct;
+import pt.ptinovacao.arqospocket.service.tasks.structs.WiFiAdvancedInfoStruct;
+import pt.ptinovacao.arqospocket.service.tasks.structs.WifiBasicInfoStruct;
 import pt.ptinovacao.arqospocket.service.utils.ApnEditor;
 import pt.ptinovacao.arqospocket.util.Homepage;
 import pt.ptinovacao.arqospocket.util.MenuOption;
 
 public class Activity_Development extends ArqosActivity {
 
+    private final static String TAG = Activity_Development.class.getSimpleName();
+    private final static Logger logger = LoggerFactory.getLogger(Activity_Development.class);
+
 	MenuOption HomeP;
 	Homepage home;
 
-	RadioGroup development_tests, development_logs, development_apn;
+	RadioGroup development_tests, development_logs, development_apn, development_radiologs;
 	int idxlogs;
 
     ApnEditor apn_editor = new ApnEditor();
-    public static final Uri APN_TABLE_URI = Uri.parse("content://telephony/carriers");
-    public static final Uri APN_PREFER_URI = Uri.parse("content://telephony/carriers/preferapn");
+    //public static final Uri APN_TABLE_URI = Uri.parse("content://telephony/carriers");
+    //public static final Uri APN_PREFER_URI = Uri.parse("content://telephony/carriers/preferapn");
 
-	public static final String TAG = "Actvity_Development";
+    private IMobileCallback IMobileCallback;
+    private IWifiCallback IWifiCallback;
+	public JSONObject radiolog = new JSONObject();
+	public JSONArray radiolog_String = new JSONArray();
 
 
-	protected void onCreate(Bundle arg0) {
+    protected void onCreate(Bundle arg0) {
 		super.onCreate(arg0);
 		super.onActionBarSetTitle(getString(R.string.development));
 		super.setMenuOption(MenuOption.Desenvolvimento);
@@ -62,7 +94,7 @@ public class Activity_Development extends ArqosActivity {
 		development_tests = (RadioGroup) findViewById(R.id.development_tests_general);
 		development_apn = (RadioGroup) findViewById(R.id.development_tests_apn);
 		development_logs = (RadioGroup) findViewById(R.id.development_logs_page);
-
+		development_radiologs = (RadioGroup) findViewById(R.id.development_radiologs_page);
 
         development_tests.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
 			@Override
@@ -140,11 +172,39 @@ public class Activity_Development extends ArqosActivity {
 				}
 			}
 		});
+
+		development_radiologs.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+			@Override
+			public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+
+				View auxlogs = group.findViewById(group
+						.getCheckedRadioButtonId());
+				idxlogs = group.indexOfChild(auxlogs);
+
+//                Debug
+				Log.d("idxLogs",""+idxlogs);
+
+				switch(idxlogs){
+					case 0:
+						//Generate radioLog
+                        radiolog = generateRadiolog(getApplicationContext());
+
+						break;
+					case 2:
+						//Send radiolog to Management System
+                        /*
+                        ------->DO STUFF HERE!!!
+                         */
+						break;
+				}
+			}
+		});
 	}
 
 
 
-	
+
 	public void onBackPressed() {
 		if (slidingMenuIsOpen()) {
 			onSlidingMenuToggle();
@@ -248,6 +308,15 @@ public class Activity_Development extends ArqosActivity {
 		}
 	}
 
+    public JSONObject generateRadiolog(Context context){
+
+        MyApplication MyApplicationRef = (MyApplication) getApplicationContext();
+        IService iService = MyApplicationRef.getEngineServiceRef();
+
+		radiolog = iService.generate_radiolog();
+        return radiolog;
+    }
+
 	private class WriteLogFile extends AsyncTask<String, Void, String> {
 
 		@Override
@@ -324,5 +393,9 @@ public class Activity_Development extends ArqosActivity {
 		}
 
 	}
+
+    public void send_pending_tests_ack(ENetworkAction action_state) {
+
+    }
 }
 

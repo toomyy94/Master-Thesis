@@ -18,13 +18,22 @@
 ANDROID_ABI:UNINITIALIZED=armeabi
 
 //No help, variable specified on the command line.
-ANDROID_NATIVE_API_LEVEL:UNINITIALIZED=9
+ANDROID_NDK:UNINITIALIZED=C:\Users\p057937\AppData\Local\Android\Sdk\ndk-bundle
 
 //No help, variable specified on the command line.
-ANDROID_NDK:UNINITIALIZED=C:\Users\p057937\AppData\Local\Android\Sdk\ndk-bundle
+ANDROID_PLATFORM:UNINITIALIZED=android-9
 
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64/bin/arm-linux-androideabi-ar.exe
+
+//Flags used by the compiler during all build types.
+CMAKE_ASM_FLAGS:STRING=
+
+//Flags used by the compiler during debug builds.
+CMAKE_ASM_FLAGS_DEBUG:STRING=
+
+//Flags used by the compiler during release builds.
+CMAKE_ASM_FLAGS_RELEASE:STRING=
 
 //Choose the type of build, options are: None(CMAKE_CXX_FLAGS or
 // CMAKE_C_FLAGS used) Debug Release RelWithDebInfo MinSizeRel.

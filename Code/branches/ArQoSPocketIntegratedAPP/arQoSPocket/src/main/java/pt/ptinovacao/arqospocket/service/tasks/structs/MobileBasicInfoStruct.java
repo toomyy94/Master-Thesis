@@ -70,7 +70,7 @@ public class MobileBasicInfoStruct {
 	public String get_mcc() {
 		return mcc;
 	}
-	
+
 	public String toString() {
 		final String method = "toString";
 		

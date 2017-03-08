@@ -11,13 +11,15 @@ import android.os.IBinder;
 import android.util.Log;
 import android.util.Pair;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -27,6 +29,7 @@ import java.util.List;
 import java.util.TreeMap;
 
 import pt.ptinovacao.arqospocket.R;
+import pt.ptinovacao.arqospocket.service.enums.EEvent;
 import pt.ptinovacao.arqospocket.service.interfaces.IAnomaliesHistory;
 import pt.ptinovacao.arqospocket.service.interfaces.IService;
 import pt.ptinovacao.arqospocket.service.interfaces.ITask;
@@ -65,8 +68,6 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 	private final static String TAG = EngineService.class.getSimpleName();
     private final static Logger logger = LoggerFactory.getLogger(EngineService.class);
 	private static EngineService myRef = null;
-	
-	
 	
 	/*
 	 * 
@@ -114,13 +115,15 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 	private AnomaliesHistory anomaliesHistory = null;
 	private TestHistory testHistory = null;
 	private TestScheduler testScheduler = null;
-	
-	
+
 	private PrivateStore private_store = null;
 	
 	private Mobile mobile_task = null;
 	private Wifi wifi_task = null;
-	
+
+	private JSONObject radiolog = new JSONObject();
+	private JSONObject scanlog;
+
 	private GPSInformation gps_information = null;
 	
 	@Override
@@ -304,13 +307,13 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 			
 			mobile_task = new Mobile(myRef, myRef);
 			wifi_task = new Wifi(myRef, myRef);
-			
+
 		} catch(Exception ex) {
 			MyLogger.error(logger, method, ex);
 		}
 	}
 	
-	
+
 	
 	/************
 	 * 
@@ -1242,6 +1245,280 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 		}
 	}
 
+	@Override
+	public JSONObject generate_radiolog() {
+		final String method = "generate_radiolog";
+
+		MobileAdvancedInfoStruct m_advanced = mobile_task.get_MobileAdvancedInfoStruct();
+		MobileBasicInfoStruct m_basic = mobile_task.get_MobileBasicInfoStruct();
+
+		try {
+            JSONArray radiolog_Array = new JSONArray();
+			JSONObject log = new JSONObject();
+
+			log.put("module", 0);
+			log.put("iccid", mobile_task.getSimIccid());
+            log.put("imsi", m_advanced.get_imsi());
+            log.put("timestamp", (int) (System.currentTimeMillis() / 1000L));
+			log.put("mac", m_advanced.get_device_id()); //IMEI
+            log.put("gps", gps_information.getLatitude()+","+gps_information.getLongitude());
+
+            //network
+            JSONObject networklog = new JSONObject();
+
+            if(mobile_task.isMobileAvailable()) networklog.put("status", 0);
+            else networklog.put("status", mobile_task.isSimSupport(getApplicationContext()));
+            networklog.put("mode", mobile_task.getConnectionMode());
+            networklog.put("cellid", m_basic.get_id_cell());
+            networklog.put("plmn", m_advanced.get_network_operator_name());
+            if(!m_advanced.get_roaming()) networklog.put("roaming", 0);
+            else networklog.put("roaming", 1);
+            networklog.put("rxlevel", m_basic.get_signal_level());
+            networklog.put("mcc", Integer.parseInt(m_basic.get_mcc_mnc().substring(0,3)));
+            networklog.put("mnc", Integer.parseInt(m_basic.get_mcc_mnc().substring(3, m_basic.get_mcc_mnc().length())));
+
+            //For LTE
+            if(mobile_task.getConnectionMode()==10){
+                networklog.put("pci", mobile_task.getPci());
+				networklog.put("tac", m_basic.get_cell_location());
+				networklog.put("rsrp", mobile_task.getLteRsrp());
+                networklog.put("rsrq", mobile_task.getLteRsrq());
+                networklog.put("rssnr", mobile_task.getLteRssnr());
+                networklog.put("cqi", mobile_task.getLteCqi());
+				if(mobile_task.getLteRssi() != 0) networklog.put("rssi", mobile_task.getLteRssi());
+
+			}
+            else{
+                if(mobile_task.getBer() != 99) networklog.put("ber", mobile_task.getBer());
+                networklog.put("lac", m_basic.get_cell_location());
+                if(networklog.has("psc")) networklog.remove("psc");
+                if(mobile_task.getConnectionMode()==8){
+                    networklog.put("psc", mobile_task.getPsc());
+                }
+            }
+
+
+            //
+            log.put("all_cell_info_list", m_advanced.get_all_cell_info_list());
+            //Tirar por agora
+            networklog.put("neighboring_cell_list", m_advanced.get_neighboring_cell_list());
+
+            log.put("network", networklog);
+
+            //neighbours
+            if(mobile_task.getNeig_id_celula()!=null && mobile_task.getNeig_id_celula().size()>0) {
+                JSONArray neighbourslog = new JSONArray();
+
+                for (int i = 0; i < mobile_task.getNeig_id_celula().size(); i++) {
+                    JSONObject one_neighbour = new JSONObject();
+
+                    if(mobile_task.getNeig_id_celula().get(i) < 200000000) one_neighbour.put("cellid", mobile_task.getNeig_id_celula().get(i));
+                    if(mobile_task.getConnectionMode()==10) {
+                        if(mobile_task.getNeig_cell_location().get(i) < 200000000) one_neighbour.put("tac", mobile_task.getNeig_cell_location().get(i));
+                        if(mobile_task.getNeig_cell_location().get(i) < 200000000) one_neighbour.put("tac", mobile_task.getNeig_cell_location().get(i));
+                        if(mobile_task.getNeig_pci().get(i) < 200000000) one_neighbour.put("pci", mobile_task.getNeig_pci().get(i));
+                    }
+                    else{
+                        if(mobile_task.getNeig_id_celula().get(i) < 200000000) one_neighbour.put("cellid", mobile_task.getNeig_id_celula().get(i));
+                        if(mobile_task.getNeig_cell_location().get(i) < 200000000) one_neighbour.put("lac", mobile_task.getNeig_cell_location().get(i));
+                        if(mobile_task.getNeig_psc().get(i) < 200000000) one_neighbour.put("psc", mobile_task.getNeig_psc().get(i));
+                    }
+                    neighbourslog.put(one_neighbour);
+                }
+
+                log.put("neighbours", neighbourslog);
+            }
+
+            radiolog_Array.put(log);
+			radiolog.put("radiolog", radiolog_Array);
+
+            MyLogger.debug(logger, method, radiolog.toString(4));
+
+		}catch (JSONException jsone){
+			Log.e("Erro","Erro creating json!!!");
+			jsone.printStackTrace();
+		}
+
+		return radiolog;
+	}
+
+    @Override
+    public JSONObject generate_radiolog(EEvent type, String origin) {
+        final String method = "generate_radiolog_Event";
+
+        MobileAdvancedInfoStruct m_advanced = mobile_task.get_MobileAdvancedInfoStruct();
+        MobileBasicInfoStruct m_basic = mobile_task.get_MobileBasicInfoStruct();
+
+        try {
+            JSONArray radiolog_Array = new JSONArray();
+            JSONObject log = new JSONObject();
+
+            log.put("module", 0);
+            log.put("iccid", mobile_task.getSimIccid());
+            log.put("imsi", m_advanced.get_imsi());
+            log.put("timestamp", (int) (System.currentTimeMillis() / 1000L));
+            log.put("mac", m_advanced.get_device_id()); //IMEI
+            log.put("gps", gps_information.getLatitude()+","+gps_information.getLongitude());
+
+            //network
+            JSONObject networklog = new JSONObject();
+
+            if(mobile_task.isMobileAvailable()) networklog.put("status", 0);
+            else networklog.put("status", mobile_task.isSimSupport(getApplicationContext()));
+            networklog.put("mode", mobile_task.getConnectionMode());
+            networklog.put("cellid", m_basic.get_id_cell());
+            networklog.put("plmn", m_advanced.get_network_operator_name());
+            if(!m_advanced.get_roaming()) networklog.put("roaming", 0);
+            else networklog.put("roaming", 1);
+            networklog.put("rxlevel", m_basic.get_signal_level());
+            networklog.put("mcc", Integer.parseInt(m_basic.get_mcc_mnc().substring(0,3)));
+            networklog.put("mnc", Integer.parseInt(m_basic.get_mcc_mnc().substring(3, m_basic.get_mcc_mnc().length())));
+
+            //For LTE
+            if(mobile_task.getConnectionMode()==10){
+                networklog.put("pci", mobile_task.getPci());
+                networklog.put("tac", m_basic.get_cell_location());
+                networklog.put("rsrp", mobile_task.getLteRsrp());
+                networklog.put("rsrq", mobile_task.getLteRsrq());
+                networklog.put("rssnr", mobile_task.getLteRssnr());
+                networklog.put("cqi", mobile_task.getLteCqi());
+                if(mobile_task.getLteRssi() != 0) networklog.put("rssi", mobile_task.getLteRssi());
+
+            }
+            else{
+                if(mobile_task.getBer() != 99) networklog.put("ber", mobile_task.getBer());
+                networklog.put("lac", m_basic.get_cell_location());
+                if(networklog.has("psc")) networklog.remove("psc");
+                if(mobile_task.getConnectionMode()==8){
+                    networklog.put("psc", mobile_task.getPsc());
+                }
+            }
+
+
+            //
+            log.put("all_cell_info_list", m_advanced.get_all_cell_info_list());
+            //Tirar por agora
+            //networklog.put("neighboring_cell_list", m_advanced.get_neighboring_cell_list());
+
+            log.put("network", networklog);
+
+            //neighbours
+            if(mobile_task.getNeig_id_celula()!=null && mobile_task.getNeig_id_celula().size()>0) {
+                JSONArray neighbourslog = new JSONArray();
+
+                for (int i = 0; i < mobile_task.getNeig_id_celula().size(); i++) {
+                    JSONObject one_neighbour = new JSONObject();
+
+                    if(mobile_task.getNeig_id_celula().get(i) < 200000000) one_neighbour.put("cellid", mobile_task.getNeig_id_celula().get(i));
+                    if(mobile_task.getConnectionMode()==10) {
+                        if(mobile_task.getNeig_cell_location().get(i) < 200000000) one_neighbour.put("tac", mobile_task.getNeig_cell_location().get(i));
+                        if(mobile_task.getNeig_cell_location().get(i) < 200000000) one_neighbour.put("tac", mobile_task.getNeig_cell_location().get(i));
+                        if(mobile_task.getNeig_pci().get(i) < 200000000) one_neighbour.put("pci", mobile_task.getNeig_pci().get(i));
+                    }
+                    else{
+                        if(mobile_task.getNeig_id_celula().get(i) < 200000000) one_neighbour.put("cellid", mobile_task.getNeig_id_celula().get(i));
+                        if(mobile_task.getNeig_cell_location().get(i) < 200000000) one_neighbour.put("lac", mobile_task.getNeig_cell_location().get(i));
+                        if(mobile_task.getNeig_psc().get(i) < 200000000) one_neighbour.put("psc", mobile_task.getNeig_psc().get(i));
+                    }
+                    neighbourslog.put(one_neighbour);
+                }
+
+                log.put("neighbours", neighbourslog);
+            }
+
+            //Event
+            JSONObject eventlog = new JSONObject();
+            eventlog.put("type",get_EEventToInt(type));
+            eventlog.put("origin",origin);
+            log.put("event", eventlog);
+
+            radiolog_Array.put(log);
+            radiolog.put("radiolog", radiolog_Array);
+
+            MyLogger.debug(logger, method, radiolog.toString(4));
+
+        }catch (JSONException jsone){
+            MyLogger.error(logger,method,jsone);
+            Log.e("Erro","Erro creating radiolog json!!!");
+            jsone.printStackTrace();
+        }
+
+        return radiolog;
+    }
+
+	@Override
+	public JSONObject generate_scanlog() {
+		final String method = "generate_scanlog";
+
+
+//		TO SCAN LOGS!!!
+//		Wifi (NEEDS REVIEW!!!)
+		WiFiAdvancedInfoStruct w_advanced = wifi_task.get_WiFiAdvancedInfoStruct();
+		WifiBasicInfoStruct w_basic = wifi_task.get_WifiBasicInfoStruct();
+
+
+		try {
+		scanlog.put("bssid", w_advanced.get_bssid());
+		scanlog.put("hidden_ssid", w_advanced.get_hidden_ssid());
+		scanlog.put("mac_address", w_advanced.get_mac_address());
+		scanlog.put("ip_address", w_advanced.get_ip_address());
+		scanlog.put("dns1", w_advanced.get_dns1());
+		scanlog.put("dns2", w_advanced.get_dns2());
+		scanlog.put("gateway", w_advanced.get_gateway());
+		scanlog.put("lease_duration", w_advanced.get_lease_duration());
+		scanlog.put("netmask", w_advanced.get_netmask());
+		scanlog.put("server_address", w_advanced.get_server_address());
+		scanlog.put("scan_Wifi_list", w_advanced.get_scan_Wifi_list());
+		scanlog.put("wireless_state", w_basic.get_wireless_state());
+		scanlog.put("rx_level", w_basic.get_rx_level());
+		scanlog.put("ssid", w_basic.get_ssid());
+		scanlog.put("channel", w_basic.get_channel());
+		scanlog.put("link_speed", w_basic.get_link_speed());
+
+		MyLogger.debug(logger, method, scanlog.toString(4));
+
+		}catch (JSONException jsone){
+			Log.e("Erro","Erro creating scanlog json!!!");
+			jsone.printStackTrace();
+		}
+
+		return scanlog;
+	}
+
+	public int get_EEventToInt(EEvent type){
+        switch (type){
+            case HANDOVER:
+                return 1;
+            case REGISTER_STATUS:
+                return 2;
+            case PLMN_CHANGE:
+                return 3;
+            case ROAMING_STATUS:
+                return 4;
+            case PAUSE_SCAN:
+                return 5;
+            case RESUME_SCAN:
+                return 6;
+            case NO_NETWORKS_DETECTED:
+                return 7;
+            case CELL_RESELECTION:
+                return 8;
+            case CALL_SETUP:
+                return 9;
+            case EMON_POCKET:
+                return 10;
+            case CALL_ESTABLISHED:
+                return 11;
+            case CALL_END:
+                return 12;
+            case CALL_DROP:
+                return 13;
+            case CALL_RELEASE:
+                return 14;
+        }
+        return -1;
+    }
+
 	
 	
 	/************
@@ -1253,7 +1530,7 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 	public Mobile get_mobile_ref() {
 		return mobile_task;
 	}
-	
+
 	public Wifi get_wifi_ref() {
 		return wifi_task;
 	}

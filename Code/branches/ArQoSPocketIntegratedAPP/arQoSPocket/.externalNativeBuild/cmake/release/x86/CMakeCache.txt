@@ -18,10 +18,10 @@
 ANDROID_ABI:UNINITIALIZED=x86
 
 //No help, variable specified on the command line.
-ANDROID_NATIVE_API_LEVEL:UNINITIALIZED=9
+ANDROID_NDK:UNINITIALIZED=C:\Users\p057937\AppData\Local\Android\Sdk\ndk-bundle
 
 //No help, variable specified on the command line.
-ANDROID_NDK:UNINITIALIZED=C:\Users\p057937\AppData\Local\Android\Sdk\ndk-bundle
+ANDROID_PLATFORM:UNINITIALIZED=android-9
 
 //Path to a program.
 CMAKE_AR:FILEPATH=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/windows-x86_64/bin/i686-linux-android-ar.exe

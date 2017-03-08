@@ -2,13 +2,17 @@ package pt.ptinovacao.arqospocket.service.tasks;
 
 import android.content.Context;
 import android.content.IntentFilter;
+import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 
 import java.util.Date;
 
+import pt.ptinovacao.arqospocket.MyApplication;
 import pt.ptinovacao.arqospocket.service.audio.AudioRecorderHelper;
 import pt.ptinovacao.arqospocket.service.enums.ECallType;
+import pt.ptinovacao.arqospocket.service.enums.EEvent;
 import pt.ptinovacao.arqospocket.service.interfaces.IRunTaskWorker;
+import pt.ptinovacao.arqospocket.service.interfaces.IService;
 import pt.ptinovacao.arqospocket.service.jsonparser.taskparser.AnswerVoiceCallTaskStruct;
 import pt.ptinovacao.arqospocket.service.jsonresult.AnswerVoiceCallTaskJsonResult;
 import pt.ptinovacao.arqospocket.service.service.GPSInformation;
@@ -61,12 +65,19 @@ public class AnswerVoiceCall implements VoiceCallReceiver.VoiceCallReceiverListe
     private boolean callAnswered = false;
     private String recordedFilename;
 
+    private MyApplication MyApplicationRef;
+    private IService iService;
+
+
     public AnswerVoiceCall(Context context, AnswerVoiceCallTaskStruct answerVoiceCallTaskStruct, GPSInformation gpsInformation, Mobile mobileRef, IRunTaskWorker callbackRef) {
         this.context = context;
         this.answerVoiceCallTaskStruct = answerVoiceCallTaskStruct;
         this.callbackRef = callbackRef;
         this.gpsInformation = gpsInformation;
         this.mobile = mobileRef;
+
+        MyApplicationRef = (MyApplication) MyApplication.getContext();
+        iService  = MyApplicationRef.getEngineServiceRef();
     }
 
     public boolean answerCall(){
@@ -79,7 +90,6 @@ public class AnswerVoiceCall implements VoiceCallReceiver.VoiceCallReceiverListe
 
             //TODO ver a questao de ter varios listeners
             startCallReceiver();
-
         }
 
         return true;
@@ -172,6 +182,7 @@ public class AnswerVoiceCall implements VoiceCallReceiver.VoiceCallReceiverListe
         Log.i(TAG, "onCallInitiated :: callType: " + callType);
         callSetupTime = System.currentTimeMillis() - startDate.getTime();
         callInitiated = true;
+        iService.generate_radiolog(EEvent.CALL_ESTABLISHED, "connect time: "+callSetupTime);
     }
 
     @Override
