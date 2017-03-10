@@ -188,7 +188,7 @@ public class Activity_Development extends ArqosActivity {
 				switch(idxlogs){
 					case 0:
 						//Generate radioLog
-                        radiolog = generateRadiolog(getApplicationContext());
+                        generateRadiolog(getApplicationContext());
 
 						break;
 					case 2:
@@ -308,13 +308,13 @@ public class Activity_Development extends ArqosActivity {
 		}
 	}
 
-    public JSONObject generateRadiolog(Context context){
+    public void generateRadiolog(Context context){
 
         MyApplication MyApplicationRef = (MyApplication) getApplicationContext();
         IService iService = MyApplicationRef.getEngineServiceRef();
 
-		radiolog = iService.generate_radiolog();
-        return radiolog;
+		iService.generate_radiolog();
+        //return radiolog;
     }
 
 	private class WriteLogFile extends AsyncTask<String, Void, String> {

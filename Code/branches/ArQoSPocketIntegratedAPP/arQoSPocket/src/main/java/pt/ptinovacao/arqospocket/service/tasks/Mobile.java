@@ -6,6 +6,7 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -62,10 +63,12 @@ public class Mobile {
     // but not all (though it's close enough without a good way to determine the band of LTE a device is using)
     private final static int RSSI_CONSTANT = 17;
 
-	private Context context;
-    private MyApplication MyApplicationRef;
-    private IService iService;
+    IService iService;
+    MyApplication MyApplicationRef;
 
+	private Context context;
+
+    private JSONObject radiolog = new JSONObject();
 	private IMobileCallback iMobileCallback;
 	
 	private MyPhoneStateListener MyListener;
@@ -76,12 +79,6 @@ public class Mobile {
 	private int mobileSignalDBM = 0;
 	private int mobileSignal = 0;
     private int signalStrenght = -1;
-
-    //private boolean prev_roaming = false;
-    //private String network_operator_name;
-    //private String prev_network_operator_name = "";
-    //private int simState = -1;
-    //private int prev_simState = -1;
 
 	private int id_celula = -1;
 	private int cell_location = -1;
@@ -183,16 +180,6 @@ public class Mobile {
             String network_operator_name = telephonyManager.getNetworkOperatorName();
             String imsi = telephonyManager.getSubscriberId();
             boolean roaming = telephonyManager.isNetworkRoaming();
-//            if(roaming = prev_roaming){
-//                Log.d("ENTREI","roaming change!");
-//                iService.generate_radiolog(EEvent.ROAMING_STATUS, "old roaming status: "+ !roaming);
-//                prev_roaming = !roaming;
-//            }
-//            if(!network_operator_name.equals(prev_network_operator_name)){
-//                Log.d("ENTREI","network_operator_name change!");
-//                iService.generate_radiolog(EEvent.PLMN_CHANGE, "old plmn: " + network_operator_name);
-//                prev_network_operator_name = network_operator_name;
-//            }
 
 			List<NeighboringCellInfo> neighboring_cell_list = telephonyManager.getNeighboringCellInfo();
 			
@@ -461,12 +448,12 @@ public class Mobile {
 		
 			if (on) {
 				
-				Settings.System.putInt(context.getContentResolver(),Settings.System.AIRPLANE_MODE_ON, 1);  
-				
+				Settings.System.putInt(context.getContentResolver(),Settings.System.AIRPLANE_MODE_ON, 1);
+
 				Intent intent = new Intent(Intent.ACTION_AIRPLANE_MODE_CHANGED);
 				intent.putExtra("state", true);//true; indicate that state of Airplane mode is ON.
 				context.sendBroadcast(intent);
-				
+
 			} else {
 				
 				Settings.System.putInt(context.getContentResolver(),Settings.System.AIRPLANE_MODE_ON, 0);
@@ -491,12 +478,11 @@ public class Mobile {
 		final String method = "Mobile";
 		
 		try {
-		
 			this.context = context;
 			this.iMobileCallback = iMobileCallback;
 
-            MyApplicationRef = (MyApplication) MyApplication.getContext();
-            iService  = MyApplicationRef.getEngineServiceRef();
+            MyApplicationRef = ((MyApplication) context.getApplicationContext());
+            iService = MyApplicationRef.getEngineServiceRef();
 
 			telephonyManager = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
 		
@@ -504,12 +490,6 @@ public class Mobile {
 			mobile_data_plan_change_listeners = new ArrayList<IMobileONOFFAdapterTask>();
 
             int simState = telephonyManager.getSimState();
-//            if(simState != prev_simState){
-//                iService.generate_radiolog(EEvent.REGISTER_STATUS, "old service status: "+ prev_simState);
-//                prev_simState = simState;
-//            }
-
-
 
 			if (simState == TelephonyManager.SIM_STATE_READY) {
 				hasSim = true;
@@ -537,13 +517,14 @@ public class Mobile {
 
 				}
 			}
-		
+
 			else {
 				mobileTechnology = EMobileNetworkMode.NONE;
 				mobileState = EMobileState.DISCONNECTED;
 				hasSim = false;
 			}
-		
+
+
 		} catch(Exception ex) {
 			MyLogger.error(logger, method, ex);
 		}
@@ -844,8 +825,6 @@ public class Mobile {
 							psc = -1;
 							pci = ncellLte.getCellIdentity().getPci();
 
-
-
                             String ssignal = ncellLte.getCellSignalStrength().toString();
 
                             String[] parts = ssignal.split(" ");
@@ -857,8 +836,8 @@ public class Mobile {
                             lteCqi =  Integer.parseInt(parts[12]);
 
 						}
-					
 						iMobileCallback.mobile_information_change();
+
 					
 						//MyLogger.debug(logger, method, "Info: " + connectedCellInfo.toString());;
                         return;
@@ -1052,6 +1031,8 @@ public class Mobile {
                                     //is this sinr??
                                     String[] parts_lteCqi = parts[5].split("=");
                                     lteCqi = Integer.parseInt(parts_lteCqi[1]);
+
+									lteRssi = calculateLteRssi();
                                 }
                                 //neighbours
                                 else{
@@ -1145,8 +1126,8 @@ public class Mobile {
 				mobileSignal = scaledSignal;
 
                 MyLogger.debug(logger, method, "Mobile Signal: " + mobileSignal);
-				iMobileCallback.mobile_information_change();
 
+                iMobileCallback.mobile_information_change();
 			
 			} catch (Exception ex) {
 				MyLogger.error(logger, method, ex);
@@ -1187,7 +1168,7 @@ public class Mobile {
     }
 
     public int getLteRssi() {
-		MyLogger.debug(logger, ""+lteRssi, ""+lteRssi);
+		//MyLogger.debug(logger, "Rssi", ""+lteRssi);
 		return lteRssi;
     }
 

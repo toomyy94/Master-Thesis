@@ -296,7 +296,7 @@ public interface IService {
 	 *
 	 * @return a json
 	 */
-	public JSONObject generate_radiolog();
+	public void generate_radiolog();
 	/**
 	 *
 	 * Gera o objecto com as informações radio
@@ -304,7 +304,7 @@ public interface IService {
 	 *
 	 * @return a json
 	 */
-	public JSONObject generate_radiolog(EEvent type, String origin);
+	public void generate_radiolog(EEvent type, String origin);
 
 	/**
 	 *
@@ -313,5 +313,5 @@ public interface IService {
 	 *
 	 * @return a json
 	 */
-	public JSONObject generate_scanlog();
+	public void generate_scanlog();
 }

@@ -4,12 +4,12 @@
 	"probetest": [
 		{
 			"testeid": "T999999",
-			"dataini": "20170113104900",
+			"dataini": "20170310113200",
 			"datafim": "20200717133554",
 			"modulo": 0,
 			"testname": "Make Voice Call",
 			"macronr": 1,
-			"testtype": 0,
+			"testtype": 5,
             "recursion":
             {
               "event": 3,
@@ -35,7 +35,7 @@
 			"modulo": 0,
 			"testname": "Make Voice Call",
 			"macronr": 1,
-			"testtype": 0,
+			"testtype": 5,
 			"endevent": 0,
 			"priority" : 0,
             "state" : 0,

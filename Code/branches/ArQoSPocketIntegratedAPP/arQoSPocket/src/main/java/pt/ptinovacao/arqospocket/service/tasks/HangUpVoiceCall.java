@@ -66,8 +66,8 @@ public class HangUpVoiceCall implements VoiceCallReceiver.VoiceCallReceiverListe
         this.gpsInformation = gpsInformation;
         this.mobile = mobileRef;
 
-        MyApplicationRef = (MyApplication) MyApplication.getContext();
-        iService  = MyApplicationRef.getEngineServiceRef();
+//        MyApplicationRef = (MyApplication) MyApplication.getContext();
+//        iService  = MyApplicationRef.getEngineServiceRef();
     }
 
     public boolean hangupCall(){

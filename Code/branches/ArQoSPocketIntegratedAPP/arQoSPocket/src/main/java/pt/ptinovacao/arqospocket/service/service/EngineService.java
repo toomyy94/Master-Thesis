@@ -1,13 +1,16 @@
 package pt.ptinovacao.arqospocket.service.service;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.location.Location;
+import android.media.AudioManager;
 import android.os.Binder;
 import android.os.Environment;
 import android.os.IBinder;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.util.Pair;
 
@@ -41,6 +44,7 @@ import pt.ptinovacao.arqospocket.service.jsonparser.MainTestStruct;
 import pt.ptinovacao.arqospocket.service.jsonparser.TestStruct;
 import pt.ptinovacao.arqospocket.service.jsonparser.enums.ETestEvent;
 import pt.ptinovacao.arqospocket.service.logs.MyLogger;
+import pt.ptinovacao.arqospocket.service.service.utils.CallUtils;
 import pt.ptinovacao.arqospocket.service.store.CurrentConfiguration;
 import pt.ptinovacao.arqospocket.service.store.PrivateStore;
 import pt.ptinovacao.arqospocket.service.structs.Anomalies;
@@ -121,7 +125,26 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 	private Mobile mobile_task = null;
 	private Wifi wifi_task = null;
 
+    /*
+       radiologs
+    */
 	private JSONObject radiolog = new JSONObject();
+    /*
+       radiologs events
+    */
+    private boolean roaming;
+    private boolean prev_roaming = false;
+    private String plmn;
+    private String prev_plmn;
+    private int status;
+    private int prev_status = Integer.MIN_VALUE;;
+    private int cellid;
+    private int prev_cellid = Integer.MIN_VALUE;
+    private int signal_level;
+    private int prev_signal_level = Integer.MIN_VALUE;
+    /*
+       scanlogslogs
+    */
 	private JSONObject scanlog;
 
 	private GPSInformation gps_information = null;
@@ -223,7 +246,6 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 			
 			MyLogger.trace(logger, method, "--------------------------------------------------------");
 
-        	
 		} catch(Exception ex) {
 			MyLogger.error(logger, method, ex);
 		}
@@ -968,7 +990,9 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 			keyValueParams.put(getString(R.string.mobile_params_network_operator_name), mobileAdvancedInfoStruct.get_network_operator_name());
 			keyValueParams.put(getString(R.string.mobile_params_imsi), mobileAdvancedInfoStruct.get_imsi());
 			keyValueParams.put(getString(R.string.mobile_params_roaming), (mobileAdvancedInfoStruct.get_roaming())?getString(R.string.yes):getString(R.string.no));
-					
+
+            Log.d("mobile_task IMP.",""+mobile_task);
+
 			ui_ref.update_mobile_params(keyValueParams);
 
 		} catch(Exception ex) {
@@ -1015,6 +1039,7 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 		try {
 
 			MobileBasicInfoStruct mobileBasicInfoStruct = this.mobile_task.get_MobileBasicInfoStruct();
+            Log.d("mobile_task",""+mobile_task);
 			
 			ui_ref.update_mobile_information(mobileBasicInfoStruct.get_mobile_state(), mobileBasicInfoStruct.get_network_type(),
 					mobileBasicInfoStruct.get_mcc(), mobileBasicInfoStruct.get_signal_level(), mobileBasicInfoStruct.get_id_cell(),
@@ -1163,6 +1188,10 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 				
 			}
 
+            //Generate radiologs periodically
+            //TODO needs to be tested!
+            generate_radiolog();
+
 		} catch(Exception ex) {
 			MyLogger.error(logger, method, ex);
 		}
@@ -1220,14 +1249,63 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 		try {
 
 			MobileBasicInfoStruct mobileBasicInfoStruct = this.mobile_task.get_MobileBasicInfoStruct();
-			
 			MyLogger.debug(logger, method, mobileBasicInfoStruct.toString());
+
+            what_changed_mobile(mobileBasicInfoStruct, null);
+
 			report_to_mobile_information_listeners(mobileBasicInfoStruct);
 
 		} catch(Exception ex) {
 			MyLogger.error(logger, method, ex);
 		}
 	}
+
+	public void what_changed_mobile(MobileBasicInfoStruct mobileBasicInfoStruct,
+                                    MobileAdvancedInfoStruct mobileAdvancedInfoStruct){
+
+        if(mobileAdvancedInfoStruct == null){
+
+            signal_level = Integer.parseInt(mobileBasicInfoStruct.get_signal_level());
+            cellid = Integer.parseInt(mobileBasicInfoStruct.get_id_cell());
+
+            if(signal_level != prev_signal_level) {
+                if(prev_signal_level != Integer.MIN_VALUE) {
+                    generate_radiolog(EEvent.EMON_POCKET, "old signal_level: "+ prev_signal_level + ", new signal_level: "+signal_level);
+                }
+                prev_signal_level = signal_level;
+            }
+            if(cellid != prev_cellid && mobile_task.isAnyCallActive()){
+                if(prev_cellid != Integer.MIN_VALUE) {
+                    generate_radiolog(EEvent.HANDOVER, "old cellid: "+ prev_cellid + ", new cellid: "+cellid);
+                }
+                prev_cellid = cellid;
+            }
+            else if(cellid != prev_cellid) {
+                if(prev_cellid != Integer.MIN_VALUE) {
+                    generate_radiolog(EEvent.CELL_RESELECTION, "old cellid: "+ prev_cellid + ", new cellid: "+cellid);
+                }
+                prev_cellid = cellid;
+            }
+
+        }
+        else if(mobileBasicInfoStruct == null){
+            plmn = mobileAdvancedInfoStruct.get_network_operator_name();
+            roaming = mobileAdvancedInfoStruct.get_roaming();
+
+            if(!plmn.equals(prev_plmn)) {
+                if(prev_plmn != null) {
+                    generate_radiolog(EEvent.PLMN_CHANGE, "old plmn: "+ prev_plmn + ", new plmn: "+plmn);
+
+                }
+                prev_signal_level = signal_level;
+            }
+            if(roaming != prev_roaming) {
+                generate_radiolog(EEvent.ROAMING_STATUS, "old roaming status: "+
+                        prev_roaming + ", new roaming status: "+roaming);
+                prev_roaming = roaming;
+            }
+        }
+    }
 
 	@Override
 	public void mobile_params_change() {
@@ -1236,8 +1314,10 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 		try {
 
 			MobileAdvancedInfoStruct mobileAdvancedInfoStruct = this.mobile_task.get_MobileAdvancedInfoStruct();
-			
 			MyLogger.debug(logger, method, mobileAdvancedInfoStruct.toString());
+
+            what_changed_mobile(null, mobileAdvancedInfoStruct);
+
 			report_to_mobile_params_listeners(mobileAdvancedInfoStruct);
 
 		} catch(Exception ex) {
@@ -1246,7 +1326,7 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 	}
 
 	@Override
-	public JSONObject generate_radiolog() {
+	public void generate_radiolog() {
 		final String method = "generate_radiolog";
 
 		MobileAdvancedInfoStruct m_advanced = mobile_task.get_MobileAdvancedInfoStruct();
@@ -1285,11 +1365,11 @@ public class EngineService extends Service implements IService, IWifiCallback, I
                 networklog.put("rsrq", mobile_task.getLteRsrq());
                 networklog.put("rssnr", mobile_task.getLteRssnr());
                 networklog.put("cqi", mobile_task.getLteCqi());
-				if(mobile_task.getLteRssi() != 0) networklog.put("rssi", mobile_task.getLteRssi());
+				if(mobile_task.getLteRssi() != -1) networklog.put("rssi", mobile_task.getLteRssi());
 
 			}
             else{
-                if(mobile_task.getBer() != 99) networklog.put("ber", mobile_task.getBer());
+                if(mobile_task.getBer() != 99 || mobile_task.getBer() != -1) networklog.put("ber", mobile_task.getBer());
                 networklog.put("lac", m_basic.get_cell_location());
                 if(networklog.has("psc")) networklog.remove("psc");
                 if(mobile_task.getConnectionMode()==8){
@@ -1297,12 +1377,7 @@ public class EngineService extends Service implements IService, IWifiCallback, I
                 }
             }
 
-
-            //
-            log.put("all_cell_info_list", m_advanced.get_all_cell_info_list());
-            //Tirar por agora
-            networklog.put("neighboring_cell_list", m_advanced.get_neighboring_cell_list());
-
+            //log.put("all_cell_info_list", m_advanced.get_all_cell_info_list());
             log.put("network", networklog);
 
             //neighbours
@@ -1339,11 +1414,11 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 			jsone.printStackTrace();
 		}
 
-		return radiolog;
+		//return radiolog;
 	}
 
     @Override
-    public JSONObject generate_radiolog(EEvent type, String origin) {
+    public void generate_radiolog(EEvent type, String origin) {
         final String method = "generate_radiolog_Event";
 
         MobileAdvancedInfoStruct m_advanced = mobile_task.get_MobileAdvancedInfoStruct();
@@ -1382,11 +1457,11 @@ public class EngineService extends Service implements IService, IWifiCallback, I
                 networklog.put("rsrq", mobile_task.getLteRsrq());
                 networklog.put("rssnr", mobile_task.getLteRssnr());
                 networklog.put("cqi", mobile_task.getLteCqi());
-                if(mobile_task.getLteRssi() != 0) networklog.put("rssi", mobile_task.getLteRssi());
+                if(mobile_task.getLteRssi() != -1) networklog.put("rssi", mobile_task.getLteRssi());
 
             }
             else{
-                if(mobile_task.getBer() != 99) networklog.put("ber", mobile_task.getBer());
+                if(mobile_task.getBer() != 99 || mobile_task.getBer() != -1) networklog.put("ber", mobile_task.getBer());
                 networklog.put("lac", m_basic.get_cell_location());
                 if(networklog.has("psc")) networklog.remove("psc");
                 if(mobile_task.getConnectionMode()==8){
@@ -1394,12 +1469,7 @@ public class EngineService extends Service implements IService, IWifiCallback, I
                 }
             }
 
-
-            //
-            log.put("all_cell_info_list", m_advanced.get_all_cell_info_list());
-            //Tirar por agora
-            //networklog.put("neighboring_cell_list", m_advanced.get_neighboring_cell_list());
-
+            //log.put("all_cell_info_list", m_advanced.get_all_cell_info_list());
             log.put("network", networklog);
 
             //neighbours
@@ -1443,11 +1513,11 @@ public class EngineService extends Service implements IService, IWifiCallback, I
             jsone.printStackTrace();
         }
 
-        return radiolog;
+        //return radiolog;
     }
 
 	@Override
-	public JSONObject generate_scanlog() {
+	public void generate_scanlog() {
 		final String method = "generate_scanlog";
 
 
@@ -1476,13 +1546,12 @@ public class EngineService extends Service implements IService, IWifiCallback, I
 		scanlog.put("link_speed", w_basic.get_link_speed());
 
 		MyLogger.debug(logger, method, scanlog.toString(4));
+//		return scanlog;
 
 		}catch (JSONException jsone){
 			Log.e("Erro","Erro creating scanlog json!!!");
 			jsone.printStackTrace();
 		}
-
-		return scanlog;
 	}
 
 	public int get_EEventToInt(EEvent type){
