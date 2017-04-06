@@ -1,5 +1,7 @@
 package pt.ptinovacao.arqospocket.util;
 
+import pt.ptinovacao.arqospocket.activities.ActivityRadiologs;
+import pt.ptinovacao.arqospocket.activities.ActivityRadiologsHistorico;
 import pt.ptinovacao.arqospocket.service.interfaces.IService;
 import pt.ptinovacao.arqospocket.MyApplication;
 import pt.ptinovacao.arqospocket.activities.ActivityAjuda;
@@ -49,50 +51,60 @@ public class Homepage {
 	public Intent TesteTipe(MenuOption home) {
 		switch (home) {
 
-		case Dashboard:
-			it = new Intent(act, ActivityDashboardMain.class);
-			act.startActivity(it);
-			break;
+			case Dashboard:
+				it = new Intent(act, ActivityDashboardMain.class);
+				act.startActivity(it);
+				break;
 
-		case Anomalias:
-			it = new Intent(act, ActivityAnomalias.class);
-			act.startActivity(it);
-			break;
+			case Anomalias:
+				it = new Intent(act, ActivityAnomalias.class);
+				act.startActivity(it);
+				break;
 
-		case HistoricoAnomalias:
-			it = new Intent(act, ActivityAnomaliasHistorico.class);
-			act.startActivity(it);
-			break;
+			case HistoricoAnomalias:
+				it = new Intent(act, ActivityAnomaliasHistorico.class);
+				act.startActivity(it);
+				break;
 
-		case Testes:
-			it = new Intent(act, ActivityTestes.class);
-			act.startActivity(it);
-			break;
+			case Testes:
+				it = new Intent(act, ActivityTestes.class);
+				act.startActivity(it);
+				break;
 
-		case HistoricoTestes:
-			it = new Intent(act, ActivityTestesHistorico.class);
-			act.startActivity(it);
-			break;
+			case HistoricoTestes:
+				it = new Intent(act, ActivityTestesHistorico.class);
+				act.startActivity(it);
+				break;
 
-		case Desenvolvimento:
-			it = new Intent(act, Activity_Development.class);
-			act.startActivity(it);
-			break;
+			case Radiologs:
+				it = new Intent(act, ActivityRadiologs.class);
+				act.startActivity(it);
+				break;
 
-		case Configuracoes:
-			it = new Intent(act, ActivityConfiguracoes.class);
-			act.startActivity(it);
-			break;
+			case HistoricoRadiologs:
+				it = new Intent(act, ActivityRadiologsHistorico.class);
+				act.startActivity(it);
+				break;
 
-		case Ajuda:
-			it = new Intent(act, ActivityAjuda.class);
-			act.startActivity(it);
-			break;
+			case Desenvolvimento:
+				it = new Intent(act, Activity_Development.class);
+				act.startActivity(it);
+				break;
 
-		case Info:
-			it = new Intent(act, Activityo_arQos.class);
-			act.startActivity(it);
-			break;
+			case Configuracoes:
+				it = new Intent(act, ActivityConfiguracoes.class);
+				act.startActivity(it);
+				break;
+
+			case Ajuda:
+				it = new Intent(act, ActivityAjuda.class);
+				act.startActivity(it);
+				break;
+
+			case Info:
+				it = new Intent(act, Activityo_arQos.class);
+				act.startActivity(it);
+				break;
 		}
 		return it;
 	}

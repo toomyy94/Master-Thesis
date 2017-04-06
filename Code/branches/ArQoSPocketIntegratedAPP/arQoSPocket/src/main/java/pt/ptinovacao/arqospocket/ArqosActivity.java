@@ -5,6 +5,8 @@ import pt.ptinovacao.arqospocket.activities.ActivityAnomalias;
 import pt.ptinovacao.arqospocket.activities.ActivityAnomaliasHistorico;
 import pt.ptinovacao.arqospocket.activities.ActivityConfiguracoes;
 import pt.ptinovacao.arqospocket.activities.ActivityDashboardMain;
+import pt.ptinovacao.arqospocket.activities.ActivityRadiologs;
+import pt.ptinovacao.arqospocket.activities.ActivityRadiologsHistorico;
 import pt.ptinovacao.arqospocket.activities.ActivitySplash;
 import pt.ptinovacao.arqospocket.activities.ActivityTestes;
 import pt.ptinovacao.arqospocket.activities.ActivityTestesHistorico;
@@ -42,7 +44,7 @@ public class ArqosActivity extends CoreActivity implements ActionBarController,
 	LinearLayout dashboard, anomalias, anamoliashist, testes, testeshist,
 			configuracoes, 
 			//ajuda,
-			info, development;
+			info, radiologs, radiologshist, development;
 
 	@Override
 	protected void onCreate(Bundle arg0) {
@@ -99,6 +101,8 @@ public class ArqosActivity extends CoreActivity implements ActionBarController,
 			configuracoes = (LinearLayout) findViewById(R.id.configuracoes);
 			//ajuda = (LinearLayout) findViewById(R.id.ajuda);
 			info = (LinearLayout) findViewById(R.id.info);
+			radiologs = (LinearLayout) findViewById(R.id.radiologs);
+			radiologshist = (LinearLayout) findViewById(R.id.historico_radiologs);
 			development = (LinearLayout) findViewById(R.id.development);
 
 			dashboard.setOnClickListener(new OnClickListener() {
@@ -179,6 +183,26 @@ public class ArqosActivity extends CoreActivity implements ActionBarController,
 					normalText();
 				
 					startActivity(Activityo_arQos.class);
+					menu.toggle(false);
+					finish();
+				}
+
+			});
+			radiologs.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					normalText();
+
+					startActivity(ActivityRadiologs.class);
+					menu.toggle(false);
+					finish();
+				}
+
+			});
+			radiologshist.setOnClickListener(new OnClickListener() {
+				public void onClick(View v) {
+					normalText();
+
+					startActivity(ActivityRadiologsHistorico.class);
 					menu.toggle(false);
 					finish();
 				}
@@ -353,32 +377,41 @@ public class ArqosActivity extends CoreActivity implements ActionBarController,
 	public void setMenuOption(MenuOption o) {
 
 		switch (o) {
-		case Dashboard:
-			boldText(R.id.dashboardtext);
-			break;
-		case Anomalias:
-			boldText(R.id.anomaliastext);
-			break;
-		case HistoricoAnomalias:
-			boldText(R.id.historico_anomaliastext);
-			break;
-		case Testes:
-			boldText(R.id.testestext);
-			break;
-		case HistoricoTestes:
-			boldText(R.id.historico_testestext);
-			break;
-		case Configuracoes:
-			boldText(R.id.configuracoestext);
-			break;
-		case Ajuda:
-			//boldText(R.id.ajudatext);
-			break;
-		case Info:
-			boldText(R.id.infotext);
-			break;
-		default:
-			break;
+			case Dashboard:
+				boldText(R.id.dashboardtext);
+				break;
+			case Anomalias:
+				boldText(R.id.anomaliastext);
+				break;
+			case HistoricoAnomalias:
+				boldText(R.id.historico_anomaliastext);
+				break;
+			case Testes:
+				boldText(R.id.testestext);
+				break;
+			case HistoricoTestes:
+				boldText(R.id.historico_testestext);
+				break;
+			case Configuracoes:
+				boldText(R.id.configuracoestext);
+				break;
+			case Ajuda:
+				//boldText(R.id.ajudatext);
+				break;
+			case Info:
+				boldText(R.id.infotext);
+				break;
+			case Radiologs:
+				boldText(R.id.radiologstext);
+				break;
+			case HistoricoRadiologs:
+				boldText(R.id.historico_radiologstext);
+				break;
+			case Desenvolvimento:
+				boldText(R.id.developmenttext);
+				break;
+			default:
+				break;
 		}
 
 	}
@@ -407,7 +440,16 @@ public class ArqosActivity extends CoreActivity implements ActionBarController,
 		//question_valueajudatext.setTypeface(null, Typeface.NORMAL);
 
 		SuperTextView question_valueinfotext = (SuperTextView) findViewById(R.id.infotext);
-		question_valueinfotext.setTypeface(null, Typeface.NORMAL); 
+		question_valueinfotext.setTypeface(null, Typeface.NORMAL);
+
+		SuperTextView question_valueradiologstext = (SuperTextView) findViewById(R.id.radiologstext);
+        question_valueradiologstext.setTypeface(null, Typeface.NORMAL);
+
+		SuperTextView question_valuehistorico_radiologstext = (SuperTextView) findViewById(R.id.historico_radiologstext);
+        question_valuehistorico_radiologstext.setTypeface(null, Typeface.NORMAL);
+
+		SuperTextView question_value_development_text = (SuperTextView) findViewById(R.id.developmenttext);
+        question_value_development_text.setTypeface(null, Typeface.NORMAL);
 		
 		
 		}

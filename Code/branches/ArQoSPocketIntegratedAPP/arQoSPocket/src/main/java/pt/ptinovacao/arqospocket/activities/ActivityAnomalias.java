@@ -17,6 +17,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.util.Log;
+import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 
 public class ActivityAnomalias extends ArqosActivity implements I_OnDataPass {
 	
@@ -56,9 +58,7 @@ public class ActivityAnomalias extends ArqosActivity implements I_OnDataPass {
 
 				}
 
-				Fragment f = getSupportFragmentManager().findFragmentById(
-
-				R.id.activity_anomalias);
+				Fragment f = getSupportFragmentManager().findFragmentById(R.id.activity_anomalias);
 
 				if (f != null & f instanceof FragmentStepsAnomalias) {
 
@@ -87,6 +87,11 @@ public class ActivityAnomalias extends ArqosActivity implements I_OnDataPass {
 	public ViewPager getpager() {
 
 		return mViewPager;
+	}
+
+	public void hideKeyboard(View view) {
+		InputMethodManager inputMethodManager =(InputMethodManager)getSystemService(this.INPUT_METHOD_SERVICE);
+		inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
 	}
 
 	@Override

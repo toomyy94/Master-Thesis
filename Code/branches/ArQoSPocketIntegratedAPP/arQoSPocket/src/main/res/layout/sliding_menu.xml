@@ -154,6 +154,60 @@
                 android:layout_width="wrap_content"
                 android:src="@drawable/linha_separador" />
 
+            <RelativeLayout
+                style="@style/SlidingMenuHolder"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/radiologs"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/historico_radiologs"
+                    android:background="@drawable/sl_sliding_menu_item"
+                    android:clickable="true"
+                    android:gravity="center_vertical" >
+
+                    <ImageView
+                        style="@style/SlidingMenuIcon"
+                        android:src="@drawable/icon_agendado" />
+
+                    <pt.ptinovacao.arqospocket.views.SuperTextView
+                        android:id="@+id/radiologstext"
+                        style="@style/SlidingMenuText"
+                        android:layout_width="wrap_content"
+                        android:text="@string/radiologs"
+
+                         />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/historico_radiologs"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/sl_sliding_menu_item"
+                    android:clickable="true"
+                    android:gravity="right|center_vertical" >
+
+                    <ImageView
+                        style="@style/SlidingMenuIconSmall"
+                        android:src="@drawable/icon_historico_testes" />
+
+                    <pt.ptinovacao.arqospocket.views.SuperTextView
+                        android:id="@+id/historico_radiologstext"
+                        style="@style/SlidingMenuTextSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="@dimen/sliding_menu_item_text_padding_right"
+                        android:text="@string/sliddingmenu_log_label" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/SlidingMenuIcon"
+                android:layout_width="wrap_content"
+                android:src="@drawable/linha_separador" />
+
             <LinearLayout
                 android:id="@+id/configuracoes"
                 style="@style/SlidingMenuHolder"

@@ -4,37 +4,123 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fadingEdge="none"
-    android:scrollbars="none" >
+    android:scrollbars="none"
+    android:background="@drawable/i_background_dark">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="@dimen/global_margin"
-        android:orientation="vertical" >
+        android:orientation="vertical"
+        android:weightSum="1">
+
+        <pt.ptinovacao.arqospocket.views.SuperTextView
+            android:id="@+id/managment_connection"
+            style="@style/SlidingMenuText"
+            android:text="@string/settings_management_connection" />
+
+        <ImageView
+            android:id="@+id/linha_managment_connection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_titulos" />
+
+        <RadioGroup
+            android:id="@+id/radio_managment_connection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!--> AUTOMATIC CONNECTION HIDDEN <!-->
+
+            <RadioButton
+                android:id="@+id/radio_automatic"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
+                android:text="@string/settings_automatic"
+                android:visibility="gone"
+                android:textColor="@color/color_radio" />
+
+        <ImageView
+            android:id="@+id/image_automatic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_separador" />
+
+            <RadioButton
+                android:id="@+id/radio_manual"
+                android:layout_width="match_parent"
+                android:layout_height="33dp"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
+                android:text="@string/settings_manual"
+                android:textColor="@color/color_radio" />
+
+
+            <ImageView
+                android:id="@+id/radio_connection_state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginRight="80dp" />
+
+            <ImageView
+            android:id="@+id/image_manual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/activity_configuracoes_linha_separador" />
+
+            <pt.ptinovacao.arqospocket.views.ImageSwitch_Layout
+                android:id="@+id/image_switch_activity_conf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+
+            <!--<Switch-->
+                <!--android:id="@+id/radio_connection_switch"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_gravity="right"-->
+                <!--android:layout_marginLeft="80dp"-->
+                <!--android:layout_weight="0.5"-->
+                <!--android:paddingLeft="@dimen/details_separator_height"-->
+                <!--android:text="@string/not_connected"-->
+                <!--android:textColor="@color/color_radio" />-->
+
+        </RadioGroup>
+
+        <!--> Network for sending logs HIDDEN <!-->
+        <!--> Remove visibility; "gone" if needed <!-->
+
 
         <pt.ptinovacao.arqospocket.views.SuperTextView
             android:id="@+id/enviarlogsrede"
             style="@style/SlidingMenuText"
+            android:visibility="gone"
             android:text="@string/settings_network_to_send_logs" />
 
         <ImageView
             android:id="@+id/linha_titulos_logs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:src="@drawable/activity_configuracoes_linha_titulos" />
 
         <RadioGroup
             android:id="@+id/radio_envio_logs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:visibility="gone"
             android:orientation="vertical" >
 
             <RadioButton
                 android:id="@+id/radio_wifi"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/settings_wifi_only_label"
                 android:textColor="@color/color_radio" />
 
@@ -47,9 +133,9 @@
             <RadioButton
                 android:id="@+id/radio_pref_wifi"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/settings_wifi_priority_label"
                 android:textColor="@color/color_radio" />
 
@@ -62,9 +148,9 @@
             <RadioButton
                 android:id="@+id/radio_qualquer"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/settings_any_network_label"
                 android:textColor="@color/color_radio" />
 
@@ -95,9 +181,9 @@
             <RadioButton
                 android:id="@+id/radio_horario"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/horario"
                 android:textColor="@color/color_radio" />
 
@@ -110,9 +196,9 @@
             <RadioButton
                 android:id="@+id/radio_diario"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/settings_daily_label"
                 android:textColor="@color/color_radio" />
 
@@ -142,12 +228,11 @@
             <RadioButton
                 android:id="@+id/radio_dashboard"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/dashboard"
-                android:textColor="@color/color_radio"
-                 />
+                android:textColor="@color/color_radio" />
 
             <ImageView
                 android:id="@+id/image_dash"
@@ -158,9 +243,9 @@
             <RadioButton
                 android:id="@+id/radio_anomalias"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/anomalies"
                 android:textColor="@color/color_radio" />
 
@@ -173,9 +258,9 @@
             <RadioButton
                 android:id="@+id/radio_historico_anomalias"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/anomaly_log"
                 android:textColor="@color/color_radio" />
 
@@ -188,9 +273,9 @@
             <RadioButton
                 android:id="@+id/radio_testes"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/tests"
                 android:textColor="@color/color_radio" />
 
@@ -203,9 +288,9 @@
             <RadioButton
                 android:id="@+id/radio_historico_testes"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/test_log"
                 android:textColor="@color/color_radio" />
 
@@ -218,9 +303,9 @@
             <RadioButton
                 android:id="@+id/radio_development"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/development"
                 android:textColor="@color/color_radio" />
 
@@ -233,9 +318,9 @@
             <RadioButton
                 android:id="@+id/radio_configuracoes"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
+                android:layout_height="33dp"
                 android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:drawableRight="@drawable/radiobutton_round_select_confi"
                 android:text="@string/settings"
                 android:textColor="@color/color_radio" />
 
@@ -245,29 +330,11 @@
                 android:layout_height="wrap_content"
                 android:src="@drawable/activity_configuracoes_linha_separador" />
 
-            <RadioButton
-                android:id="@+id/radio_ajuda"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
-                android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
-                android:text="@string/help"
-                android:textColor="@color/color_radio" />
-
             <ImageView
                 android:id="@+id/image_ajuda"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/activity_configuracoes_linha_separador" />
-
-            <RadioButton
-                android:id="@+id/radio_info"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/linha"
-                android:button="@null"
-                android:drawableRight="@drawable/radiobutton_select_confi"
-                android:text="@string/about"
-                android:textColor="@color/color_radio" />
 
             <ImageView
                 android:id="@+id/image_info"
@@ -290,9 +357,9 @@
         <RadioButton
             android:id="@+id/radio_date_tests"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="33dp"
             android:button="@null"
-            android:drawableRight="@drawable/radiobutton_select_confi"
+            android:drawableRight="@drawable/radiobutton_round_select_confi"
             android:text="@string/auto_run_date_tests"
             android:textColor="@color/color_radio" />
 
@@ -310,11 +377,11 @@
         <pt.ptinovacao.arqospocket.views.SuperTextView
             android:id="@+id/tvLanguage"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/linha"
+            android:layout_height="33dp"
             android:button="@null"
+            android:gravity="center_vertical"
             android:text="@string/app_language"
-            android:textColor="@color/color_radio"
-            android:gravity="center_vertical" />
+            android:textColor="@color/color_radio" />
 
 
         <ImageView

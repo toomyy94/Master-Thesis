@@ -96,6 +96,13 @@
         <activity
             android:name="pt.ptinovacao.arqospocket.activities.ActivityAjuda"
             android:label="@string/app_name" />
+
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityRadiologs"
+            android:label="@string/app_name" />
+        <activity
+            android:name="pt.ptinovacao.arqospocket.activities.ActivityRadiologsHistorico"
+            android:label="@string/app_name" />
         <activity
             android:name="pt.ptinovacao.arqospocket.activities.Activity_Development"
             android:label="@string/app_name" />

@@ -23,6 +23,10 @@ import pt.ptinovacao.arqospocket.swipablelistview.SwipeListView;
 import pt.ptinovacao.arqospocket.util.LocaleHelper;
 import pt.ptinovacao.arqospocket.util.Utils;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -32,9 +36,13 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class FragmentTestesHistorico extends Fragment implements IUI {
 
@@ -74,7 +82,7 @@ public class FragmentTestesHistorico extends Fragment implements IUI {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 
-		View v = inflater.inflate(R.layout.fragment_testes_historico,
+		final View v = inflater.inflate(R.layout.fragment_testes_historico,
 				container, false);
 
 		list = (SwipeListView) v.findViewById(R.id.list);
@@ -127,9 +135,97 @@ public class FragmentTestesHistorico extends Fragment implements IUI {
 		LinearLayout sendPendingTests = (LinearLayout) v.findViewById(R.id.bt_sendPendingTests);
 		sendPendingTests.setOnClickListener(new OnClickListener() {			
 			@Override
-			public void onClick(View v) {
+			public void onClick(final View view) {
 				/* Send pending tests. */
-				activity.getServiceInterface().send_pending_tests(FragmentTestesHistorico.this);
+                final AlertDialog.Builder al_connection = new  AlertDialog.Builder(v.getContext());
+                LayoutInflater inflater = getActivity().getLayoutInflater();
+                View myview = inflater.inflate(R.layout.alertdialog_custom, null);
+                al_connection.setView(myview);
+
+                //al_send_tests.setContentView(R.layout.alertdialog_custom);
+                TextView title = (TextView) myview.findViewById(R.id.title);
+                title.setText(R.string.alert_pending_tests);
+                TextView subtitle = (TextView) myview.findViewById(R.id.subtitle);
+                subtitle.setText(R.string.alert_pending_tests_subtitle);
+                TextView message = (TextView) myview.findViewById(R.id.mensagem);
+                message.setText(R.string.alert_pending_tests_message);
+                ImageView icon = (ImageView) myview.findViewById(R.id.icon);
+                icon.setImageResource(R.drawable.icon_info);
+
+                final AlertDialog alertDialog = al_connection.show();
+
+                Button yes = (Button) myview.findViewById (R.id.button_yes);
+                yes.setText(R.string.alert_pending_tests_yes);
+                yes.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        alertDialog.dismiss();
+                        //TODO LIGAR AO SISTEMA DE GESTÃO...
+
+                        //if(ligação_bem_sucedida)
+
+                        //----
+
+                        //if(send_pending_tests_bem_sucedida)
+                        final AlertDialog.Builder al_send_tests = new  AlertDialog.Builder(v.getContext());
+                        LayoutInflater inflater = getActivity().getLayoutInflater();
+                        View myview2 = inflater.inflate(R.layout.alertdialog_custom, null);
+                        al_send_tests.setView(myview2);
+
+                        //al_send_tests.setContentView(R.layout.alertdialog_custom);
+                        TextView title = (TextView) myview2.findViewById(R.id.title);
+                        title.setText(R.string.alert_pending_tests);
+                        TextView subtitle = (TextView) myview2.findViewById(R.id.subtitle);
+                        subtitle.setText(R.string.alert_connection_done_subtitle);
+                        TextView message = (TextView) myview2.findViewById(R.id.mensagem);
+                        message.setText(R.string.alert_connection_done_message);
+                        final AlertDialog alertDialog2 = al_send_tests.show();
+
+                        Button yes = (Button) myview2.findViewById (R.id.button_yes);
+                        yes.setText(R.string.alert_send_tests_now);
+                        yes.setOnClickListener(new View.OnClickListener() {
+
+                            public void onClick(View v) {
+                                //TODO SEND PENDING TESTS...
+                                //activity.getServiceInterface().send_pending_tests(FragmentTestesHistorico.this);
+
+                                //if(send_pending_tests_bem_sucedida)
+                                AlertDialog.Builder al_tests_sucess = new  AlertDialog.Builder(v.getContext());
+                                LayoutInflater inflater = getActivity().getLayoutInflater();
+                                View myview = inflater.inflate(R.layout.alertdialog_custom_no_buttons, null);
+                                al_tests_sucess.setView(myview);
+                                //al_tests_sucess.setContentView(R.layout.alertdialog_custom_no_buttons);
+                                TextView title = (TextView) myview.findViewById(R.id.title);
+                                title.setText(R.string.alert_pending_tests);
+                                TextView subtitle = (TextView) myview.findViewById(R.id.subtitle);
+                                subtitle.setText(R.string.alert_send_tests_sucess);
+                                al_tests_sucess.show();
+                                alertDialog2.dismiss();
+
+                            }
+                        });
+                        Button no = (Button) myview2.findViewById (R.id.button_no);
+                        no.setOnClickListener(new View.OnClickListener() {
+
+                            public void onClick(View v) {
+                                //do some stuff
+                                alertDialog2.dismiss();
+                            }
+                        });
+
+                    }
+                });
+
+                Button no = (Button) myview.findViewById (R.id.button_no);
+                no.setOnClickListener(new View.OnClickListener() {
+
+                    public void onClick(View v) {
+                        //do some stuff
+                        alertDialog.dismiss();
+                    }
+                });
+
+				//activity.getServiceInterface().send_pending_tests(FragmentTestesHistorico.this);
 			}
 		});
 		
@@ -257,5 +353,13 @@ public class FragmentTestesHistorico extends Fragment implements IUI {
 	public void update_test_task(String test_id) {
 
 	}
+
+    public void yes(View view, Dialog dialog) {
+
+    }
+    public void no(View view, Dialog dialog) {
+
+    }
+
 
 }

@@ -38,6 +38,7 @@ import pt.ptinovacao.arqospocket.MyApplication;
 import pt.ptinovacao.arqospocket.R;
 import pt.ptinovacao.arqospocket.core.CurrentConfiguration;
 import pt.ptinovacao.arqospocket.fragments.FragmentDashboardDetailWifi;
+import pt.ptinovacao.arqospocket.service.enums.EEvent;
 import pt.ptinovacao.arqospocket.service.enums.ENetworkAction;
 import pt.ptinovacao.arqospocket.service.interfaces.IService;
 import pt.ptinovacao.arqospocket.service.interfaces.IServiceNetworksInfo;

@@ -3,7 +3,7 @@ package pt.ptinovacao.arqospocket.adapters;
 import java.util.ArrayList;
 
 import pt.ptinovacao.arqospocket.fragments.FragmentAbtfalha;
-import pt.ptinovacao.arqospocket.fragments.FragmentEnvfeedback;
+import pt.ptinovacao.arqospocket.fragments.FragmentEnvfeedback_Anomaly;
 import pt.ptinovacao.arqospocket.fragments.FragmentIdtlocal;
 import pt.ptinovacao.arqospocket.fragments.FragmentTipfalha;
 import android.support.v4.app.Fragment;
@@ -22,7 +22,7 @@ public class AdapterFragmentAnomaliasView extends FragmentPagerAdapter {
 		fragments.add(new FragmentAbtfalha());
 		fragments.add(new FragmentTipfalha());
 		fragments.add(new FragmentIdtlocal());
-		fragments.add(new FragmentEnvfeedback());
+		fragments.add(new FragmentEnvfeedback_Anomaly());
 
 	}
 
@@ -56,7 +56,7 @@ public class AdapterFragmentAnomaliasView extends FragmentPagerAdapter {
 			// if(position < fragments.size())
 			return fragments.get(position);
 			// else{
-			// fragments.add(new FragmentEnvfeedback());
+			// fragments.add(new FragmentEnvfeedback_Anomaly());
 			// return fragments.get(position);
 			// }
 

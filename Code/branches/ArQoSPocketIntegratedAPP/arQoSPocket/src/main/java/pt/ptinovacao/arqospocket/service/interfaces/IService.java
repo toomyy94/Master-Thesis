@@ -213,14 +213,33 @@ public interface IService {
 	 * @param ui_ref - Referencia para o callback à UI
 	 */
 	public void send_report(String anomaly, String anomaly_details, Location location, String anomaly_report, IUI ui_ref);
-	
+
+	/**
+	 *
+	 * regista/Envia um report radio
+	 *
+	 * @param json - snapshot
+	 * @param location - localização da anomalia
+	 * @param ui_ref - Referencia para o callback à UI
+	 */
+	public void send_report_radio(String json, Location location, String report, IUI ui_ref);
+
 	/**
 	 * 
 	 * Devolve a lista com o historico de anomalias
 	 * 
 	 * @return Lista com o historico de anomalias
 	 */
+
 	public List<IAnomaliesHistory> get_all_anomalies_history();
+
+	/**
+	 *
+	 * Devolve a lista com o historico de radiologs
+	 *
+	 * @return Lista com o historico de radiologs
+	 */
+	public List<IRadiologsHistory> get_all_radiologs_history();
 	
 	/**
 	 * 
@@ -296,7 +315,9 @@ public interface IService {
 	 *
 	 * @return a json
 	 */
+    //TODO Radiologs only alowed w/ Event
 	public void generate_radiolog();
+
 	/**
 	 *
 	 * Gera o objecto com as informações radio
@@ -306,6 +327,15 @@ public interface IService {
 	 */
 	public void generate_radiolog(EEvent type, String origin);
 
+    /**
+     *
+     * Gera o objecto com as informações radio
+     *
+     *
+     * @return a json
+     */
+    public JSONObject generate_radiolog(String user_feedback);
+
 	/**
 	 *
 	 * Gera o objecto com as informações radio
@@ -314,4 +344,43 @@ public interface IService {
 	 * @return a json
 	 */
 	public void generate_scanlog();
+	/**
+	 *
+	 * Gera int apartir do EEvent
+	 *
+	 *
+	 * @return a integer
+	 */
+	public int get_EEventToInt(EEvent type);
+	/**
+	 *
+	 * Gera String do nome do EEvent apartir do int fornecido
+	 *
+	 *
+	 * @return a string
+	 */
+	public  String get_IntToEEvent(Integer type);
+	 /*
+	 * Gera String do nome do Status apartir do integer fornecido
+	 *
+	 *
+	 * @return a string
+	 */
+	public String get_IntToStatus(Integer status);
+	 /*
+	 *
+	 * Gera String do nome do Mode apartir do integer fornecido
+	 *
+	 *
+	 * @return a string
+	 */
+	public String get_IntToMode(Integer mode);
+	/*
+	 *
+	 * Gera String do nome do Roaming apartir do integer fornecido
+	 *
+	 *
+	 * @return a string
+	 */
+	public String get_IntToRoaming(Integer roaming);
 }

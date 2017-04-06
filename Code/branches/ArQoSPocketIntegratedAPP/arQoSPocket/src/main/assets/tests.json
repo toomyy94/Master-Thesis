@@ -200,12 +200,12 @@
 		},
 		{
 			"testeid": "T417654",
-			"dataini": "20140529171900",
-			"datafim": "20200717133554",
+			"dataini": "20170330163800",
+			"datafim": "20170330163900",
 			"modulo": 0,
 			"testname": "Google PING",
 			"macronr": 1,
-			"testtype": 5,
+			"testtype": 0,
             "priority" : 40,
 			"data": [
 				{

@@ -9,5 +9,7 @@ public enum MenuOption {
 	Configuracoes,
 	Ajuda,
 	Info,
+	Radiologs,
+	HistoricoRadiologs,
 	Desenvolvimento
 }

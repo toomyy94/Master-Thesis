@@ -1,5 +1,6 @@
 package pt.ptinovacao.arqospocket.core;
 
+import pt.ptinovacao.arqospocket.util.MenuConToManagement;
 import pt.ptinovacao.arqospocket.util.MenuLogs;
 import pt.ptinovacao.arqospocket.util.MenuOption;
 import pt.ptinovacao.arqospocket.util.MenuTimer;
@@ -12,13 +13,15 @@ public class CurrentConfiguration {
 	private static MenuLogs logsid = MenuLogs.ApensWifi;
 	private static MenuTimer Timelogsid = MenuTimer.Horario;
 	private static String languagecode;
+	private static MenuConToManagement Connid = MenuConToManagement.Automatic;
 
 	
 	public static pt.ptinovacao.arqospocket.service.store.CurrentConfiguration get_service_configuration() {
 		int start_page = -1;
 		int send_technology = -1;
 		int report_frequency = -1;
-		
+		int management_connection = -1;
+
 		switch (logsid) {
 			case ApensWifi:
 				send_technology = 0;
@@ -37,6 +40,15 @@ public class CurrentConfiguration {
 				break;
 			case Horario:
 				report_frequency = 1;
+				break;
+		}
+
+		switch(Connid) {
+			case Automatic:
+				management_connection = 0;
+				break;
+			case Manual:
+				management_connection = 1;
 				break;
 		}
 		
@@ -71,7 +83,7 @@ public class CurrentConfiguration {
 
 			}
 		
-		return new pt.ptinovacao.arqospocket.service.store.CurrentConfiguration(start_page, send_technology, report_frequency);
+		return new pt.ptinovacao.arqospocket.service.store.CurrentConfiguration(start_page, send_technology, report_frequency, management_connection);
 	}
 	
 	
@@ -97,7 +109,17 @@ public class CurrentConfiguration {
 				Timelogsid = MenuTimer.Horario;
 				break;
 		}
-		
+
+
+		switch(currentConfiguration.get_management_connection()) {
+			case 0:
+				Connid = MenuConToManagement.Automatic;
+				break;
+			case 1:
+                Connid = MenuConToManagement.Manual;
+				break;
+		}
+
 		switch(currentConfiguration.get_start_page()) {
 			case 0:
 				homepageid = MenuOption.Ajuda;
@@ -143,6 +165,10 @@ public class CurrentConfiguration {
 		return Timelogsid;
 	}
 
+	public static MenuConToManagement getconnlogsid() {
+		return Connid;
+	}
+
 	public static String getLanguagecode() {
 		return languagecode;
 	}
@@ -150,6 +176,10 @@ public class CurrentConfiguration {
 	public static void setTimelogsid(MenuTimer Timelogsid) {
 		Log.d(TAG, "Current home page: " + Timelogsid.toString());
 		CurrentConfiguration.Timelogsid = Timelogsid;
+	}
+
+	public static void setConnlogsid(MenuConToManagement Connlogsid) {
+		CurrentConfiguration.Connid = Connlogsid;
 	}
 
 	public static MenuOption getHomepageid() {

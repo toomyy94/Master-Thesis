@@ -961,139 +961,138 @@ public class Mobile {
 					//final CellSignalStrengthLte lte = ((CellInfoLte) telephonyManager.getAllCellInfo().get(0)).getCellSignalStrength();
 					List<CellInfo> CellsList = telephonyManager.getAllCellInfo();
 
-					if ((CellsList != null) && (CellsList.size()>0)) {
-                        // clear neighbours
-                        neig_cell_location.clear();
-                        neig_id_celula.clear();
-                        neig_pci.clear();
-                        neig_psc.clear();
+					if ((CellsList != null) && (CellsList.size() > 0)) {
+						// clear neighbours
+						neig_cell_location.clear();
+						neig_id_celula.clear();
+						neig_pci.clear();
+						neig_psc.clear();
 
-                        // get CellInfo
-                        for (int i = 0; i < CellsList.size(); i++) {
+						// get CellInfo
+						for (int i = 0; i < CellsList.size(); i++) {
 
-                            CellInfo connectedCell = CellsList.get(i);
-                            //MyLogger.debug(logger, "connectedCell", ""+connectedCell.toString());
+							CellInfo connectedCell = CellsList.get(i);
+							//MyLogger.debug(logger, "connectedCell", ""+connectedCell.toString());
 
-                            if (connectedCell instanceof CellInfoGsm) {
-                                if(i==0) {
+							if (connectedCell instanceof CellInfoGsm) {
+								if (i == 0) {
 
-                                    MyLogger.debug(logger, method, "CellInfoGsm");
-                                    MyLogger.debug(logger, method, "Mobile :: getAsuLevel :" + ((CellInfoGsm) connectedCell).getCellSignalStrength().getAsuLevel());
-                                    MyLogger.debug(logger, method, "Mobile :: getDbm :" + ((CellInfoGsm) connectedCell).getCellSignalStrength().getDbm());
-                                    MyLogger.debug(logger, method, "Mobile :: getLevel :" + ((CellInfoGsm) connectedCell).getCellSignalStrength().getLevel());
+									MyLogger.debug(logger, method, "CellInfoGsm");
+									MyLogger.debug(logger, method, "Mobile :: getAsuLevel :" + ((CellInfoGsm) connectedCell).getCellSignalStrength().getAsuLevel());
+									MyLogger.debug(logger, method, "Mobile :: getDbm :" + ((CellInfoGsm) connectedCell).getCellSignalStrength().getDbm());
+									MyLogger.debug(logger, method, "Mobile :: getLevel :" + ((CellInfoGsm) connectedCell).getCellSignalStrength().getLevel());
 
-                                    mobileSignal = signalStrenght = ((CellInfoGsm) connectedCell).getCellSignalStrength().getAsuLevel();
+									mobileSignal = signalStrenght = ((CellInfoGsm) connectedCell).getCellSignalStrength().getAsuLevel();
 
-                                    id_celula = ((CellInfoGsm) connectedCell).getCellIdentity().getCid();
-                                    cell_location = ((CellInfoGsm) connectedCell).getCellIdentity().getLac();
-                                    //PSC Deprecated
-                                    //psc = ((CellInfoWcdma)connectedCell).getCellIdentity().getPsc();
+									id_celula = ((CellInfoGsm) connectedCell).getCellIdentity().getCid();
+									cell_location = ((CellInfoGsm) connectedCell).getCellIdentity().getLac();
+									//PSC Deprecated
+									//psc = ((CellInfoWcdma)connectedCell).getCellIdentity().getPsc();
 
-                                    String ssignal_strenght = ((CellInfoGsm) connectedCell).getCellSignalStrength().toString();
-                                    String[] parts = ssignal_strenght.split(" ");
+									String ssignal_strenght = ((CellInfoGsm) connectedCell).getCellSignalStrength().toString();
+									String[] parts = ssignal_strenght.split(" ");
 
-                                    String[] parts_gsmBer = parts[2].split("=");
-                                    ber = onlyNumbers(parts_gsmBer[1]);
-                                    MyLogger.debug(logger, method, "Mobile :: getBer :" + "" + ber);
-                                }
-                                //neighbours
-                                else{
-                                    neig_id_celula.add(((CellInfoGsm) connectedCell).getCellIdentity().getCid());
-                                    neig_cell_location.add(((CellInfoGsm) connectedCell).getCellIdentity().getLac());
-                                }
+									String[] parts_gsmBer = parts[2].split("=");
+									ber = onlyNumbers(parts_gsmBer[1]);
+									MyLogger.debug(logger, method, "Mobile :: getBer :" + "" + ber);
+								}
+								//neighbours
+								else {
+									neig_id_celula.add(((CellInfoGsm) connectedCell).getCellIdentity().getCid());
+									neig_cell_location.add(((CellInfoGsm) connectedCell).getCellIdentity().getLac());
+								}
 
-                            } else if (connectedCell instanceof CellInfoLte) {
-                                if(i==0) {
-                                    MyLogger.debug(logger, method, "CellInfoLte");
-                                    MyLogger.debug(logger, method, "Mobile :: getAsuLevel :" + ((CellInfoLte) connectedCell).getCellSignalStrength().getAsuLevel());
-                                    MyLogger.debug(logger, method, "Mobile :: getDbm :" + ((CellInfoLte) connectedCell).getCellSignalStrength().getDbm());
-                                    MyLogger.debug(logger, method, "Mobile :: getLevel :" + ((CellInfoLte) connectedCell).getCellSignalStrength().getLevel());
+							} else if (connectedCell instanceof CellInfoLte) {
+								if (i == 0) {
+									MyLogger.debug(logger, method, "CellInfoLte");
+									MyLogger.debug(logger, method, "Mobile :: getAsuLevel :" + ((CellInfoLte) connectedCell).getCellSignalStrength().getAsuLevel());
+									MyLogger.debug(logger, method, "Mobile :: getDbm :" + ((CellInfoLte) connectedCell).getCellSignalStrength().getDbm());
+									MyLogger.debug(logger, method, "Mobile :: getLevel :" + ((CellInfoLte) connectedCell).getCellSignalStrength().getLevel());
 
-                                    mobileSignal = signalStrenght = ((CellInfoLte) connectedCell).getCellSignalStrength().getAsuLevel();
+									mobileSignal = signalStrenght = ((CellInfoLte) connectedCell).getCellSignalStrength().getAsuLevel();
 
-                                    id_celula = ((CellInfoLte) connectedCell).getCellIdentity().getCi();
-                                    cell_location = ((CellInfoLte) connectedCell).getCellIdentity().getTac();
-                                    pci = ((CellInfoLte) connectedCell).getCellIdentity().getPci();
+									id_celula = ((CellInfoLte) connectedCell).getCellIdentity().getCi();
+									cell_location = ((CellInfoLte) connectedCell).getCellIdentity().getTac();
+									pci = ((CellInfoLte) connectedCell).getCellIdentity().getPci();
 
-                                    //TODO zero values
-                                    String ssignal = ((CellInfoLte) connectedCell).getCellSignalStrength().toString();
-                                    String[] parts = ssignal.split(" ");
+									//TODO zero values
+									String ssignal = ((CellInfoLte) connectedCell).getCellSignalStrength().toString();
+									String[] parts = ssignal.split(" ");
 
-                                    String[] parts_lteRsrp = parts[2].split("=");
-                                    lteRsrp = Integer.parseInt(parts_lteRsrp[1]);
+									String[] parts_lteRsrp = parts[2].split("=");
+									lteRsrp = Integer.parseInt(parts_lteRsrp[1]);
 
-                                    String[] parts_lteRsrq = parts[3].split("=");
-                                    lteRsrq = Integer.parseInt(parts_lteRsrq[1]);
+									String[] parts_lteRsrq = parts[3].split("=");
+									lteRsrq = Integer.parseInt(parts_lteRsrq[1]);
 
-                                    String[] parts_lteRssnr = parts[4].split("=");
-                                    lteRssnr = Integer.parseInt(parts_lteRssnr[1]);
+									String[] parts_lteRssnr = parts[4].split("=");
+									lteRssnr = Integer.parseInt(parts_lteRssnr[1]);
 
-                                    //is this sinr??
-                                    String[] parts_lteCqi = parts[5].split("=");
-                                    lteCqi = Integer.parseInt(parts_lteCqi[1]);
+									//is this sinr??
+									String[] parts_lteCqi = parts[5].split("=");
+									lteCqi = Integer.parseInt(parts_lteCqi[1]);
 
 									lteRssi = calculateLteRssi();
-                                }
-                                //neighbours
-                                else{
-                                    neig_id_celula.add(((CellInfoLte) connectedCell).getCellIdentity().getCi());
-                                    neig_cell_location.add(((CellInfoLte) connectedCell).getCellIdentity().getTac());
-                                    neig_pci.add(((CellInfoLte) connectedCell).getCellIdentity().getPci());
-                                }
+								}
+								//neighbours
+								else {
+									neig_id_celula.add(((CellInfoLte) connectedCell).getCellIdentity().getCi());
+									neig_cell_location.add(((CellInfoLte) connectedCell).getCellIdentity().getTac());
+									neig_pci.add(((CellInfoLte) connectedCell).getCellIdentity().getPci());
+								}
 
-                            } else if (connectedCell instanceof CellInfoWcdma) {
-                                if(i==0) {
-                                    MyLogger.debug(logger, method, "CellInfoWcdma");
-                                    MyLogger.debug(logger, method, "Mobile :: getAsuLevel :" + ((CellInfoWcdma) connectedCell).getCellSignalStrength().getAsuLevel());
-                                    MyLogger.debug(logger, method, "Mobile :: getDbm :" + ((CellInfoWcdma) connectedCell).getCellSignalStrength().getDbm());
-                                    MyLogger.debug(logger, method, "Mobile :: getLevel :" + ((CellInfoWcdma) connectedCell).getCellSignalStrength().getLevel());
+							} else if (connectedCell instanceof CellInfoWcdma) {
+								if (i == 0) {
+									MyLogger.debug(logger, method, "CellInfoWcdma");
+									MyLogger.debug(logger, method, "Mobile :: getAsuLevel :" + ((CellInfoWcdma) connectedCell).getCellSignalStrength().getAsuLevel());
+									MyLogger.debug(logger, method, "Mobile :: getDbm :" + ((CellInfoWcdma) connectedCell).getCellSignalStrength().getDbm());
+									MyLogger.debug(logger, method, "Mobile :: getLevel :" + ((CellInfoWcdma) connectedCell).getCellSignalStrength().getLevel());
 
-                                    mobileSignal = signalStrenght = ((CellInfoWcdma) connectedCell).getCellSignalStrength().getAsuLevel();
+									mobileSignal = signalStrenght = ((CellInfoWcdma) connectedCell).getCellSignalStrength().getAsuLevel();
 
 
-                                    id_celula = ((CellInfoWcdma) connectedCell).getCellIdentity().getCid();
-                                    cell_location = ((CellInfoWcdma) connectedCell).getCellIdentity().getLac();
-                                    //PSC Deprecated
-                                    psc = ((CellInfoWcdma)connectedCell).getCellIdentity().getPsc();
+									id_celula = ((CellInfoWcdma) connectedCell).getCellIdentity().getCid();
+									cell_location = ((CellInfoWcdma) connectedCell).getCellIdentity().getLac();
+									//PSC Deprecated
+									psc = ((CellInfoWcdma) connectedCell).getCellIdentity().getPsc();
 
-                                    String ssignal_strenght = ((CellInfoWcdma) connectedCell).getCellSignalStrength().toString();
-                                    String[] parts = ssignal_strenght.split(" ");
+									String ssignal_strenght = ((CellInfoWcdma) connectedCell).getCellSignalStrength().toString();
+									String[] parts = ssignal_strenght.split(" ");
 
-                                    String[] parts_wcdmaBer = parts[2].split("=");
-                                    ber = onlyNumbers(parts_wcdmaBer[1]);
-                                    MyLogger.debug(logger, method, "Mobile :: getBer :" + "" + ber);
-                                }
-                                //neighbours
-                                else{
-                                    neig_id_celula.add(((CellInfoWcdma) connectedCell).getCellIdentity().getCid());
-                                    neig_cell_location.add(((CellInfoWcdma) connectedCell).getCellIdentity().getLac());
-                                }
+									String[] parts_wcdmaBer = parts[2].split("=");
+									ber = onlyNumbers(parts_wcdmaBer[1]);
+									MyLogger.debug(logger, method, "Mobile :: getBer :" + "" + ber);
+								}
+								//neighbours
+								else {
+									neig_id_celula.add(((CellInfoWcdma) connectedCell).getCellIdentity().getCid());
+									neig_cell_location.add(((CellInfoWcdma) connectedCell).getCellIdentity().getLac());
+								}
 
-                            } else if (connectedCell instanceof CellInfoCdma) {
-                                if(i==0) {
-                                    MyLogger.debug(logger, method, "CellInfoCdma");
-                                    MyLogger.debug(logger, method, "Mobile :: getAsuLevel :" + ((CellInfoCdma) connectedCell).getCellSignalStrength().getAsuLevel());
-                                    MyLogger.debug(logger, method, "Mobile :: getDbm :" + ((CellInfoCdma) connectedCell).getCellSignalStrength().getDbm());
-                                    MyLogger.debug(logger, method, "Mobile :: getLevel :" + ((CellInfoCdma) connectedCell).getCellSignalStrength().getLevel());
+							} else if (connectedCell instanceof CellInfoCdma) {
+								if (i == 0) {
+									MyLogger.debug(logger, method, "CellInfoCdma");
+									MyLogger.debug(logger, method, "Mobile :: getAsuLevel :" + ((CellInfoCdma) connectedCell).getCellSignalStrength().getAsuLevel());
+									MyLogger.debug(logger, method, "Mobile :: getDbm :" + ((CellInfoCdma) connectedCell).getCellSignalStrength().getDbm());
+									MyLogger.debug(logger, method, "Mobile :: getLevel :" + ((CellInfoCdma) connectedCell).getCellSignalStrength().getLevel());
 
-                                    mobileSignal = signalStrenght = ((CellInfoWcdma) connectedCell).getCellSignalStrength().getAsuLevel();
+									mobileSignal = signalStrenght = ((CellInfoWcdma) connectedCell).getCellSignalStrength().getAsuLevel();
 
-                                    id_celula = ((CellInfoWcdma) connectedCell).getCellIdentity().getCid();
-                                    cell_location = ((CellInfoWcdma) connectedCell).getCellIdentity().getLac();
-                                    psc = ((CellInfoWcdma) connectedCell).getCellIdentity().getPsc();
-                                }
-                                //neighbours
-                                else{
-                                    neig_id_celula.add(((CellInfoWcdma) connectedCell).getCellIdentity().getCid());
-                                    neig_cell_location.add(((CellInfoWcdma) connectedCell).getCellIdentity().getLac());
-                                    neig_psc.add(((CellInfoWcdma) connectedCell).getCellIdentity().getPsc());
+									id_celula = ((CellInfoWcdma) connectedCell).getCellIdentity().getCid();
+									cell_location = ((CellInfoWcdma) connectedCell).getCellIdentity().getLac();
+									psc = ((CellInfoWcdma) connectedCell).getCellIdentity().getPsc();
+								}
+								//neighbours
+								else {
+									neig_id_celula.add(((CellInfoWcdma) connectedCell).getCellIdentity().getCid());
+									neig_cell_location.add(((CellInfoWcdma) connectedCell).getCellIdentity().getLac());
+									neig_psc.add(((CellInfoWcdma) connectedCell).getCellIdentity().getPsc());
 
-                                }
+								}
 
-                            }
-                        }
-                    }
-
+							}
+						}
+					}
 				}
 				
 				//MyLogger.debug(logger, method, "Mobile signalStrenght: " + onlyNumbers(""+signalStrenght));
@@ -1130,7 +1129,8 @@ public class Mobile {
                 iMobileCallback.mobile_information_change();
 			
 			} catch (Exception ex) {
-				MyLogger.error(logger, method, ex);
+				Log.e("Erro","Erro on getting Signal Strenght");
+				ex.printStackTrace();
 			}
 		}
 

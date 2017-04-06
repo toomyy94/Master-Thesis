@@ -11,6 +11,7 @@ import org.slf4j.LoggerFactory;
 
 import pt.ptinovacao.arqospocket.service.logs.MyLogger;
 import pt.ptinovacao.arqospocket.service.service.AnomaliesHistory;
+import pt.ptinovacao.arqospocket.service.service.RadiologsHistory;
 import pt.ptinovacao.arqospocket.service.service.TestHistory;
 
 
@@ -27,8 +28,9 @@ public class PrivateStore {
 	private final static String Current_Configuration = "PrivateAPPArQoSPocket.CurrentConfiguration";
 	private final static String Test_History = "PrivateAPPArQoSPocket.TestHistory";
 	private final static String Anomalies_History = "PrivateAPPArQoSPocket.AnomaliesHistory";
-	
-	
+	private final static String Radiologs_History = "PrivateAPPArQoSPocket.RadiologsHistory";
+
+
 	private static Context myContext = null;
 	
 	public PrivateStore(Context c) {
@@ -137,6 +139,54 @@ public class PrivateStore {
 			MyLogger.error(logger, method, ex);;
 		}
 		
+		return null;
+	}
+
+	public static boolean save_radiologs_history(RadiologsHistory object) {
+		final String method = "save_radiologs_history";
+
+		try {
+
+			MyLogger.debug(logger, method, "In - object:"+object.toString());
+
+			SharedPreferences prefs = myContext.getSharedPreferences(SharedPreferencesID, Context.MODE_PRIVATE);
+			boolean result = prefs.edit().putString(Radiologs_History, toString(object)).commit();
+
+			MyLogger.debug(logger, method, "Out - result:"+result);
+
+			return result;
+
+		} catch(Exception ex) {
+			MyLogger.error(logger, method, ex);;
+		}
+		return false;
+	}
+
+	public static RadiologsHistory load_radiologs_history() {
+		String method = "load_anomalies_history";
+
+		try {
+
+			MyLogger.trace(logger, method, "In");
+
+			SharedPreferences prefs = myContext.getSharedPreferences(SharedPreferencesID, Context.MODE_PRIVATE);
+			String result = prefs.getString(Radiologs_History, null);
+
+			MyLogger.debug(logger, method, "result:"+result);
+
+			if (result != null)  {
+
+				RadiologsHistory radiologsHistory = (RadiologsHistory) fromString(result);
+
+				MyLogger.debug(logger, method, "radiologsHistory:"+radiologsHistory.toString());
+
+				return radiologsHistory;
+			}
+
+		} catch(Exception ex) {
+			MyLogger.error(logger, method, ex);;
+		}
+
 		return null;
 	}
 	

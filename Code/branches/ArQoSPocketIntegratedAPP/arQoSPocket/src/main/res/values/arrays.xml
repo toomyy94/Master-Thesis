@@ -10,6 +10,30 @@
         <item>@string/anomaly_category_network_coverage</item>
         <item>@string/anomaly_category_other</item>
     </string-array>
+
+    <!-- Radiologs -->
+    <string-array name="radiologs">
+        <item>@string/all_radiologs</item>
+        <item>@string/radiolog</item>
+        <item>@string/radiolog_event</item>
+        <item>@string/snapshot</item>
+    </string-array>
+
+    <!-- Radiologs Events -->
+    <string-array name="radiolog_events">
+        <item>@string/all_radiologs</item>
+        <item>@string/radiolog_call_drop</item>
+        <item>@string/radiolog_call_end</item>
+        <item>@string/radiolog_call_established</item>
+        <item>@string/radiolog_call_release</item>
+        <item>@string/radiolog_call_setup</item>
+        <item>@string/radiolog_cell_reselection</item>
+        <item>@string/radiolog_handover</item>
+        <item>@string/radiolog_plmn_change</item>
+        <item>@string/radiolog_register_status</item>
+        <item>@string/radiolog_roaming_status</item>
+    </string-array>
+
     <!-- Testes -->
     <string-array name="testes">
         <item>@string/all_tests</item>

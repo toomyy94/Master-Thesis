@@ -21,7 +21,6 @@ public class AnomaliesTopics {
 	public static final String ANOMALY_CATEGORY_OTHERS = "Outra";
 
 	private TreeMap<String, String> anomalies = null;
-	
 	private TreeMap<String, TreeMap<String, String>> anomalies_details = null;
 
 	public AnomaliesTopics(Context context, String json) {

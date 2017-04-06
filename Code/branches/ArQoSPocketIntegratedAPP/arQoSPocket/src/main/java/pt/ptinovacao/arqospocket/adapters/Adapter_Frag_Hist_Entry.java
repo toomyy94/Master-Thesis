@@ -1,7 +1,11 @@
 package pt.ptinovacao.arqospocket.adapters;
 
+import pt.ptinovacao.arqospocket.activities.ActivityAnomaliasHistorico;
+import pt.ptinovacao.arqospocket.activities.ActivityRadiologs;
+import pt.ptinovacao.arqospocket.activities.ActivityRadiologsHistorico;
 import pt.ptinovacao.arqospocket.activities.ActivityTestesHistorico;
 import pt.ptinovacao.arqospocket.fragments.FragmentAnomaliasHistorico_Entry;
+import pt.ptinovacao.arqospocket.fragments.FragmentRadiologsHistorico_Entry;
 import pt.ptinovacao.arqospocket.fragments.FragmentTestesHistorico_Entry;
 import pt.ptinovacao.arqospocket.interfaces.IHistoryProvider;
 import android.content.Context;
@@ -36,8 +40,10 @@ public class Adapter_Frag_Hist_Entry extends FragmentPagerAdapter {
 
 		if (provider instanceof ActivityTestesHistorico)
 			frag = new FragmentTestesHistorico_Entry();
-		else
+		else if (provider instanceof ActivityAnomaliasHistorico)
 			frag = new FragmentAnomaliasHistorico_Entry();
+		else
+			frag = new FragmentRadiologsHistorico_Entry();
 
 		frag.setArguments(bundle);
 		return frag;

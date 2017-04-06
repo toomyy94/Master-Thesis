@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/p057937/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket
+# Install script for directory: C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/p057937/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/.externalNativeBuild/cmake/debug/x86/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/.externalNativeBuild/cmake/debug/x86/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

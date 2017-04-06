@@ -2,12 +2,12 @@
 {
 	"buildFiles" : 
 	[
-		"C:/Users/p057937/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/CMakeLists.txt"
+		"C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/CMakeLists.txt"
 	],
 	"cFileExtensions" : [ "c" ],
 	"cleanCommands" : 
 	[
-		"C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\p057937\\AndroidProjects\\prbpocket\\branches\\ArQoSPocketIntegratedAPP\\arQoSPocket\\.externalNativeBuild\\cmake\\debug\\armeabi --target clean"
+		"C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\AndroidProjects\\prbpocket\\branches\\ArQoSPocketIntegratedAPP\\arQoSPocket\\.externalNativeBuild\\cmake\\debug\\armeabi --target clean"
 	],
 	"libraries" : 
 	{
@@ -15,18 +15,18 @@
 		{
 			"abi" : "armeabi",
 			"artifactName" : "ttaenc",
-			"buildCommand" : "C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\Users\\p057937\\AndroidProjects\\prbpocket\\branches\\ArQoSPocketIntegratedAPP\\arQoSPocket\\.externalNativeBuild\\cmake\\debug\\armeabi --target ttaenc",
+			"buildCommand" : "C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.3155560\\bin\\cmake.exe --build C:\\AndroidProjects\\prbpocket\\branches\\ArQoSPocketIntegratedAPP\\arQoSPocket\\.externalNativeBuild\\cmake\\debug\\armeabi --target ttaenc",
 			"buildType" : "debug",
 			"files" : 
 			[
 				
 				{
-					"flags" : "  -target armv5te-none-linux-androideabi -gcc-toolchain C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/platforms/android-9/arch-arm -Dttaenc_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
-					"src" : "C:/Users/p057937/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/src/main/cpp/ttaenc.c",
-					"workingDirectory" : "C:/Users/p057937/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/.externalNativeBuild/cmake/debug/armeabi"
+					"flags" : "  --target=armv5te-none-linux-androideabi --gcc-toolchain=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/arm-linux-androideabi-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/platforms/android-9/arch-arm -Dttaenc_EXPORTS  -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -march=armv5te -mtune=xscale -msoft-float -fno-integrated-as -mthumb -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/src/main/cpp/ttaenc.c",
+					"workingDirectory" : "C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/.externalNativeBuild/cmake/debug/armeabi"
 				}
 			],
-			"output" : "C:/Users/p057937/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/build/intermediates/cmake/debug/obj/armeabi/libttaenc.so",
+			"output" : "C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/build/intermediates/cmake/debug/obj/armeabi/libttaenc.so",
 			"toolchain" : "704307921"
 		}
 	},

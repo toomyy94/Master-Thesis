@@ -20,6 +20,7 @@
     <string name="help">Ajuda</string>
     <string name="homepage">Página Inicial</string>
     <string name="language">Idioma</string>
+    <string name="radiologs">Radiologs/Snapshots</string>
     <string name="development">Desenvolvimento de testes</string>
 
     <string name="network_unavailable">Indisponível</string>
@@ -28,6 +29,7 @@
     <string name="feedback">Feedback</string>
     <string name="sliddingmenu_log_label">Histórico</string>
 
+    <!-- activity_conf -->
     <string name="settings_wifi_only_label">Apenas via Wi-Fi</string>
     <string name="settings_wifi_priority_label">Preferencialmente via Wi-Fi</string>
     <string name="settings_any_network_label">Qualquer rede</string>
@@ -35,6 +37,17 @@
     <string name="settings_network_to_send_logs">Rede para envio dos logs</string>
     <string name="settings_daily_label">Diário</string>
     <string name="settings_dashboard_label">Dashboard</string>
+    <string name="settings_management_connection">Ligação ao Sistema de Gestão</string>
+    <string name="settings_automatic">Automático</string>
+    <string name="settings_manual">Manual</string>
+    <!-- activity_conf // Connection to Management System -->
+    <string name="connected">Ligado</string>
+    <string name="not_connected">Desligado</string>
+    <string name="establishing_connection">... A efetuar ligação</string>
+    <string name="receveing_configurations">A receber configurações...</string>
+    <string name="sending_configurations">A enviar dados...</string>
+    <string name="try_again_connect">Repetição em 12 seg...</string>
+
 
     <string name="wifi">Wi-Fi</string>
     <string name="mbps">Mbps</string>
@@ -60,7 +73,8 @@
     <string name="report_anomaly">Reportar Anomalia</string>
     <string name="all_anomalies">Todas as anomalias</string>
     <string name="anomaly_log">Histórico anomalias</string>
-    <string name="send_feedback_text_hint">A anomalia verificada deve-se a...</string>
+    <string name="send_feedback_anomaly_text_hint">A anomalia verificada deve-se a...</string>
+    <string name="send_feedback_radiolog_text_hint">O snapshot deve-se a...</string>
 
     <string name="location">Local</string>
     <string name="failure">Falha</string>
@@ -88,7 +102,56 @@
     <string name="anomaly_type_no_indoor_coverage">Sem cobertura indoor</string>
     <string name="anomaly_type_no_outdoor_coverage">Sem cobertura outdoor</string>
 
+    <!-- Radiologs -->
+    <string name="radiolog">Radiolog</string>
+    <string name="radiolog_event">Evento</string>
+    <string name="snapshot">Snapshot</string>
+
+    <string name="radiolog_type">Tipo de Radiolog</string>
+    <string name="report_radiolog">Reportar Radiolog</string>
+    <string name="all_radiologs">Todos os Radiologs</string>
+    <string name="radiolog_log">Histórico de Radiologs</string>
+
+    <string name="radiolog_register_status">Register status</string>
+    <string name="radiolog_plmn_change">PLMN change</string>
+    <string name="radiolog_roaming_status">Roaming status</string>
+    <string name="radiolog_cell_reselection">Cell Reselection</string>
+    <string name="radiolog_handover">Handover</string>
+    <string name="radiolog_call_setup">Call Setup</string>
+    <string name="radiolog_call_established">Call Established</string>
+    <string name="radiolog_call_end">Call End</string>
+    <string name="radiolog_call_drop">Call Drop</string>
+    <string name="radiolog_call_release">Call Release</string>
+
+    <!-- Radiologs Parameters-->
+    <string name="event_title">Type of Event</string>
+    <string name="module">Module</string>
+    <string name="iccid">Iccid</string>
+    <string name="imsi">Imsi</string>
+    <string name="timestamp">Timestamp</string>
+    <string name="mac">Device_id</string>
+    <string name="gps">Location</string>
+    <string name="status">Status</string>
+    <string name="mode">Technology</string>
+    <string name="cellid">Cell ID</string>
+    <string name="plmn">Operator Name</string>
+    <string name="roaming">Roaming</string>
+    <string name="rxlevel">Signal Strenght</string>
+    <string name="mcc">Mcc/Mnc</string>
+    <string name="mnc">Mnc</string>
+    <string name="pci">Pci</string>
+    <string name="tac">Tac</string>
+    <string name="Lac">Lac</string>
+    <string name="ber">Ber</string>
+    <string name="rsrp">Rsrp</string>
+    <string name="rsrq">Rsrq</string>
+    <string name="rssnr">Rssnr</string>
+    <string name="cqi">Cqi</string>
+    <string name="psc">Psc</string>
+    <string name="neighbours">Neighbours information</string>
+
     <!-- Anomalias icons -->
+
     <string name="anomalias_ic_01">anomalias_icon_01</string>
     <string name="anomalias_ic_02">anomalias_icon_02</string>
     <string name="anomalias_ic_03">anomalias_icon_03</string>
@@ -105,6 +168,16 @@
     <string name="all_tests">Todos os testes</string>
     <string name="send_pending_tests">Enviar testes pendentes</string>
 
+    <string name="alert_pending_tests">ENVIAR TESTES PENDENTES</string>
+    <string name="alert_connection">Ligação ao sistema de Gestão</string>
+    <string name="alert_pending_tests_subtitle">Ligação ao sistema de Gestão desligada.</string>
+    <string name="alert_pending_tests_message">Para enviar os testes pendentes, o arQoS pocket necessita de estar ligado ao sistema de gestão.</string>
+    <string name="alert_pending_tests_yes">Ligar agora</string>
+
+    <string name="alert_send_tests_now">Enviar testes agora</string>
+    <string name="alert_connection_done_subtitle">Ligação ao Sistema de Gestão efetuada.</string>
+    <string name="alert_connection_done_message">Já pode enviar os testes pendentes.</string>
+    <string name="alert_send_tests_sucess">Testes pendentes enviados com sucesso.</string>
 
     <!-- Mapa -->
     <string name="anomaly_map_info_title">Arraste o mapa</string>
