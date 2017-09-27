@@ -1,0 +1,254 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
+
+        <ImageView
+            android:id="@+id/sliding_menu_banner"
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="15dp"
+            android:adjustViewBounds="true"
+            android:src="@mipmap/i_sliding_menu_logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/sliding_menu_banner"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/dashboard"
+                style="@style/SlidingMenuHolder"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/SlidingMenuIcon"
+                    android:src="@mipmap/icon_dashboard" />
+
+                <pt.ptinovacao.arqospocket.views.ArQosTextView
+                    android:id="@+id/dashboard_text"
+                    style="@style/SlidingMenuText"
+                    android:layout_width="wrap_content"
+                    android:text="@string/dashboard" />
+            </LinearLayout>
+
+            <ImageView
+                style="@style/SlidingMenuIcon"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/line_separate" />
+
+            <RelativeLayout
+                style="@style/SlidingMenuHolder"
+                android:orientation="horizontal"
+                android:clickable="false">
+
+                <LinearLayout
+                    android:id="@+id/anormaly"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/anormaly_historic"
+                    android:background="@drawable/sl_sliding_menu_item"
+                    android:gravity="center_vertical">
+                    <!--android:clickable="false"-->
+
+
+                    <ImageView
+                        style="@style/SlidingMenuIcon"
+                        android:src="@mipmap/icon_anomalias" />
+
+                    <pt.ptinovacao.arqospocket.views.ArQosTextView
+                        android:id="@+id/anomaly_text"
+                        style="@style/SlidingMenuText"
+                        android:layout_width="wrap_content"
+                        android:shareInterpolator="true"
+                        android:text="@string/anomalies"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/anormaly_historic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/sl_sliding_menu_item"
+                    android:gravity="right|center_vertical">
+                    <!--android:clickable="false"-->
+
+
+                    <ImageView
+                        style="@style/SlidingMenuIconSmall"
+                        android:src="@mipmap/icon_historico_anomalias" />
+
+                    <pt.ptinovacao.arqospocket.views.ArQosTextView
+                        android:id="@+id/anomaly_historic_text"
+                        style="@style/SlidingMenuTextSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="@dimen/sliding_menu_item_text_padding_right"
+                        android:text="@string/sliddingmenu_log_label" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/SlidingMenuIcon"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/line_separate" />
+
+            <RelativeLayout
+                style="@style/SlidingMenuHolder"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/tests"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/tests_historic"
+                    android:background="@drawable/sl_sliding_menu_item"
+                    android:clickable="true"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        style="@style/SlidingMenuIcon"
+                        android:src="@mipmap/icon_testes" />
+
+                    <pt.ptinovacao.arqospocket.views.ArQosTextView
+                        android:id="@+id/tests_text"
+                        style="@style/SlidingMenuText"
+                        android:layout_width="wrap_content"
+                        android:text="@string/tests" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tests_historic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/sl_sliding_menu_item"
+                    android:clickable="true"
+                    android:gravity="right|center_vertical">
+
+                    <ImageView
+                        style="@style/SlidingMenuIconSmall"
+                        android:src="@mipmap/icon_historico_testes" />
+
+                    <pt.ptinovacao.arqospocket.views.ArQosTextView
+                        android:id="@+id/historic_tests_text"
+                        style="@style/SlidingMenuTextSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="@dimen/sliding_menu_item_text_padding_right"
+                        android:text="@string/sliddingmenu_log_label" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/SlidingMenuIcon"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/line_separate" />
+
+            <RelativeLayout
+                style="@style/SlidingMenuHolder"
+                android:orientation="horizontal">
+                <!--android:clickable="false"-->
+                <!--android:alpha="0.5">-->
+
+                <LinearLayout
+                    android:id="@+id/radiologs"
+                    android:layout_width="match_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_toLeftOf="@+id/radiologs_historic"
+                    android:background="@drawable/sl_sliding_menu_item"
+                    android:gravity="center_vertical" >
+                    <!--android:clickable="false"-->
+
+
+                    <ImageView
+                        style="@style/SlidingMenuIcon"
+                        android:src="@mipmap/icon_radiologs" />
+
+                    <pt.ptinovacao.arqospocket.views.ArQosTextView
+                        android:id="@+id/radiologs_text"
+                        style="@style/SlidingMenuText"
+                        android:layout_width="wrap_content"
+                        android:text="@string/radiologs"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/radiologs_historic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/sl_sliding_menu_item"
+                    android:gravity="right|center_vertical">
+                    <!--android:clickable="false"-->
+
+
+                    <ImageView
+                        style="@style/SlidingMenuIconSmall"
+                        android:src="@mipmap/icon_historico_testes" />
+
+                    <pt.ptinovacao.arqospocket.views.ArQosTextView
+                        android:id="@+id/radiologs_historic_text"
+                        style="@style/SlidingMenuTextSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_marginRight="@dimen/sliding_menu_item_text_padding_right"
+                        android:text="@string/sliddingmenu_log_label" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <ImageView
+                style="@style/SlidingMenuIcon"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/line_separate" />
+
+            <LinearLayout
+                android:id="@+id/settings"
+                style="@style/SlidingMenuHolder"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/SlidingMenuIcon"
+                    android:src="@mipmap/icon_configuracoes" />
+
+                <pt.ptinovacao.arqospocket.views.ArQosTextView
+                    android:id="@+id/settings_text"
+                    style="@style/SlidingMenuText"
+                    android:text="@string/settings" />
+            </LinearLayout>
+
+            <ImageView
+                style="@style/SlidingMenuIcon"
+                android:layout_width="wrap_content"
+                android:src="@mipmap/line_separate" />
+
+            <LinearLayout
+                android:id="@+id/help"
+                style="@style/SlidingMenuHolder"
+                android:clickable="true"
+                android:orientation="horizontal">
+
+                <ImageView
+                    style="@style/SlidingMenuIcon"
+                    android:src="@mipmap/icon_info" />
+
+                <pt.ptinovacao.arqospocket.views.ArQosTextView
+                    android:id="@+id/help_text"
+                    style="@style/SlidingMenuText"
+                    android:text="@string/about" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

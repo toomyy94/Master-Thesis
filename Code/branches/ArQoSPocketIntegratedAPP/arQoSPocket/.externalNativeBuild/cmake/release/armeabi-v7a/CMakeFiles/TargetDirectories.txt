@@ -1,3 +1,0 @@
-C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/ttaenc.dir
-C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/AndroidProjects/prbpocket/branches/ArQoSPocketIntegratedAPP/arQoSPocket/.externalNativeBuild/cmake/release/armeabi-v7a/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,53 @@
+
+{
+	"buildFiles" : 
+	[
+		"C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/CMakeLists.txt"
+	],
+	"cFileExtensions" : [ "c" ],
+	"cleanCommands" : 
+	[
+		"C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\AndroidProjects\\ArQoS_Pocket\\branches\\2.2.x\\src\\ArQoSPocketIntegratedAPP\\core\\.externalNativeBuild\\cmake\\debug\\x86 --target clean"
+	],
+	"libraries" : 
+	{
+		"ttaenc-Debug-x86" : 
+		{
+			"abi" : "x86",
+			"artifactName" : "ttaenc",
+			"buildCommand" : "C:\\Users\\p057937\\AppData\\Local\\Android\\Sdk\\cmake\\3.6.4111459\\bin\\cmake.exe --build C:\\AndroidProjects\\ArQoS_Pocket\\branches\\2.2.x\\src\\ArQoSPocketIntegratedAPP\\core\\.externalNativeBuild\\cmake\\debug\\x86 --target ttaenc",
+			"buildType" : "debug",
+			"files" : 
+			[
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/sysroot -Dttaenc_EXPORTS  -isystem C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/src/main/cpp/ttaenc.c",
+					"workingDirectory" : "C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/.externalNativeBuild/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/sysroot -Dttaenc_EXPORTS  -isystem C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/src/main/cpp/entropy.c",
+					"workingDirectory" : "C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/.externalNativeBuild/cmake/debug/x86"
+				},
+				
+				{
+					"flags" : "  --target=i686-none-linux-android --gcc-toolchain=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/x86-4.9/prebuilt/windows-x86_64 --sysroot=C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/sysroot -Dttaenc_EXPORTS  -isystem C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/sysroot/usr/include/i686-linux-android -D__ANDROID_API__=14 -g -DANDROID -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -mstackrealign -Wa,--noexecstack -Wformat -Werror=format-security  -O0 -fno-limit-debug-info  -fPIC      -c ",
+					"src" : "C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/src/main/cpp/filters.c",
+					"workingDirectory" : "C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/.externalNativeBuild/cmake/debug/x86"
+				}
+			],
+			"output" : "C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/build/intermediates/cmake/debug/obj/x86/libttaenc.so",
+			"toolchain" : "704307921"
+		}
+	},
+	"toolchains" : 
+	{
+		"704307921" : 
+		{
+			"cCompilerExecutable" : "C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang.exe",
+			"cppCompilerExecutable" : "C:/Users/p057937/AppData/Local/Android/sdk/ndk-bundle/toolchains/llvm/prebuilt/windows-x86_64/bin/clang++.exe"
+		}
+	}
+}

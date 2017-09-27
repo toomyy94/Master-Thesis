@@ -1,0 +1,108 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/schedule_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/recycler_view_row_height"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:layout_marginLeft="10dp"
+    android:background="@android:color/transparent"
+    android:gravity="center_vertical"
+    android:minHeight="70dp"
+    android:weightSum="8">
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_historico_teste_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_erro_big" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_historico_teste_tecnologia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@mipmap/icon_wi_fi_erro_big" />
+    </LinearLayout>
+
+    <!-- Space -->
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1" />
+
+    <RelativeLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="4.1"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_historico_teste_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_historico_teste_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_historico_teste_type"
+            android:text="14 fev 2014, 18:45"
+            android:textColor="@android:color/white"></TextView>
+    </RelativeLayout>
+
+    <!-- Space -->
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"
+        android:gravity="right" />
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="0.5"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/img_historico_teste_pendente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/icon_teste_pendente_litle" />
+    </LinearLayout>
+
+    <!-- Space -->
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.1"
+        android:gravity="right" />
+
+    <LinearLayout
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical|right">
+
+        <ImageView
+            android:id="@+id/img_historico_anomalias_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/bot_more_teste" />
+    </LinearLayout>
+
+</LinearLayout>

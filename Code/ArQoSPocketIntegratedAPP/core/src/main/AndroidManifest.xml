@@ -1,0 +1,101 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="pt.ptinovacao.arqospocket.core">
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-feature android:name="android.hardware.telephony" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.WRITE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_MMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.READ_CALL_LOG" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <permission android:name="android.permission.REBOOT"/>
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true">
+
+        <receiver
+            android:name=".keepalive.AlarmKeepAliveAndAutoDiscoverReceive"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="pt.ptinovacao.arqospocket.core.ACTION_EXECUTE_AUTO_DISCOVERY"/>
+                <action android:name="pt.ptinovacao.arqospocket.core.ACTION_EXECUTE_KEEP_ALIVE"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".ssh.AttachmentsProcessManager$AttachmentReceiver"
+            android:enabled="true"
+            android:exported="false">
+        </receiver>
+
+        <receiver
+            android:name=".ssh.RadiologsAttachmentsProcessManager$AttachmentReceiver"
+            android:enabled="true"
+            android:exported="false">
+        </receiver>
+
+        <receiver
+            android:name=".ssh.ScanlogsAttachmentsProcessManager$AttachmentReceiver"
+            android:enabled="true"
+            android:exported="false">
+        </receiver>
+
+        <receiver
+            android:name=".alarms.AlarmsManager$AlarmsReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.SIM_STATE_CHANGED" />
+                <action android:name="android.intent.action.SERVICE_STATE" />
+            </intent-filter>
+
+        </receiver>
+
+        <receiver
+            android:name=".backoff.AlarmBackOffReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="pt.ptinovacao.arqospocket.core.ACTION_EXECUTE_BACK_OFF"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".serialization.entities.results.type2.PhoneStateReceiver">
+            <intent-filter android:priority="0">
+                <action android:name="android.intent.action.PHONE_STATE"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name=".alarms.ShutdownReceiver"
+              android:enabled="true"
+              android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.ACTION_SHUTDOWN" />
+                <action android:name="android.intent.action.QUICKBOOT_POWEROFF" />
+                <action android:name="android.intent.action.SERVICE_STATE"/>
+            </intent-filter>
+        </receiver>
+
+        <receiver
+            android:name=".adb.AdbManager$AdbReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="pt.ptinovacao.arqospocket.core.ACTION_EXECUTE_TEST_DISCOVERY"/>
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

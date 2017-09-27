@@ -1,4 +1,0 @@
-include ':nineOldAndroids_library'
-include ':androidslidingmenu'
-include ':slf4jga'
-include ':arQoSPocket'

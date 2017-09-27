@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="@dimen/historic_margin_top"
+              android:background="@mipmap/main_background"
+              android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/anomalias_header_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/bt_swipe_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/selector_swipe_testes_left"
+            android:clickable="true"/>
+
+        <TextView
+            android:id="@+id/teste_entry_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:drawablePadding="8dp"
+            android:drawableTop="@mipmap/icon_rede_movel_erro_big"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/bt_swipe_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/selector_swipe_testes_right"
+            android:clickable="true"/>
+    </RelativeLayout>
+
+    <!-- Date -->
+
+    <TextView
+        android:id="@+id/test_entry_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="12 mar 2014, 14:00"
+        android:textColor="@color/color_light_grey_text"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/mapview_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:weightSum="2">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/my_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:cacheColorHint="@android:color/transparent"
+                android:clickable="true"
+                android:divider="@mipmap/line_separate"
+                android:scrollbars="vertical"/>
+
+            <!-- Map view -->
+            <com.google.android.gms.maps.MapView
+                android:id="@+id/map_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

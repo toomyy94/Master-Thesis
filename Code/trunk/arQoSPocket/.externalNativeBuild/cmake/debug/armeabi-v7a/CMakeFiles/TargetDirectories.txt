@@ -1,3 +1,0 @@
-C:/Users/p057937/Desktop/Master-Thesis.git/Code/trunk/arQoSPocket/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/ttaenc.dir
-C:/Users/p057937/Desktop/Master-Thesis.git/Code/trunk/arQoSPocket/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/edit_cache.dir
-C:/Users/p057937/Desktop/Master-Thesis.git/Code/trunk/arQoSPocket/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/rebuild_cache.dir

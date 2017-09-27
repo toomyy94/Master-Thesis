@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:background="@mipmap/main_background"
+              android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_tab_sub_type_failure"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/image_steps_anomaly"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tv_tab_sub_type_failure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal|center"
+                android:text="@string/service"
+
+                android:textSize="@dimen/text_steps_anomaly"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_tab_type_failure"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/image_steps_anomaly"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tv_tab_type_failure"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/failure"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_steps_anomaly"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_tab_local"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/image_steps_anomaly"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tv_tab_local"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/location"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_steps_anomaly"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_tab_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/image_steps_anomaly"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/tv_tab_feedback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="@string/feedback"
+                android:textAllCaps="true"
+                android:textSize="@dimen/text_steps_anomaly"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager_anomaly"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

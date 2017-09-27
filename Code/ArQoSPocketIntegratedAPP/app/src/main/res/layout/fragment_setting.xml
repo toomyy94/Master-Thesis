@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/VerticalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/i_background_dark"
+            android:fadingEdge="none"
+            android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="@dimen/global_margin"
+        android:orientation="vertical">
+
+        <pt.ptinovacao.arqospocket.views.ArQosTextView
+            android:id="@+id/tv_sg_title"
+            style="@style/SlidingMenuText"
+            android:text="@string/settings_management_connection"/>
+
+        <ImageView
+            android:id="@+id/line_test_sg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_titulos"/>
+
+        <RadioButton
+            android:id="@+id/radio_date_automatic_sg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/global_line"
+            android:alpha="0.7"
+            android:button="@null"
+            android:drawableRight="@drawable/radiobutton_select_confi"
+            android:tag="4"
+            android:text="@string/test_type_auto"
+            android:textColor="@color/color_radio"
+            android:visibility="gone"/>
+
+        <RadioButton
+            android:id="@+id/radio_date_manual_sg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/global_line"
+            android:alpha="0.7"
+            android:button="@null"
+            android:drawableRight="@drawable/radiobutton_select_confi"
+            android:tag="4"
+            android:text="@string/test_type_manual"
+            android:textColor="@color/color_radio"/>
+
+        <pt.ptinovacao.arqospocket.views.settings.ArQoSSwitch
+            android:id="@+id/switch_mode_manual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <pt.ptinovacao.arqospocket.views.ArQosTextView
+            android:id="@+id/tv_radiolog_title"
+            style="@style/SlidingMenuText"
+            android:text="@string/settings_radiologs"/>
+
+        <ImageView
+            android:id="@+id/line_test_radiolog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_titulos"/>
+
+
+        <pt.ptinovacao.arqospocket.views.settings.ArQoSSwitch
+            android:id="@+id/switch_radiologs_enable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <CheckBox
+            android:id="@+id/radio_radiolog_dedicated"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/global_line"
+            android:tag="0"
+            android:button="@null"
+            android:drawableRight="@drawable/checkbox_round_select_confi"
+            android:text="@string/radiolog_dedicated"
+            android:textColor="@color/color_radio"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:id="@+id/image_radiolog"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+
+        <CheckBox
+            android:id="@+id/radio_radiolog_idle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/global_line"
+            android:tag="1"
+            android:button="@null"
+            android:drawableRight="@drawable/checkbox_round_select_confi"
+            android:text="@string/radiolog_idle"
+            android:textColor="@color/color_radio"
+            android:visibility="gone"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+        <CheckBox
+            android:id="@+id/radio_scanlog"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/global_line"
+            android:tag="2"
+            android:button="@null"
+            android:drawableRight="@drawable/checkbox_round_select_confi"
+            android:text="@string/scanlog"
+            android:textColor="@color/color_radio"
+            android:visibility="gone"/>
+
+        <pt.ptinovacao.arqospocket.views.settings.ArQoSProgressBar
+            android:id="@+id/radiologs_progressbar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
+        <pt.ptinovacao.arqospocket.views.ArQosTextView
+            android:id="@+id/tv_storage_title"
+            style="@style/SlidingMenuText"
+            android:text="@string/settings_storage"/>
+
+        <ImageView
+            android:id="@+id/line_test_storage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_titulos"/>
+
+        <pt.ptinovacao.arqospocket.views.settings.ArQoSeek
+            android:id="@+id/seek_bar_percentage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:textColor="@color/color_radio"/>
+
+        <pt.ptinovacao.arqospocket.views.ArQosTextView
+            android:id="@+id/homepage"
+            style="@style/SlidingMenuText"
+            android:text="@string/homepage"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+        <ImageView
+            android:id="@+id/linha_titulos_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_titulos"/>
+
+        <RadioGroup
+            android:id="@+id/radio_homepage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/radio_dashboard"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/global_line"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:tag="3"
+                android:text="@string/dashboard"
+                android:textColor="@color/color_radio"/>
+
+            <ImageView
+                android:id="@+id/image_dash"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+            <RadioButton
+                android:id="@+id/radio_anomalias"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/global_line"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:tag="3"
+                android:text="@string/anomalies"
+                android:textColor="@color/color_radio"/>
+
+            <ImageView
+                android:id="@+id/image_anoma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+            <RadioButton
+                android:id="@+id/radio_historico_anomalias"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/global_line"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:tag="3"
+                android:text="@string/anomaly_log"
+                android:textColor="@color/color_radio"/>
+
+            <ImageView
+                android:id="@+id/image_hist_anoma"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+            <RadioButton
+                android:id="@+id/radio_testes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/global_line"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:tag="3"
+                android:text="@string/tests"
+                android:textColor="@color/color_radio"/>
+
+            <ImageView
+                android:id="@+id/image_testes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+            <RadioButton
+                android:id="@+id/radio_historico_testes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/global_line"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:tag="3"
+                android:text="@string/test_log"
+                android:textColor="@color/color_radio"/>
+
+            <ImageView
+                android:id="@+id/image_hist_test"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+            <RadioButton
+                android:id="@+id/radio_configuracoes"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/global_line"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:tag="3"
+                android:text="@string/settings"
+                android:textColor="@color/color_radio"/>
+
+            <ImageView
+                android:id="@+id/image_ajuda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+            <RadioButton
+                android:id="@+id/radio_info"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/global_line"
+                android:button="@null"
+                android:drawableRight="@drawable/radiobutton_select_confi"
+                android:tag="3"
+                android:text="@string/about"
+                android:textColor="@color/color_radio"/>
+
+            <ImageView
+                android:id="@+id/image_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/activity_configuracoes_linha_separador"/>
+        </RadioGroup>
+
+        <pt.ptinovacao.arqospocket.views.ArQosTextView
+            android:id="@+id/test_configs"
+            style="@style/SlidingMenuText"
+            android:text="@string/test_execution_settings"/>
+
+        <ImageView
+            android:id="@+id/linha_test_configs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_titulos"/>
+
+        <pt.ptinovacao.arqospocket.views.settings.ArQoSSwitch
+            android:id="@+id/switch_auto_tests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <pt.ptinovacao.arqospocket.views.ArQosTextView
+            android:id="@+id/language_title"
+            style="@style/SlidingMenuText"
+            android:text="@string/language"/>
+
+        <ImageView
+            android:id="@+id/linha_titulos_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_titulos"/>
+
+        <pt.ptinovacao.arqospocket.views.ArQosTextView
+            android:id="@+id/tvLanguage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/global_line"
+            android:button="@null"
+            android:gravity="center_vertical"
+            android:text="@string/app_language"
+            android:textColor="@color/color_radio"/>
+
+        <ImageView
+            android:id="@+id/image_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/activity_configuracoes_linha_separador"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"></LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

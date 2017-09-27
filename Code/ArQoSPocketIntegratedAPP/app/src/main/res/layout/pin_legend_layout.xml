@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal" >
+
+    <ImageView
+        android:id="@+id/img_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:src="@mipmap/pin_legenda_voz" />
+
+    <TextView
+        android:id="@+id/tv_label_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/img_type"
+        android:layout_centerHorizontal="true"
+        android:text="@string/anomaly_category_messaging"
+        android:textSize="@dimen/tertiary_text_size"
+        android:textColor="@color/color_light_grey_text" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_toRightOf="@+id/img_type"
+        android:layout_marginLeft="2dp"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/icon_legenda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/circle_white_legend" />
+
+        <TextView
+            android:id="@+id/tv_legenda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+
+</RelativeLayout>
+<!--
+         <TextView
+        android:id="@+id/tv_label_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/voz"
+        android:textColor="@color/color_light_grey_text" />
+-->

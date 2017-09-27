@@ -1,5 +1,0 @@
-package PT.PTInov.ArQoSPocket.structs;
-
-public enum EDataState {
-	DATA_DISCONNECTED, DATA_CONNECTING, DATA_CONNECTED, DATA_SUSPENDED, NA
-}

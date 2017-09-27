@@ -1,0 +1,50 @@
+package pt.ptinovacao.arqospocket.core.serialization.entities.results;
+
+import com.google.gson.JsonObject;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import pt.ptinovacao.arqospocket.core.serialization.entities.results.proberesponse.ProbeResponse;
+
+/**
+ * Created by Tomás on 07/09/2017.
+ */
+public class AlarmFileDataAssocitedResponse extends ResultFileData {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AlarmFileDataAssocitedResponse.class);
+
+    public static class Builder extends ResultFileData.Builder {
+
+        protected JsonObject pippedString;
+
+        public Builder() {
+            super();
+            this.pippedString = new JsonObject();
+        }
+
+
+
+        public ResultFileData.Builder appendPippedAlarm(JsonObject pippedString) {
+            this.pippedString = pippedString;
+            return this;
+        }
+
+        public AlarmFileDataAssocitedResponse build() {
+
+            AlarmFileDataAssocitedResponse data = new AlarmFileDataAssocitedResponse();
+
+            ProbeNotificationAssociatedResponse probeNotification = new ProbeNotificationAssociatedResponse();
+            data.setNotification(probeNotification);
+
+            setValues(probeNotification);
+
+            ProbeResponse probeResponse = new ProbeResponse();
+            probeNotification.setResponse(probeResponse);
+
+            probeResponse.setAlarms(pippedString);
+
+            return data;
+        }
+    }
+}

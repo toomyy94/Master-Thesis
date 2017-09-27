@@ -1,5 +1,0 @@
-package PT.PTInov.ArQoSPocket.Enums;
-
-public enum DataStateEnum {
-	DATA_DISCONNECTED, DATA_CONNECTING, DATA_CONNECTED, DATA_SUSPENDED, NA
-}

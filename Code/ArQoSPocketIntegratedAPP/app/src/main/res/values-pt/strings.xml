@@ -1,0 +1,428 @@
+<resources>
+
+    <string name="app_name">arQos pocket</string>
+    <string name="app_language">Português</string>
+
+    <!-- Dashboard -->
+    <string name="na">NA</string>
+    <string name="unavailable">Indisponível</string>
+    <string name="yes">Sim</string>
+    <string name="no">Não</string>
+    <string name="english">Inglês</string>
+    <string name="portuguese">Português</string>
+    <string name="french">Francês</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="anomalies">Anomalias</string>
+    <string name="tests">Testes</string>
+    <string name="settings">Configurações</string>
+    <string name="about">ArQos pocket</string>
+    <string name="help">Ajuda</string>
+    <string name="homepage">Página Inicial</string>
+    <string name="language">Idioma</string>
+    <string name="radiologs">Radiologs/Snapshots</string>
+    <string name="development">Desenvolvimento de testes</string>
+
+    <string name="network_unavailable">Indisponível</string>
+    <string name="horario">Horário</string>
+    <string name="location_info">Identificação do local</string>
+    <string name="feedback">Feedback</string>
+    <string name="sliddingmenu_log_label">Histórico</string>
+
+    <!-- Settings -->
+    <string name="settings_wifi_only_label">Apenas via Wi-Fi</string>
+    <string name="settings_wifi_priority_label">Preferencialmente via Wi-Fi</string>
+    <string name="settings_any_network_label">Qualquer rede</string>
+    <string name="settings_log_upload_periodicity">Periodicidade de envio dos logs</string>
+    <string name="settings_network_to_send_logs">Rede para envio dos logs</string>
+    <string name="settings_daily_label">Diário</string>
+    <string name="settings_dashboard_label">Dashboard</string>
+    <string name="settings_management_connection">Ligação ao Sistema de Gestão</string>
+    <string name="settings_automatic">Automático</string>
+    <string name="settings_manual">Manual</string>
+    <!-- Settings // Radiologs Register -->
+    <string name="settings_radiologs">Registo de Radiologs</string>
+    <!-- Settings // Connection to Management System -->
+    <string name="connected">Ligado</string>
+    <string name="not_connected">Desligado</string>
+    <string name="establishing_connection">... A efetuar ligação</string>
+    <string name="receveing_configurations">A receber configurações...</string>
+    <string name="sending_configurations">A enviar dados...</string>
+    <string name="try_again_connect">Repetição em 12 seg...</string>
+
+
+    <string name="wifi">Wi-Fi</string>
+    <string name="mbps">Mbps</string>
+    <string name="network_type_2g">2G</string>
+    <string name="network_type_3g">3G</string>
+    <string name="network_type_4g">4G</string>
+    <string name="mobile_state">mobile_state</string>
+    <string name="network_mode">network_mode</string>
+    <string name="operator_code">operator_code</string>
+    <string name="rx_level">rx_level</string>
+    <string name="lac">lac</string>
+    <string name="link_speed">link_speed</string>
+    <string name="ssid">ssid</string>
+    <string name="wifi_version">Wi-Fi Version</string>
+    <string name="bit_error_rate">Bit Error Rate</string>
+    <string name="cid">CID</string>
+    <string name="dbm_ber">dBm (BER)</string>
+    <string name="dbm">dBm</string>
+
+    <!-- Anomalias -->
+
+    <string name="anomaly_type">Tipo de Anomalias</string>
+    <string name="report_anomaly">Reportar Anomalia</string>
+    <string name="all_anomalies">Todas as anomalias</string>
+    <string name="anomaly_log">Histórico anomalias</string>
+    <string name="send_feedback_anomaly_text_hint">A anomalia verificada deve-se a...</string>
+    <string name="send_feedback_radiolog_text_hint">O snapshot deve-se a...</string>
+
+    <string name="location">Local</string>
+    <string name="failure">Falha</string>
+    <string name="finish">Finalizar</string>
+    <string name="service">Serviço</string>
+    <string name="failure_type">Tipo de falha</string>
+
+    <string name="anomaly_category_voice">Voz</string>
+    <string name="anomaly_category_internet">Internet</string>
+    <string name="anomaly_category_messaging">Messaging</string>
+    <string name="anomaly_category_network_coverage">Cobertura</string>
+    <string name="anomaly_category_other">Outra</string>
+    <string name="anomaly_type_dropped_call">Chamada caída</string>
+    <string name="anomaly_type_call_not_established">Chamada não realizada</string>
+    <string name="anomaly_type_lost_call">Chamada perdida</string>
+    <string name="anomaly_type_bad_call_audio">Ruído/má qualidade audio</string>
+    <string name="anomaly_type_another_anomaly_type">Outro tipo de anomalia</string>
+    <string name="anomaly_type_no_data_access">Sem acesso de dados</string>
+    <string name="anomaly_type_intermittent_access">Acesso intermitente</string>
+    <string name="anomaly_type_slow_connection">Acesso lento</string>
+    <string name="anomaly_type_message_not_sent">Mensagem não enviada</string>
+    <string name="anomaly_type_message_not_received">Mensagem não recebida</string>
+    <string name="anomaly_type_message_slow_dispatch">Envio lento</string>
+    <string name="anomaly_type_message_delayed_recepetion">Receção atrasada</string>
+    <string name="anomaly_type_no_indoor_coverage">Sem cobertura indoor</string>
+    <string name="anomaly_type_no_outdoor_coverage">Sem cobertura outdoor</string>
+
+    <!-- Radiologs -->
+    <string name="radiolog_register">Registo de Radiologs</string>
+    <string name="radiolog">Radiolog</string>
+    <string name="radiolog_idle">Radiolog Idle Mode</string>
+    <string name="radiolog_dedicated">Radiolog Dedicated Mode</string>
+    <string name="radiolog_event">Event</string>
+    <string name="snapshot">Snapshot</string>
+    <string name="scanlog">Scanlog</string>
+    <string name="take_a_snapshot">Tirar snapshot da rede</string>
+    <string name="view_radiologs_registers">Consultar registos</string>
+    <string name="view_radiologs_registers_by_date">Consultar registos por Date</string>
+
+
+    <string name="radiolog_type">Tipo de Radiolog</string>
+    <string name="report_radiolog">Reportar Radiolog</string>
+    <string name="all_radiologs">Todos os Radiologs</string>
+    <string name="radiolog_log">Histórico de Radiologs</string>
+    <string name="every_records">Todos os Registos</string>
+
+    <string name="radiolog_register_status">Register status</string>
+    <string name="radiolog_plmn_change">PLMN change</string>
+    <string name="radiolog_roaming_status">Estado do roaming</string>
+    <string name="radiolog_cell_reselection">Reseleção de célula</string>
+    <string name="radiolog_handover">Handover</string>
+    <string name="radiolog_call_setup">Call Setup</string>
+    <string name="radiolog_call_established">Establecimento de chamada</string>
+    <string name="radiolog_call_end">Fim de chamada</string>
+    <string name="radiolog_call_drop">Chamada caída</string>
+    <string name="radiolog_call_release">Liberação de chamda</string>
+
+    <!-- Radiologs Parameters-->
+    <string name="event_title">Tipo de Evento</string>
+    <string name="module">Module</string>
+    <string name="iccid">Iccid</string>
+    <string name="imsi">Imsi</string>
+    <string name="timestamp">Timestamp</string>
+    <string name="mac">Device_id</string>
+    <string name="gps">Location</string>
+    <string name="status">Status</string>
+    <string name="mode">Technology</string>
+    <string name="cellid">Cell ID</string>
+    <string name="plmn">Operator Name</string>
+    <string name="roaming">Roaming</string>
+    <string name="rxlevel">Signal Strenght</string>
+    <string name="mcc">Mcc/Mnc</string>
+    <string name="mnc">Mnc</string>
+    <string name="pci">Pci</string>
+    <string name="tac">Tac</string>
+    <string name="Lac">Lac</string>
+    <string name="ber">Ber</string>
+    <string name="rsrp">Rsrp</string>
+    <string name="rsrq">Rsrq</string>
+    <string name="rssnr">Rssnr</string>
+    <string name="cqi">Cqi</string>
+    <string name="psc">Psc</string>
+    <string name="neighbours">Informação vizinha</string>
+
+    <!-- Scanlogs Parameters-->
+    <string name="bssid">Bssid</string>
+    <string name="channel">Channel</string>
+    <string name="essid">Essid</string>
+
+    <!-- Anomalias icons -->
+
+    <string name="anomalias_ic_01">anomalias_icon_01</string>
+    <string name="anomalias_ic_02">anomalias_icon_02</string>
+    <string name="anomalias_ic_03">anomalias_icon_03</string>
+    <string name="anomalias_ic_04">anomalias_icon_04</string>
+    <string name="anomalias_ic_05">anomalias_icon_05</string>
+
+    <!-- Testes -->
+    <string name="test_types">TIPO DE TESTES</string>
+    <string name="test_log">Histórico testes</string>
+    <string name="mobile_network">Rede Móvel</string>
+    <string name="test_wifi">Wi-Fi</string>
+    <string name="test_mixed_network">Misto</string>
+    <string name="test_not_connected">Sem ligação</string>
+    <string name="all_tests">Todos os testes</string>
+    <string name="send_pending_tests">Enviar testes pendentes</string>
+
+    <string name="alert_pending_tests">ENVIAR TESTES PENDENTES</string>
+    <string name="alert_connection">Ligação ao sistema de Gestão</string>
+    <string name="alert_pending_tests_subtitle">Ligação ao sistema de Gestão desligada.</string>
+    <string name="alert_pending_tests_message">Para enviar os testes pendentes, o arQoS pocket necessita de estar ligado ao sistema de gestão.</string>
+    <string name="alert_pending_tests_yes">Ligar agora</string>
+
+    <string name="alert_send_tests_now">Enviar testes agora</string>
+    <string name="alert_connection_done_subtitle">Ligação ao Sistema de Gestão efetuada.</string>
+    <string name="alert_connection_done_message">Já pode enviar os testes pendentes.</string>
+    <string name="alert_send_tests_sucess">Testes pendentes enviados com sucesso.</string>
+
+    <!-- Mapa -->
+    <string name="anomaly_map_info_title">Arraste o mapa</string>
+    <string name="anomaly_map_info_info_subtitle">para visualizar mais anomalias.</string>
+    <string name="radiolog_map_info_info_subtitle">para visualizar mais radiologs.</string>
+    <string name="test_map_info_subtitle">para visualizar mais testes.</string>
+    <string name="error_msg_unable_to_create_maps">Desculpe! Incapaz de criar o mapa</string>
+
+    <!-- Testes -->
+    <string name="test_name">Nome do Teste</string>
+    <string name="test_inactive">Inactivo</string>
+    <string name="test_running">Em Curso</string>
+    <string name="test_completed">Concluido</string>
+    <string name="test_failed">Falhado</string>
+    <string name="running_tests">Testes em Curso</string>
+    <string name="inactive_tests">Testes Inativos</string>
+
+    <!-- Testes pendentes -->
+    <string name="pending_tests_mobile">Testes de Rede Móvel</string>
+    <string name="pending_tests_wifi">Testes de Rede Wi-Fi</string>
+    <string name="pending_tests_both">Testes de Rede Híbridos</string>
+
+    <!-- Testes em desenvolvimento -->
+    <string name="main_development_apn">Configurar APN</string>
+    <string name="main_development_logfile">Enviar logcat para um ficheiro</string>
+    <string name="main_development_radiolog">Radiolog</string>
+
+    <string name="development_tests_dtmf">Enviar DTMF</string>
+
+    <string name="development_tests_default_apn">Mudar o APN por default</string>
+    <string name="development_tests_insert_apn">Inserir APN</string>
+
+    <string name="development_tests_logfile">Escrever logcat para logfile.txt</string>
+    <string name="development_tests_no_logfile">Não escrever logcat para logfile.txt</string>
+
+    <string name="development_tests_create_radiolog">Gerar radiolog</string>
+    <string name="development_tests_send_radiolog">Enviar radiolog para Sistema de Gestão</string>
+
+    <string name="both">Both</string>
+
+    <!-- Percent -->
+    <string name="percent_0">0%</string>
+    <string name="percent_10">10%</string>
+    <string name="percent_20">20%</string>
+    <string name="percent_30">30%</string>
+    <string name="percent_40">40%</string>
+    <string name="percent_50">50%</string>
+    <string name="percent_60">60%</string>
+    <string name="percent_70">70%</string>
+    <string name="percent_80">80%</string>
+    <string name="percent_90">90%</string>
+    <string name="percent_100">100%</string>
+
+    <!-- 	about -->
+    <string name="about_dialog_title">ArQoS Pocket</string>
+    <string name="about_dialog_text">O ArQoS Pocket é uma sonda ArQoS para instalação em Smartphones.\n\n
+        O ArQoS é um sistema de monotoria de performance para avaliação da qualidade dos serviços e experiência de utilização em redes em várias tecnologias (FTTx, LTE, Ethernet e IP).\n\n
+        O sistema utiliza sondas fixas e móveis e Sistema de Gestão.</string>
+    <string name="about_dialog_copyright">© 2017 Altice Labs, S.A. Todos os direitos reservados </string>
+
+    <string name="install_application">Instale esta aplicação.</string>
+    <string name="error_msg_no_web_browser">Erro fatal! Nenhum web browser encontrado no dispositivo.</string>
+
+    <string name="gps_heading_north">N</string>
+    <string name="gps_heading_south">S</string>
+    <string name="gps_heading_east">E</string>
+    <string name="gps_heading_west">W</string>
+
+    <string name="task_result_min_rtt_ms">RTT Minimo (ms)</string>
+    <string name="task_result_max_rtt_ms">RTT Maximo (ms)</string>
+    <string name="task_result_average_rtt_ms">RTT Médio (ms)</string>
+    <string name="task_result_sent_packets">Pacotes enviados</string>
+    <string name="task_result_received_packets">Pacotes recebidos</string>
+    <string name="task_result_lost_packets">% de pacotes perdidos</string>
+    <string name="task_result_email_to_send">Email a enviar</string>
+    <string name="task_result_destination_address">Email destinatário</string>
+    <string name="task_result_sent_data">Dados enviados</string>
+    <string name="task_result_sending_time">Tempo de envio</string>
+    <string name="task_result_destination_number">Número destino</string>
+    <string name="task_result_call_duration">Duração da chamada</string>
+    <string name="task_result_wifi_authentication_answer">Resposta ao pedido de autenticação</string>
+    <string name="task_result_response_time">Tempo de resposta</string>
+    <string name="task_result_wifi_scan_available_networks">Redes disponiveis</string>
+    <string name="task_result_received_sms_text">SMS Recebida</string>
+    <string name="task_result_origin_number">Número de envio</string>
+    <string name="task_result_received_mms_received_data">Dados recebidos</string>
+    <string name="task_result_data_size">Dimensão dos dados</string>
+    <string name="task_result_uploaded_data_size_kb">Upload (KB)</string>
+    <string name="task_result_upload_time_ms">Tempo de upload (ms)</string>
+    <string name="task_result_mac">MAC</string>
+    <string name="frequency_mhz">Frequência (MHz)</string>
+    <string name="task_result_channel">Canal</string>
+    <string name="task_result_mode">Modo</string>
+    <string name="task_result_protocol">Protocolo</string>
+    <string name="task_result_bitrate">Velocidade (bps)</string>
+    <string name="task_result_encryption">Encriptação</string>
+    <string name="task_result_association_time_sec">Tempo de associação (sec)</string>
+    <string name="task_result_signal_level">Nível de sinal (dB)</string>
+    <string name="task_result_noise_level">Nível de ruido (dB)</string>
+    <string name="task_result_ip_address">Endereço</string>
+    <string name="task_result_subnet_mask">Máscara</string>
+    <string name="task_result_gateway">Gateway</string>
+    <string name="task_result_dns">DNS</string>
+    <string name="task_result_domain">Domínio</string>
+    <string name="task_result_lease_time_sec">Tempo de Aluguer (sec)</string>
+    <string name="task_result_received_data_kb">Download (KB)</string>
+    <string name="task_result_download_time_in_ms">Tempo de download (ms)</string>
+    <string name="task_result_access_time_in_ms">Tempo de acesso (ms)</string>
+    <string name="task_result_throughput">Velocidade (Kbps)</string>
+    <string name="task_result_measured_impulses">Impulsos medidos</string>
+    <string name="task_result_call_setup_time">Tempo de establecimento da chamada</string>
+    <string name="task_result_call_origin_number">Caller Number</string>
+    <string name="task_result_time_waiting_ringing">Tempo de espera chamando</string>
+    <string name="task_result_audio_recording">Gravar áudio</string>
+
+    <string name="mobile_params_device_id">ID do dispositivo</string>
+    <string name="mobile_params_cell_id">ID da célula</string>
+    <string name="mobile_params_provider_code">Código Operador</string>
+    <string name="mobile_params_msisdn">MSISDN</string>
+    <string name="mobile_params_network_operator_name">Nome do operador de rede</string>
+    <string name="mobile_params_imsi">IMSI</string>
+    <string name="mobile_params_roaming">Roaming</string>
+    <string name="mobile_params_imei">IMEI</string>
+    <string name="mobile_params_mnc">MNC</string>
+    <string name="mobile_params_mcc">MCC</string>
+
+    <string name="wifi_params_bssid">BSSID</string>
+    <string name="wifi_params_hidden_ssid">SSID escondido</string>
+    <string name="wifi_params_mac_address">Endereço MAC</string>
+    <string name="wifi_params_ip_address">Endereço IP</string>
+    <string name="wifi_params_primary_dns">DNS 1</string>
+    <string name="wifi_params_secondary_dns">DNS 2</string>
+    <string name="wifi_params_gateway_adress">Gateway</string>
+    <string name="wifi_params_lease_duration">Lease Duration</string>
+    <string name="wifi_params_netmask">Netmask</string>
+    <string name="wifi_params_server_address">Server Address</string>
+    <string name="wifi_params_essid">ESSID</string>
+    <string name="wifi_params_channel">Canal</string>
+
+    <string name="test_execution_settings">Configurações de execução de teste</string>
+    <string name="auto_run_date_tests">Correr testes automaticamente por data</string>
+
+    <!--Tasks details-->
+    <!--Tasks details - base-->
+    <string name="tasks_details_task_id">ID da tarefa</string>
+    <string name="tasks_details_task_name">Nome da tarefa</string>
+    <string name="tasks_details_macro_id">Macro id</string>
+    <string name="tasks_details_task_number">Número da tarefa</string>
+    <string name="tasks_details_iccid">ICCID</string>
+    <string name="tasks_details_gps_location">Localização GPS</string>
+    <string name="tasks_details_status">Estado</string>
+    <string name="tasks_details_start_date">Data de ínico</string>
+    <string name="tasks_details_end_date">Data de fim</string>
+
+    <!--Tasks details - receive-->
+    <string name="tasks_details_message_text">Texto da mensagem</string>
+    <string name="tasks_details_source_number">Número da fonte</string>
+    <string name="tasks_details_waiting_time">Tempo de espera</string>
+    <string name="tasks_details_message_delivery_time">Tempo de entrega da mensagem</string>
+    <string name="tasks_details_encoding">Codificação</string>
+
+    <!--Tasks details - send-->
+    <string name="tasks_details_destination_number">Número destino</string>
+    <string name="tasks_details_text_message">Texto da mensagem</string>
+    <string name="tasks_details_sending_time">Tempo de envio</string>
+
+    <!--Tasks details - down-->
+    <string name="tasks_details_received_data">Dados recebidos</string>
+    <string name="tasks_details_received_data_size">Tamanho dos dados recebidos</string>
+    <string name="tasks_details_download_time_seconds">Tempo de download em segundos</string>
+    <string name="tasks_details_access_time_seconds">Tempo de acesso em segundos</string>
+    <string name="tasks_details_throughput">Taxa de transferência</string>
+
+    <!--Tasks details - down-->
+    <string name="tasks_details_sent_data">Dados enviados</string>
+    <string name="tasks_details_sent_data_size">Tamanho dos dados enviados</string>
+    <string name="tasks_details_upload_time_seconds">Tempo de upload em segundos</string>
+
+    <!--Tasks details - ping-->
+    <string name="tasks_details_minimum">Mínimo</string>
+    <string name="tasks_details_medium">Médio</string>
+    <string name="tasks_details_maximum">Máximo</string>
+    <string name="tasks_details_sent_packets">Pacotes enviados</string>
+    <string name="tasks_details_received_packets">Pacotes recebidos</string>
+    <string name="tasks_details_lost_packets">Pacotes perdidos</string>
+
+    <!-- RadioInformationParameter-->
+    <string name="radio_inf_parm_gsm_cel_id">ID da Célula</string>
+    <string name="radio_inf_parm_gsm_sig_lvl">RSSI</string>
+    <string name="radio_inf_parm_gsm_more">Modo da REDE</string>
+    <string name="radio_inf_parm_gsm_operator">Nome do Operador</string>
+    <string name="radio_inf_parm_rac">Lac</string>
+    <string name="radio_inf_parm_imsi">Imsi</string>
+    <string name="radio_inf_parm_neighbours">Vizinhos</string>
+    <string name="radio_inf_parm_cqi">CQI</string>
+
+    <!-- RadioInformationParameter can't retrieve-->
+    <string name="radio_inf_parm_gsm_band">Band</string>
+    <string name="radio_inf_parm_rscp">RSCP</string>
+    <string name="radio_inf_parm_ecio">Ecio</string>
+    <string name="radio_inf_parm_arfcn">Arfcn</string>
+    <string name="radio_inf_parm_gpsc">Gpsc</string>
+    <string name="radio_inf_parm_bsic">Bsic</string>
+    <string name="radio_inf_parm_ber">BER</string>
+    <string name="radio_inf_parm_psc">PSC</string>
+
+    <!-- WiFiInformationParameter-->
+    <string name="wifi_inf_parm_bssid">Wi-Fi Bssid</string>
+    <string name="wifi_inf_parm_ssid">Wi-Fi Ssid</string>
+    <string name="wifi_inf_parm_ipAddress">IpAddress</string>
+    <string name="wifi_inf_parm_linkSpeed">Wi-Fi Link Speed</string>
+    <string name="wifi_inf_parm_rxLevel">Wi-Fi RxLevel</string>
+    <string name="wifi_inf_parm_leaseDuration">Lease Duration</string>
+    <string name="wifi_inf_parm_wifiState">Estado Wi-Fi</string>
+
+    <!--LTE RADIO INFO-->
+    <string name="lte_reg_stat">LTE Reg Stat</string>
+    <string name="lte_mode">Network mode</string>
+    <string name="lte_band">LTE band</string>
+    <string name="lte_bw">LTE bw</string>
+    <string name="lte_oper">Nome do Operador</string>
+    <string name="lte_txch">LTE txch</string>
+    <string name="lte_rxch">LTE rxch</string>
+    <string name="lte_rssi">RSSI</string>
+    <string name="lte_rsrp">RSRP</string>
+    <string name="lte_rsrq">RSRQ</string>
+    <string name="lte_sinr">SINR</string>
+    <string name="lte_cellid">ID da célula</string>
+    <string name="lte_imsi">Imsi</string>
+    <string name="lte_cqi">CQI</string>
+    <string name="lte_pci">PCI</string>
+
+</resources>

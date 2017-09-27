@@ -1,0 +1,53 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_branding</item>
+        <item name="colorPrimaryDark">@color/color_branding</item>
+        <item name="colorAccent">@color/color_branding</item>
+        <item name="android:spinnerStyle">@style/SpinnerStyle</item>
+        <item name="android:spinnerItemStyle">@style/SpinnerItem</item>
+        <item name="android:alertDialogTheme">@style/CustomDialogTheme</item>
+    </style>
+
+    <declare-styleable name="ArQosTextView">
+        <attr name="font" format="string" />
+        <attr name="color_selected" format="color" />
+    </declare-styleable>
+
+    <!-- Spinner -->
+    <style name="SpinnerStyle" parent="@android:style/Widget.Spinner">
+        <item name="android:background">@drawable/dropdown_selector</item>
+    </style>
+    <style name="SpinnerItem">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/primary_text_size</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- Dialog -->
+    <style name="CustomDialogTheme" parent="android:Theme.Dialog">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/color_branding</item>
+
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowTitleStyle">@null</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:itemTextAppearance">@android:style/TextAppearance.Large.Inverse</item>
+        <item name="android:textAppearanceListItem">@android:style/TextAppearance.Large.Inverse</item>
+        <item name="android:textAppearanceListItemSmall">@android:style/TextAppearance.Large.Inverse</item>
+    </style>
+
+    <style name="App.Theme.Dialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowTitleStyle">@style/App.Theme.Dialog.Title</item>
+        <item name="android:windowBackground">@color/color_list_divider_50_transparency</item>
+    </style>
+    <style name="App.Theme.Dialog.Title">
+        <item name="android:windowTitleStyle">@color/white</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+</resources>
