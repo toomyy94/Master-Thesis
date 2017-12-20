@@ -1,3 +1,0 @@
-C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/ttaenc.dir
-C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/edit_cache.dir
-C:/AndroidProjects/ArQoS_Pocket/branches/2.2.x/src/ArQoSPocketIntegratedAPP/core/.externalNativeBuild/cmake/release/x86_64/CMakeFiles/rebuild_cache.dir
