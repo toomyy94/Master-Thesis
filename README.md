@@ -12,7 +12,6 @@
 * Communication protocols (HTTP, SSH, SFTP, ...)
 * [Requery](https://github.com/requery/requery)
 * [ReactiveX for Java](https://github.com/ReactiveX/RxAndroid)
-*
 
 ### Report
 * [english version (pdf)](https://github.com/toomyy94/Master-Thesis/blob/master/End-user%20quality%20of%20service%20and%20experience%20in%20mobile%20networks.pdf)
